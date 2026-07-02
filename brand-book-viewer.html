@@ -1,0 +1,3839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Book — Jaltech® 2026</title>
+  <meta name="description" content="Guía de identidad y comunicación de Jaltech. Sistema visual, tipografía, voz y aplicaciones. Documento de uso interno." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo/jaltech-isotipo-green-gradient.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+  :root {
+    --verde:           #529A00;
+    --verde-light:     #6DC200;
+    --verde-soft:      #EBF5DA;
+    --azul:            #1D2333;
+    --azul-mid:        #252D42;
+    --ink:             #0B0D12;
+    --naranja:         #FF8600;
+    --naranja-light:   #FFA94D;
+    --naranja-soft:    #FFEFD9;
+    --morado:          #6A2AE1;
+    --morado-light:    #9560F0;
+    --morado-soft:     #EFE5FF;
+    --blanco:          #FFFFFF;
+    --off:             #F6F6F2;
+    --gris-100:        #EEEEEA;
+    --gris-200:        #D8D8D2;
+    --gris-300:        #C8C8C2;
+    --gris-400:        #9B9B95;
+    --gris-600:        #5C5C58;
+    --gris-800:        #2E2E2C;
+    --azul-extra:      #0063FE;
+    --amarillo:        #FFBF15;
+    --error:           #D93B3B;
+    /* Tipografía: Mont/Montserrat principales · Poppins/Aptos secundarias */
+    --font-display:    'Mont', 'Montserrat', sans-serif;
+    --font-body:       'Aptos', 'Poppins', sans-serif;
+    --font-secondary:  'Aptos', 'Poppins', sans-serif;
+    --sidebar-w:       220px;
+    --content-max:     900px;
+    --pad-xl:          120px 60px;
+    --pad-mb:          80px 28px;
+    --ease:            cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 40px; }
+  body {
+    font-family: var(--font-body);
+    background: var(--blanco);
+    color: var(--azul);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  ul, ol { list-style: none; }
+  button { font-family: inherit; border: none; background: none; cursor: pointer; }
+  table { border-collapse: collapse; width: 100%; }
+
+  /* SIDEBAR */
+  #sidebar {
+    position: fixed; top: 0; left: 0;
+    width: var(--sidebar-w); height: 100vh;
+    background: var(--ink);
+    display: flex; flex-direction: column;
+    z-index: 100; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+  #sidebar::-webkit-scrollbar { width: 6px; }
+  #sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+  .sb-brand {
+    padding: 28px 24px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sb-iso { width: 36px; height: 36px; flex-shrink: 0; filter: none; }
+  .sb-brand-text { line-height: 1.1; }
+  .sb-brand-name {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 13px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #fff;
+  }
+  .sb-brand-sub {
+    font-family: var(--font-secondary);
+    font-size: 8.5px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25); margin-top: 4px;
+  }
+  .sb-nav { padding: 20px 0; flex: 1; }
+  .sb-group {
+    font-family: var(--font-secondary);
+    font-size: 8.5px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    padding: 18px 24px 8px;
+  }
+  .sb-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 24px; font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    transition: color 0.2s, background 0.2s;
+    border-left: 2px solid transparent;
+  }
+  .sb-link:hover { color: rgba(255,255,255,0.7); }
+  .sb-link.active {
+    color: var(--verde-light);
+    border-left-color: var(--verde-light);
+    background: rgba(82,154,0,0.08);
+  }
+  .sb-link .num {
+    font-size: 9px; font-family: var(--font-display); font-weight: 700;
+    color: rgba(255,255,255,0.18); min-width: 18px;
+  }
+  .sb-link.active .num { color: var(--verde-light); }
+  .sb-foot { padding: 18px 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .sb-version { font-family: var(--font-secondary); font-size: 9.5px; color: rgba(255,255,255,0.16); letter-spacing: 0.06em; }
+
+  /* MAIN */
+  #main { margin-left: var(--sidebar-w); min-height: 100vh; }
+  #menu-toggle {
+    display: none;
+    position: fixed; top: 16px; left: 16px;
+    z-index: 200; width: 42px; height: 42px;
+    background: var(--ink); border-radius: 4px;
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 5px;
+  }
+  #menu-toggle span { display: block; width: 18px; height: 1.5px; background: #fff; }
+
+  /* SECCIONES BASE */
+  .section { padding: var(--pad-xl); position: relative; scroll-margin-top: 40px; }
+  .section--dark { background: var(--azul); color: #fff; }
+  .section--ink { background: var(--ink); color: #fff; }
+  .section--off { background: var(--off); }
+  .section--verde { background: var(--verde); color: #fff; }
+  .section-inner { max-width: var(--content-max); }
+  .sec-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--verde); margin-bottom: 18px;
+  }
+  .section--dark .sec-tag, .section--ink .sec-tag, .section--verde .sec-tag { color: var(--verde-light); }
+  .sec-tag::before { content: ''; display: block; width: 22px; height: 1.5px; background: currentColor; }
+  .sec-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1.04; letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+  .sec-title em { font-style: italic; color: var(--verde); }
+  .section--dark .sec-title em, .section--ink .sec-title em { color: var(--verde-light); }
+  .sec-lead {
+    font-family: var(--font-secondary);
+    font-size: 16px; font-weight: 400; line-height: 1.75;
+    color: var(--gris-600); max-width: 900px; margin-bottom: 56px;
+  }
+  .section--dark .sec-lead, .section--ink .sec-lead { color: rgba(255,255,255,0.82); }
+  hr.rule { border: none; border-top: 1px solid var(--gris-100); margin: 64px 0; }
+  .section--dark hr.rule, .section--ink hr.rule { border-top-color: rgba(255,255,255,0.07); }
+  h3.sub-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 20px; color: var(--azul);
+    letter-spacing: -0.015em; margin-bottom: 18px;
+  }
+  .section--dark h3.sub-title, .section--ink h3.sub-title { color: #fff; }
+  h4.mini-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; color: var(--verde);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .body-text {
+    font-family: var(--font-secondary);
+    font-size: 14px; line-height: 1.8; color: var(--gris-600);
+    font-weight: 500;
+  }
+  .body-text strong { color: var(--azul); font-weight: 600; }
+  .section--dark .body-text, .section--ink .body-text { color: rgba(255,255,255,0.82); }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* CALLOUTS */
+  .callout {
+    border-left: 3px solid var(--verde);
+    padding: 18px 22px; background: var(--verde-soft);
+    font-family: var(--font-secondary);
+    font-size: 13.5px; line-height: 1.75;
+    color: var(--gris-600); margin: 24px 0;
+  }
+  .callout strong { color: var(--verde); font-weight: 700; }
+  .callout.naranja { border-left-color: var(--naranja); background: var(--naranja-soft); }
+  .callout.naranja strong { color: var(--naranja); }
+  .callout.morado { border-left-color: var(--morado); background: var(--morado-soft); }
+  .callout.morado strong { color: var(--morado); }
+
+  /* 00 PORTADA */
+  #cover {
+    min-height: 100vh; background: var(--ink);
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 60px;
+    position: relative; overflow: hidden;
+  }
+  #cover::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(82,154,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82,154,0,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 40s linear infinite;
+    pointer-events: none;
+  }
+  .cover-glow {
+    position: absolute; width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(82,154,0,0.16) 0%, transparent 65%);
+    top: -10%; right: -8%;
+    animation: glowPulse 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .cover-iso-watermark {
+    position: absolute; bottom: 8%; right: 6%;
+    width: 360px; height: 360px;
+    opacity: 0.06;
+    animation: drift 20s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  .cover-logo {
+    position: relative; z-index: 2;
+    width: 200px; height: auto;
+    filter: brightness(0) invert(1);
+  }
+  .cover-content { position: relative; z-index: 2; }
+  .cover-meta {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .cover-badge {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--verde-light);
+    border: 1px solid rgba(82,154,0,0.35);
+    padding: 6px 13px;
+  }
+  .cover-year {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+  }
+  .cover-sup {
+    display: block; font-family: var(--font-secondary);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.32); margin-bottom: 24px;
+  }
+  .cover-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(54px, 8.5vw, 130px);
+    line-height: 0.92; letter-spacing: -0.04em;
+    color: #fff; margin-bottom: 32px;
+  }
+  .cover-title .green { color: var(--verde-light); }
+  .cover-title .italic { font-style: italic; }
+  .cover-desc {
+    font-family: var(--font-secondary);
+    font-size: 16px; font-weight: 400; line-height: 1.8;
+    color: rgba(255,255,255,0.45);
+    max-width: 540px; margin-bottom: 48px;
+  }
+  .cover-scroll {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.22);
+  }
+  .cover-scroll::before {
+    content: ''; width: 32px; height: 1px;
+    background: rgba(82,154,0,0.4);
+  }
+
+  /* 01 INTRODUCCIÓN */
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--gris-100);
+    margin: 48px 0 56px;
+  }
+  .stat-box { background: var(--blanco); padding: 32px 26px; }
+  .stat-box .num {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(32px, 3.5vw, 46px);
+    letter-spacing: -0.035em; line-height: 1;
+    margin-bottom: 8px; color: var(--verde);
+  }
+  .stat-box:nth-child(2) .num { color: var(--naranja); }
+  .stat-box:nth-child(3) .num { color: var(--azul); }
+  .stat-box:nth-child(4) .num { color: var(--morado); }
+  .stat-box .lbl {
+    font-family: var(--font-secondary);
+    font-size: 12px; font-weight: 500; color: var(--gris-400); line-height: 1.5;
+  }
+  .stat-box .lbl strong {
+    display: block; font-family: var(--font-display);
+    color: var(--azul); font-weight: 700; margin-bottom: 3px; font-size: 13px;
+  }
+
+  .purpose-block {
+    background: var(--azul);
+    padding: 56px 52px;
+    position: relative; overflow: hidden;
+  }
+  .purpose-block::before {
+    content: '"'; position: absolute;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 220px; line-height: 1;
+    color: rgba(82,154,0,0.08);
+    top: -28px; left: 22px;
+  }
+  .purpose-text {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(22px, 3vw, 36px); line-height: 1.4;
+    color: #fff; position: relative; z-index: 1;
+    font-style: italic; letter-spacing: -0.02em;
+  }
+  .purpose-text em { font-style: normal; color: var(--verde-light); }
+  .purpose-attr {
+    margin-top: 24px; font-family: var(--font-secondary);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    position: relative; z-index: 1;
+  }
+  .brands-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .brand-pill {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 7px 14px;
+    border: 1.5px solid var(--gris-200);
+    color: var(--gris-600);
+  }
+  .brand-pill.main { background: var(--verde); border-color: var(--verde); color: #fff; }
+  .submarcas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 20px; }
+  .submarca { background: var(--off); padding: 24px 20px; }
+  .submarca-name {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 14px; letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .submarca-name.verde { color: var(--verde); }
+  .submarca-name.azul { color: var(--azul); }
+  .submarca-name.dark { color: #1a1a1a; letter-spacing: 0.04em; font-size: 12px; }
+  .submarca-name.gray { color: var(--gris-600); letter-spacing: 0.02em; }
+  .submarca-desc {
+    font-family: var(--font-secondary);
+    font-size: 11px; color: var(--gris-400); line-height: 1.6;
+  }
+
+  /* 02 LOGO E ISOTIPO */
+
+  /* Origen del nombre */
+  .origin-blocks {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin-bottom: 56px;
+  }
+  .origin-block-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 44px 40px;
+    position: relative; overflow: hidden;
+  }
+  .origin-letters {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(72px, 10vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--verde);
+    margin-bottom: 24px;
+  }
+  .origin-letters .accent { color: var(--naranja); }
+  .origin-block-card.tech .origin-letters { color: var(--azul); }
+  .origin-block-card.tech .origin-letters .accent { color: var(--verde); }
+  .origin-breakdown {
+    display: flex; flex-direction: column; gap: 10px;
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid var(--gris-100);
+    border-bottom: 1px solid var(--gris-100);
+  }
+  .origin-breakdown-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    font-family: var(--font-secondary);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--gris-600);
+  }
+  .origin-breakdown-letter {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 22px;
+    color: var(--verde);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+  .origin-block-card.tech .origin-breakdown-letter { color: var(--azul); }
+  .origin-breakdown-item.tech {
+    grid-template-columns: 1fr;
+    padding-left: 16px;
+    border-left: 2px solid var(--verde);
+  }
+  .origin-breakdown-item strong { color: var(--azul); font-weight: 600; }
+  .origin-meaning {
+    font-family: var(--font-secondary);
+    font-size: 13.5px; line-height: 1.75;
+    color: var(--gris-600);
+  }
+  .origin-meaning strong { color: var(--azul); font-weight: 600; }
+
+  /* Isotipo: texto del concepto bajo la construcción */
+  .isotype-meaning {
+    background: var(--off);
+    border-left: 3px solid var(--verde);
+    padding: 22px 26px;
+    margin-top: 32px;
+    font-family: var(--font-secondary);
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--gris-600);
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+    /* Espacio reservado para futura animación del isotipo */
+  }
+  .isotype-meaning strong { color: var(--azul); font-weight: 600; font-style: normal; }
+
+  /* Aplicaciones del isotipo como recurso visual */
+  .iso-uses-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-bottom: 32px;
+  }
+  .iso-use {
+    background: var(--off); padding: 28px 24px;
+    border-top: 3px solid var(--verde);
+  }
+  .iso-use-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--blanco);
+    border: 1.5px solid var(--gris-200);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    color: var(--verde);
+  }
+  .iso-use-icon img { width: 24px; height: 24px; object-fit: contain; }
+  .iso-use-icon svg { width: 22px; height: 22px; }
+  .iso-use-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 14px; color: var(--azul);
+    letter-spacing: -0.005em; margin-bottom: 8px;
+  }
+  .iso-use-desc {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; color: var(--gris-600);
+    line-height: 1.65;
+  }
+
+  .iso-pattern-feature {
+    background: var(--azul);
+    padding: 48px 44px;
+    position: relative; overflow: hidden;
+    border-radius: 4px;
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 48px; align-items: center;
+    margin-top: 32px;
+  }
+  .iso-pattern-bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/logo/jaltech-isotipo-green-gradient.svg');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+    opacity: 0.05; pointer-events: none;
+  }
+  .iso-pattern-text { position: relative; z-index: 1; }
+  .iso-pattern-text h4 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 22px; color: #fff;
+    letter-spacing: -0.02em; line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .iso-pattern-text p {
+    font-family: var(--font-secondary);
+    font-size: 13.5px; line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+  }
+  .iso-pattern-visual {
+    position: relative; z-index: 1;
+    background-image: url('assets/logo/jaltech-isotipo.svg');
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    background-color: rgba(82,154,0,0.15);
+    border: 1px solid rgba(82,154,0,0.25);
+    border-radius: 4px;
+    aspect-ratio: 1.4 / 1;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  /* Construcción J + A */
+  .isotype-construction {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--off);
+    padding: 40px 32px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+  .construction-element { text-align: center; }
+  .construction-letter {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--verde);
+    margin-bottom: 10px;
+  }
+  .construction-label {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gris-400);
+  }
+  .construction-arrow {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 28px; color: var(--gris-300);
+  }
+  .construction-result img {
+    width: 90px; height: 90px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  /* Variantes del logo: 3 filas de 2 */
+  .logo-variants {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin-bottom: 32px;
+  }
+  .logo-variant {
+    padding: 48px 36px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 22px; min-height: 220px;
+  }
+  .logo-variant--light { background: var(--blanco); border: 1px solid var(--gris-100); }
+  .logo-variant--dark { background: var(--azul); }
+  .logo-variant--mono { background: var(--ink); }
+  .logo-variant--dark img, .logo-variant--mono img { filter: brightness(0) invert(1); }
+  .logo-variant img {
+    max-width: 75%; max-height: 90px;
+    width: auto; height: auto; object-fit: contain;
+  }
+  .logo-variant.iso img { max-height: 80px; max-width: 80px; }
+  .logo-variant-label {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-align: center;
+  }
+  .logo-variant--light .logo-variant-label { color: var(--gris-400); }
+  .logo-variant--dark .logo-variant-label,
+  .logo-variant--mono .logo-variant-label { color: rgba(255,255,255,0.4); }
+
+  /* Regla de contraste */
+  .contrast-rule {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin: 32px 0;
+  }
+  .contrast-card { padding: 36px 28px; text-align: center; }
+  .contrast-card--light { background: var(--blanco); border: 1px solid var(--gris-100); }
+  .contrast-card--dark { background: var(--azul); }
+  .contrast-card--dark img { filter: brightness(0) invert(1); }
+  .contrast-card img {
+    max-width: 60%; max-height: 70px;
+    margin: 0 auto 20px;
+  }
+  .contrast-rule-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--verde);
+    color: #fff;
+    border-radius: 3px;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .contrast-rule-text {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; line-height: 1.6;
+  }
+  .contrast-card--light .contrast-rule-text { color: var(--gris-600); }
+  .contrast-card--dark .contrast-rule-text { color: rgba(255,255,255,0.65); }
+  .contrast-rule-text strong {
+    display: block; margin-bottom: 4px;
+    font-family: var(--font-display); font-size: 13px; font-weight: 800;
+  }
+  .contrast-card--light .contrast-rule-text strong { color: var(--azul); }
+  .contrast-card--dark .contrast-rule-text strong { color: #fff; }
+
+  /* Zona de protección */
+  .clearspace-info {
+    font-family: var(--font-secondary);
+    font-size: 14px; line-height: 1.8;
+    color: var(--gris-600); margin-bottom: 24px;
+  }
+  .clearspace-info strong { color: var(--azul); font-weight: 600; }
+  .clearspace-info .key {
+    color: var(--verde); font-weight: 700;
+    font-family: var(--font-display);
+  }
+  .clearspace-placeholder {
+    background: var(--off);
+    border: 2px dashed var(--gris-300);
+    padding: 60px 40px;
+    border-radius: 4px;
+    margin: 24px 0;
+    text-align: center;
+    min-height: 240px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+  }
+  .clearspace-placeholder-tag {
+    background: var(--blanco);
+    border: 1px solid var(--gris-200);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--naranja);
+  }
+  .clearspace-placeholder-text {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600);
+    line-height: 1.7; max-width: 460px;
+    font-style: italic;
+  }
+  .clearspace-placeholder-text strong { color: var(--azul); font-weight: 600; font-style: normal; }
+
+  /* Tamaños mínimos */
+  .size-scale {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 24px 0;
+  }
+  .size-scale-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .size-col {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 36px 32px;
+  }
+  .size-scale-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--gris-100);
+  }
+  .size-scale-row:last-child { border-bottom: none; }
+  .size-scale-visual {
+    display: flex; align-items: center;
+    justify-content: flex-start; min-height: 52px;
+  }
+  .size-scale-visual img {
+    height: auto; width: auto; object-fit: contain;
+  }
+  .size-scale-info { display: flex; flex-direction: column; gap: 4px; }
+  .size-scale-label {
+    font-family: var(--font-secondary);
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gris-400);
+  }
+  .size-scale-value {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 16px; color: var(--verde);
+    letter-spacing: -0.02em;
+  }
+  .size-scale-note {
+    font-family: var(--font-secondary);
+    font-size: 12px; color: var(--gris-600); line-height: 1.55;
+  }
+  .size-flow-note {
+    background: var(--verde-soft);
+    border-left: 3px solid var(--verde);
+    padding: 18px 22px;
+    margin-top: 24px;
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.75;
+    color: var(--gris-600);
+  }
+  .size-flow-note strong { color: var(--verde); font-weight: 700; }
+
+  /* 03 SISTEMA DE COLOR */
+  .palette-primary {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 3px; margin-bottom: 32px;
+  }
+  .swatch {
+    position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 24px 22px;
+    min-height: 200px;
+  }
+  .swatch-name {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .swatch-hex {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 16px; letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .swatch-role {
+    font-family: var(--font-secondary);
+    font-size: 11.5px; font-weight: 600;
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid currentColor;
+    line-height: 1.5;
+  }
+  .on-dark .swatch-name,
+  .on-dark .swatch-hex { color: #fff; }
+  .on-dark .swatch-role { color: rgba(255,255,255,0.92); }
+  .on-light .swatch-name,
+  .on-light .swatch-hex { color: var(--ink); }
+  .on-light .swatch-role { color: rgba(0,0,0,0.78); }
+
+  .palette-section-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; color: var(--azul);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin: 32px 0 16px;
+  }
+  .palette-secondary {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 3px; margin-bottom: 16px;
+  }
+  .swatch--sm { min-height: 120px; padding: 18px 16px; }
+
+  .palette-comp {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 3px; margin-bottom: 32px;
+  }
+  .swatch--md { min-height: 160px; padding: 22px 20px; }
+
+  /* Roles de color: bloques horizontales iguales */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .role-block {
+    min-height: 230px;
+    padding: 30px 24px 34px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    position: relative;
+    overflow: visible;
+  }
+  .role-block-name {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    line-height: 1.15;
+  }
+  .role-block-role {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 0;
+  }
+  .role-block-desc {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; font-weight: 500;
+    line-height: 1.6;
+  }
+  .role-block.on-dark .role-block-name { color: #fff; }
+  .role-block.on-dark .role-block-role { color: rgba(255,255,255,0.7); }
+  .role-block.on-dark .role-block-desc { color: rgba(255,255,255,0.92); }
+  .role-block.on-light .role-block-name { color: var(--ink); }
+  .role-block.on-light .role-block-role { color: var(--gris-600); }
+  .role-block.on-light .role-block-desc { color: var(--gris-600); }
+
+  /* 04 TIPOGRAFÍA */
+  .type-specimen {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 56px 48px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .type-specimen-tag {
+    display: inline-block;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .type-specimen-tag.principal {
+    background: var(--verde-soft); color: var(--verde);
+  }
+  .type-specimen-tag.secondary {
+    background: var(--naranja-soft); color: var(--naranja);
+  }
+  .type-specimen-name {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(56px, 8vw, 110px);
+    line-height: 0.95; letter-spacing: -0.04em;
+    color: var(--azul); margin-bottom: 8px;
+  }
+  /* Cada nombre y peso renderizado en su propia tipografía */
+  .font-mont       { font-family: 'Mont', 'Montserrat', sans-serif !important; }
+  .font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+  .font-poppins    { font-family: 'Poppins', sans-serif !important; }
+  .font-aptos      { font-family: 'Aptos', 'Poppins', sans-serif !important; }
+
+  /* Variante secundaria: más pequeña, menos protagonismo */
+  .type-specimen.is-secondary { padding: 36px 36px; }
+  .type-specimen.is-secondary .type-specimen-name {
+    font-size: clamp(36px, 5vw, 64px);
+  }
+  .type-specimen.is-secondary .type-specimen-tagline {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+  .type-specimen.is-secondary .type-specimen-meta {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 14px 0;
+  }
+  .type-specimen.is-secondary .type-meta-value { font-size: 12px; }
+  .type-specimen.is-secondary .weight-pill { font-size: 11px; padding: 5px 11px; }
+  .type-specimen-name.alt {
+    font-family: var(--font-secondary); font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  .type-specimen-tagline {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 18px; color: var(--gris-600);
+    margin-bottom: 32px; letter-spacing: -0.01em;
+  }
+  .type-specimen-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 20px 0;
+    border-top: 1px solid var(--gris-100);
+    border-bottom: 1px solid var(--gris-100);
+    margin-bottom: 28px;
+  }
+  .type-meta-item {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .type-meta-label {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gris-400);
+  }
+  .type-meta-value {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 13px; color: var(--azul);
+    letter-spacing: -0.01em;
+  }
+  .type-weights {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .weight-pill {
+    padding: 6px 14px;
+    border: 1px solid var(--gris-200);
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 12px;
+    color: var(--gris-600);
+  }
+  .weight-pill.w300 { font-weight: 300; }
+  .weight-pill.w400 { font-weight: 400; }
+  .weight-pill.w500 { font-weight: 500; }
+  .weight-pill.w600 { font-weight: 600; }
+  .weight-pill.w700 { font-weight: 700; }
+  .weight-pill.w800 { font-weight: 800; }
+  .weight-pill.w900 { font-weight: 900; }
+  .weight-pill.alt { font-family: var(--font-secondary); }
+
+  /* Jerarquía tipográfica */
+  .type-hierarchy {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 40px 36px;
+    margin-top: 24px;
+  }
+  .hierarchy-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 32px; align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--gris-100);
+  }
+  .hierarchy-row:last-child { border-bottom: none; }
+  .hierarchy-label {
+    font-family: var(--font-secondary);
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gris-400);
+  }
+  .h-h1 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 44px; letter-spacing: -0.035em; color: var(--azul); line-height: 1;
+  }
+  .h-h2 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 30px; letter-spacing: -0.025em; color: var(--azul); line-height: 1.05;
+  }
+  .h-h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 22px; letter-spacing: -0.015em; color: var(--azul); line-height: 1.1;
+  }
+  .h-body {
+    font-family: var(--font-secondary); font-weight: 400;
+    font-size: 15px; color: var(--gris-600); line-height: 1.7;
+  }
+  .h-caption {
+    font-family: var(--font-secondary); font-weight: 600;
+    font-size: 11px; letter-spacing: 0.14em;
+    color: var(--gris-400); text-transform: uppercase;
+  }
+
+  /* Tabla tamaños mínimos */
+  .min-sizes-table {
+    width: 100%;
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    margin-top: 24px;
+  }
+  .min-sizes-table th,
+  .min-sizes-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--gris-100);
+  }
+  .min-sizes-table th {
+    font-family: var(--font-secondary);
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gris-400);
+    background: var(--off);
+    border-bottom: 2px solid var(--gris-200);
+  }
+  .min-sizes-table td {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600); line-height: 1.55;
+  }
+  .min-sizes-table td:first-child {
+    font-family: var(--font-display); font-weight: 700;
+    color: var(--azul); letter-spacing: -0.005em;
+  }
+  .min-sizes-table td:nth-child(2),
+  .min-sizes-table td:nth-child(3) {
+    font-family: var(--font-display); font-weight: 700;
+    color: var(--verde); font-size: 14px; letter-spacing: -0.01em;
+  }
+  .min-sizes-table tr:last-child td { border-bottom: none; }
+
+  /* 05 COMPOSICIÓN */
+  .comp-principles {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px; margin-bottom: 32px;
+  }
+  .comp-card {
+    background: var(--off);
+    border: 1px solid var(--gris-100);
+    border-top: 3px solid var(--verde);
+    padding: 30px 26px;
+  }
+  .comp-card-num {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 36px; line-height: 1;
+    color: var(--verde);
+    letter-spacing: -0.04em;
+    margin-bottom: 14px;
+  }
+  .comp-card-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 16px; color: var(--azul);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .comp-card-text {
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.7;
+    color: var(--gris-600);
+  }
+
+  .comp-demo {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin: 24px 0;
+  }
+  .comp-demo-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+  }
+  .comp-demo-card.bad {
+    padding: 14px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+  }
+  .comp-demo-card.good {
+    padding: 36px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+  }
+  .comp-demo-tag {
+    position: absolute; top: 12px; right: 12px;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .comp-demo-tag.no { background: var(--error); color: #fff; }
+  .comp-demo-tag.ok { background: var(--verde); color: #fff; }
+  .comp-demo-title {
+    font-family: var(--font-display); font-weight: 900;
+    color: var(--azul); line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .comp-demo-card.bad .comp-demo-title { font-size: 22px; }
+  .comp-demo-card.good .comp-demo-title { font-size: 26px; letter-spacing: -0.02em; }
+  .comp-demo-text {
+    font-family: var(--font-secondary);
+    color: var(--gris-600); line-height: 1.5;
+  }
+  .comp-demo-card.bad .comp-demo-text { font-size: 11px; }
+  .comp-demo-card.good .comp-demo-text { font-size: 13px; line-height: 1.65; }
+  .comp-demo-meta {
+    margin-top: 8px;
+    font-family: var(--font-secondary);
+    font-size: 9px; color: var(--gris-400);
+    letter-spacing: 0.06em;
+  }
+
+  /* 06 ICONOGRAFÍA */
+  .icons-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .icons-col {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 32px 28px;
+  }
+  .icons-col-tag {
+    display: inline-block;
+    font-family: var(--font-secondary);
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  .icons-col-tag.bare { background: var(--off); color: var(--gris-600); }
+  .icons-col-tag.contained { background: var(--verde-soft); color: var(--verde); }
+  .icons-col-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 18px; color: var(--azul);
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  .icons-col-desc {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600);
+    line-height: 1.65; margin-bottom: 24px;
+  }
+
+  /* Sin contenedor: iconos lineales con acentos */
+  .icons-grid-bare {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .icon-cell {
+    padding: 32px 16px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px; min-height: 120px;
+  }
+  .icon-cell img {
+    width: 44px; height: 44px;
+    object-fit: contain;
+  }
+  /* Los SVG de iconografía se exportan ya en su color correcto: base gris o acento. */
+  .icon-cell-label {
+    font-family: var(--font-secondary);
+    font-size: 11px; font-weight: 600;
+    color: var(--gris-600);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* Con contenedor: círculos sólidos colores corporativos */
+  .icons-grid-contained {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .icon-ring-cell {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px; padding: 16px 8px;
+  }
+  .icon-ring {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .icon-ring img {
+    width: 42px; height: 42px;
+    object-fit: contain;
+  }
+  /* Variantes con fondo sólido — icono en blanco */
+  .icon-ring-cell.fill-verde .icon-ring { background: var(--verde); }
+  .icon-ring-cell.fill-azul .icon-ring { background: var(--azul); }
+  .icon-ring-cell.fill-naranja .icon-ring { background: var(--naranja); }
+  .icon-ring-cell.fill-morado .icon-ring { background: var(--morado); }
+  .icon-ring-cell.fill-verde .icon-ring img,
+  .icon-ring-cell.fill-azul .icon-ring img,
+  .icon-ring-cell.fill-naranja .icon-ring img,
+  .icon-ring-cell.fill-morado .icon-ring img { filter: brightness(0) invert(1); }
+  /* Acentos: anillo con opacidad blanca ~50% rodeando el sólido */
+  .icon-ring-cell.fill-verde .icon-ring::after,
+  .icon-ring-cell.fill-azul .icon-ring::after,
+  .icon-ring-cell.fill-naranja .icon-ring::after,
+  .icon-ring-cell.fill-morado .icon-ring::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    pointer-events: none;
+  }
+  .icon-ring-cell.fill-naranja .icon-ring::after,
+  .icon-ring-cell.fill-verde .icon-ring::after { border-color: rgba(255,255,255,0.55); }
+  /* Caso outline gris */
+  .icon-ring-cell.outline .icon-ring {
+    background: transparent;
+    border: 1.5px solid var(--gris-300);
+  }
+  .icon-ring-cell.outline .icon-ring img { filter: none; }
+
+  .icon-rules-block {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 32px 28px;
+    margin-top: 24px;
+  }
+  .icon-rules-list {
+    display: grid; gap: 0;
+  }
+  .icon-rule-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px; align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gris-100);
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600);
+    line-height: 1.65;
+  }
+  .icon-rule-item:last-child { border-bottom: none; }
+  .icon-rule-item::before {
+    content: '✓';
+    color: var(--verde); font-weight: 700;
+    font-size: 14px;
+  }
+  .icon-rule-item strong { color: var(--azul); font-weight: 600; }
+
+  /* 07 VOZ Y TONO */
+  .tone-traits {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; margin-bottom: 48px;
+  }
+  .tone-trait {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px 24px;
+  }
+  .tone-trait-num {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 30px; color: var(--verde-light);
+    letter-spacing: -0.04em; line-height: 1;
+    margin-bottom: 16px;
+  }
+  .tone-trait-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 18px; color: #fff;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .tone-trait-desc {
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Comparativo sí/no */
+  .tone-compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin-bottom: 48px;
+  }
+  .tc-cell { padding: 32px 28px; }
+  .tc-cell--si {
+    background: rgba(82,154,0,0.12);
+    border: 1px solid rgba(82,154,0,0.25);
+  }
+  .tc-cell--no {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .tc-label {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tc-cell--si .tc-label { color: var(--verde-light); }
+  .tc-cell--no .tc-label { color: rgba(255,255,255,0.4); }
+  .tc-list { display: flex; flex-direction: column; }
+  .tc-item {
+    font-family: var(--font-secondary);
+    font-size: 13.5px; line-height: 1.6;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-style: italic;
+  }
+  .tc-cell--si .tc-item { color: rgba(255,255,255,0.85); }
+  .tc-cell--no .tc-item {
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.18);
+  }
+  .tc-item:last-child { border-bottom: none; }
+
+  /* Voz por canal: versión visual con íconos */
+  .channel-voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .ch-voice {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 28px 24px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .ch-voice-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(82,154,0,0.15);
+    border: 1px solid rgba(82,154,0,0.3);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ch-voice-icon img {
+    width: 24px; height: 24px;
+    object-fit: contain;
+  }
+  .ch-voice-head { display: flex; flex-direction: column; gap: 4px; }
+  .ch-voice-tag {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(82,154,0,0.85);
+  }
+  .ch-voice-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 18px; color: #fff;
+    letter-spacing: -0.015em; line-height: 1.15;
+  }
+  .ch-voice-rule {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+  .ch-voice-rule strong { color: #fff; font-weight: 600; }
+
+  /* 08 JALBOT */
+  .jalbot-hero {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: center;
+    background: var(--azul);
+    padding: 56px 52px;
+    position: relative; overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+  .jalbot-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 75% 50%, rgba(82,154,0,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  .jalbot-hero-text {
+    position: relative; z-index: 2;
+  }
+  .jalbot-hero-text .body-text {
+    color: rgba(255,255,255,0.55);
+  }
+  .jalbot-hero-text .body-text strong { color: #fff; }
+
+  .jalbot-quote {
+    background: rgba(82,154,0,0.18);
+    border-left: 3px solid var(--verde-light);
+    padding: 16px 20px;
+    margin-top: 24px;
+    font-family: var(--font-display);
+    font-size: 14px; font-weight: 700;
+    color: var(--verde-light);
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  .jalbot-image-wrap {
+    position: relative; z-index: 2;
+    text-align: center;
+  }
+  .jalbot-image {
+    max-width: 100%;
+    width: 280px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(82,154,0,0.25));
+  }
+
+  /* Roles */
+  .jalbot-roles {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; margin-bottom: 32px;
+  }
+  .jalbot-role {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 32px 28px;
+    border-top: 3px solid var(--verde);
+    transition: background-color .25s var(--ease), transform .25s var(--ease);
+  }
+  .jalbot-role:hover {
+    background: var(--verde-soft);
+    transform: translateY(-2px);
+  }
+  .jalbot-role-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 14px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--verde);
+    margin-bottom: 10px;
+  }
+  .jalbot-role-desc {
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.65;
+    color: var(--gris-600);
+  }
+
+  /* Cuándo sí / cuándo no */
+  .jalbot-when {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; margin-bottom: 32px;
+  }
+  .jw-col { padding: 32px 28px; }
+  .jw-col--si {
+    background: var(--blanco);
+    border: 1px solid rgba(82,154,0,0.2);
+    border-top: 3px solid var(--verde);
+  }
+  .jw-col--no {
+    background: var(--off);
+    border-top: 3px solid var(--error);
+  }
+  .jw-head {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .jw-col--si .jw-head { color: var(--verde); }
+  .jw-col--no .jw-head { color: var(--error); }
+  .jw-list { list-style: none; padding: 0; }
+  .jw-list li {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600);
+    padding: 9px 0 9px 22px;
+    border-bottom: 1px solid var(--gris-100);
+    line-height: 1.55;
+    position: relative;
+  }
+  .jw-list li:last-child { border-bottom: none; }
+  .jw-col--si .jw-list li::before {
+    content: '+'; position: absolute; left: 0;
+    color: var(--verde); font-weight: 700;
+  }
+  .jw-col--no .jw-list li::before {
+    content: '−'; position: absolute; left: 0;
+    color: var(--error); font-weight: 700;
+  }
+
+  /* Animaciones sugeridas */
+  .anim-suggestions {
+    background: var(--off);
+    padding: 32px;
+    border-left: 4px solid var(--naranja);
+    border-radius: 4px;
+  }
+  .anim-suggestions h4 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; color: var(--naranja);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .anim-suggestions p {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; color: var(--gris-400);
+    line-height: 1.65; margin-bottom: 16px;
+    font-style: italic;
+  }
+  .anim-suggestions-list {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px; list-style: none; padding: 0;
+  }
+  .anim-suggestions-list li {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; color: var(--gris-600);
+    line-height: 1.55;
+    padding-left: 22px;
+    position: relative;
+  }
+  .anim-suggestions-list li::before {
+    content: '▸'; position: absolute; left: 0;
+    color: var(--naranja); font-weight: 700;
+  }
+  .anim-suggestions-list li strong { color: var(--azul); font-weight: 600; }
+
+  /* 09 USOS DEL ISOTIPO */
+  .pattern-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .pattern-card {
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--azul);
+  }
+  .pattern-card.watermark {
+    background:
+      radial-gradient(circle at 80% 20%, rgba(82,154,0,0.20) 0%, transparent 38%),
+      linear-gradient(135deg, #1D2333 0%, #111725 100%);
+  }
+  .pattern-card.texture {
+    background:
+      linear-gradient(135deg, rgba(82,154,0,0.16) 0 12%, transparent 12% 24%, rgba(255,255,255,0.05) 24% 36%, transparent 36% 100%),
+      linear-gradient(45deg, rgba(255,134,0,0.10) 0 10%, transparent 10% 100%),
+      #1D2333;
+    background-size: 120px 120px, 90px 90px, auto;
+  }
+  .pattern-card-label {
+    position: absolute;
+    bottom: 18px; left: 18px;
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.86);
+    padding: 6px 11px;
+    background: rgba(0,0,0,0.36);
+    backdrop-filter: blur(4px);
+    border-radius: 2px;
+  }
+  .pattern-uses {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .pattern-use {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 26px 24px;
+  }
+  .pattern-use h4 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; color: var(--verde);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .pattern-use p {
+    font-family: var(--font-secondary);
+    font-size: 13px; color: var(--gris-600);
+    line-height: 1.7;
+  }
+
+  /* 10 APLICACIONES */
+  .apps-section { background: var(--ink); color: #fff; }
+  .apps-section .sec-title { color: #fff; }
+  .apps-section .sec-title em { color: var(--verde-light); }
+  .apps-section .sec-lead { color: rgba(255,255,255,0.55); }
+  .apps-section .sec-tag { color: var(--verde-light); }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* Divisor por categoría */
+  .app-category-divider {
+    grid-column: 1 / -1;
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; margin: 32px 0 4px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .app-category-divider:first-of-type { margin-top: 0; }
+  .app-category-name {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 13px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--verde-light);
+  }
+  .app-category-count {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* Card visual con gradiente oscuro + isotipo de fondo */
+  .app-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 28px;
+  }
+
+  /* Variantes de gradiente (tomadas del archivo referencia) */
+  .app-card.mailing      { background: linear-gradient(160deg, #1d4a8a 0%, #0f2849 60%, #061427 100%); }
+  .app-card.redes        { background: linear-gradient(160deg, #2a4a3a 0%, #142820 60%, #0a1612 100%); }
+  .app-card.whatsapp     { background: linear-gradient(160deg, #5fa800 0%, #3b6a00 60%, #1a3300 100%); }
+  .app-card.web          { background: linear-gradient(160deg, #1a3a5e 0%, #0e1f33 60%, #050d18 100%); }
+  .app-card.catalogo     { background: linear-gradient(160deg, #2a2c34 0%, #16181f 60%, #0a0b0f 100%); }
+  .app-card.pop          { background: linear-gradient(160deg, #b85a00 0%, #6a3300 60%, #2e1500 100%); }
+  .app-card.empaques     { background: linear-gradient(160deg, #4a3a1a 0%, #2a210e 60%, #14100a 100%); }
+  .app-card.ficha        { background: linear-gradient(160deg, #5a2ea1 0%, #2e186e 60%, #160b3e 100%); }
+  .app-card.aliados      { background: linear-gradient(160deg, #1a5a4a 0%, #0e3328 60%, #051712 100%); }
+
+  .app-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+
+  /* Contenido visible siempre (no depende del hover) */
+  .app-card-content {
+    position: relative; z-index: 1;
+    transition: opacity 0.35s var(--ease);
+  }
+  .app-card-tag {
+    font-family: var(--font-secondary);
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--verde-light);
+    margin-bottom: 16px; line-height: 1.3;
+  }
+  .app-card-headline {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.2; letter-spacing: -0.025em;
+    color: #fff; margin-bottom: 14px;
+  }
+  .app-card-copy {
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 18px;
+  }
+  .app-card-image-note {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--font-secondary);
+    font-size: 11px; line-height: 1.5;
+    color: rgba(255,255,255,0.45);
+  }
+  .app-card-image-note::before {
+    content: '◆'; color: var(--verde-light);
+    font-size: 8px; margin-top: 4px; flex-shrink: 0;
+  }
+  .app-card-image-note strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 600; display: block;
+    margin-bottom: 2px; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* Hover: muestra ejemplo visual editable encima del contenido */
+  .app-card-preview {
+    position: absolute; inset: 0;
+    z-index: 3;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(109, 194, 0, 0.45);
+    box-shadow: inset 0 0 40px rgba(109, 194, 0, 0.12);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    text-align: center; padding: 28px 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+  .app-card:hover .app-card-preview { opacity: 1; }
+  .app-card-preview-tag {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--verde-light);
+    color: var(--ink);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .app-card-preview-text {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    max-width: 240px;
+  }
+  .app-card-preview-text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-style: normal;
+    letter-spacing: -0.01em;
+  }
+
+  /* 11 DOs & DON'Ts */
+  .dd-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; margin-bottom: 32px;
+  }
+  .dd-col { padding: 36px 32px; }
+  .dd-col--do {
+    background: var(--blanco);
+    border: 1px solid rgba(82,154,0,0.2);
+    border-top: 3px solid var(--verde);
+  }
+  .dd-col--dont {
+    background: var(--off);
+    border-top: 3px solid var(--error);
+  }
+  .dd-head {
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .dd-col--do .dd-head { color: var(--verde); }
+  .dd-col--dont .dd-head { color: var(--error); }
+  .dd-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px; align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gris-100);
+  }
+  .dd-item:last-child { border-bottom: none; }
+  .dd-marker {
+    font-size: 14px; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .dd-col--do .dd-marker { color: var(--verde); }
+  .dd-col--dont .dd-marker { color: var(--error); }
+  .dd-text {
+    font-family: var(--font-secondary);
+    font-size: 13px; line-height: 1.65;
+    color: var(--gris-600);
+  }
+  .dd-text strong { color: var(--azul); font-weight: 600; }
+  .dd-text .example {
+    display: block; margin-top: 6px;
+    font-style: italic; font-size: 12px;
+    color: var(--gris-400);
+  }
+
+  /* 12 RECURSOS */
+  .resource-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-bottom: 48px;
+  }
+  .resource-card {
+    background: var(--blanco);
+    border: 1px solid var(--gris-100);
+    padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .resource-icon {
+    width: 44px; height: 44px;
+    background: var(--verde-soft);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--verde);
+    border-radius: 4px;
+  }
+  .resource-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 14px; color: var(--azul);
+    letter-spacing: -0.01em;
+  }
+  .resource-desc {
+    font-family: var(--font-secondary);
+    font-size: 12.5px; line-height: 1.65;
+    color: var(--gris-600); flex: 1;
+  }
+  .resource-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-secondary);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--verde);
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(82,154,0,0.15);
+  }
+
+  /* Recursos: tira compacta */
+  .resource-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--gris-200);
+    border: 1px solid var(--gris-200);
+    margin-bottom: 32px;
+  }
+  .resource-strip-item {
+    background: var(--blanco);
+    padding: 24px 20px;
+  }
+  .resource-strip-label {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; color: var(--azul);
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+  }
+  .resource-strip-path {
+    font-family: var(--font-secondary);
+    font-size: 11px; font-weight: 600;
+    color: var(--verde);
+    letter-spacing: 0.04em;
+  }
+
+  .contact-strip {
+    background: var(--verde);
+    padding: 48px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px;
+    position: relative; overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .contact-text { position: relative; z-index: 1; }
+  .contact-title {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 22px; color: #fff;
+    letter-spacing: -0.02em; margin-bottom: 6px;
+  }
+  .contact-sub {
+    font-family: var(--font-secondary);
+    font-size: 14px; color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+  }
+  .contact-email {
+    position: relative; z-index: 1;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 15px; color: #fff;
+    padding: 14px 26px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .contact-email:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: #fff;
+  }
+
+  /* CIERRE */
+  #cierre {
+    background: var(--ink);
+    min-height: 60vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 80px 60px;
+    position: relative; overflow: hidden;
+  }
+  #cierre::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(82,154,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82,154,0,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  
+  .cierre-inner { position: relative; z-index: 2; max-width: 680px; }
+  .cierre-logo {
+    width: 140px; height: auto;
+    margin: 0 auto 36px;
+    filter: brightness(0) invert(1);
+  }
+  .cierre-label {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(255,255,255,0.24);
+    margin-bottom: 24px;
+  }
+  .cierre-quote {
+    font-family: var(--font-display); font-weight: 900;
+    font-style: italic;
+    font-size: clamp(28px, 4.2vw, 46px);
+    line-height: 1.15; letter-spacing: -0.03em;
+    color: #fff; margin-bottom: 28px;
+  }
+  .cierre-quote em { font-style: normal; color: var(--verde-light); }
+  .cierre-sub {
+    font-family: var(--font-secondary);
+    font-size: 14.5px; line-height: 1.8;
+    color: rgba(255,255,255,0.4);
+    max-width: 520px; margin: 0 auto 36px;
+  }
+  .cierre-contact {
+    display: inline-flex; flex-direction: column; align-items: center;
+    gap: 6px;
+    padding: 18px 28px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 28px;
+  }
+  .cierre-contact-label {
+    font-family: var(--font-secondary);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .cierre-contact-mail {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 14px; color: #fff;
+    letter-spacing: -0.005em;
+  }
+  .cierre-sig {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-display);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 28px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+  }
+  .footer-brand {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  .footer-info {
+    font-family: var(--font-secondary);
+    font-size: 11px; color: rgba(255,255,255,0.14);
+    letter-spacing: 0.06em;
+  }
+
+  @keyframes gridShift {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+  }
+  @keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+  }
+  @keyframes drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-12px, -8px) rotate(2deg); }
+  }
+
+  @media (max-width: 1024px) {
+    :root { --sidebar-w: 0; }
+    #sidebar { transform: translateX(-100%); transition: transform 0.3s ease; width: 280px; }
+    #sidebar.open { transform: translateX(0); }
+    #menu-toggle { display: flex; }
+    #main { margin-left: 0; }
+    .section { padding: var(--pad-mb); }
+    #cover { padding: 60px 28px; }
+    .stats-row { grid-template-columns: repeat(2,1fr); }
+    .submarcas-grid { grid-template-columns: 1fr 1fr; }
+    .origin-blocks { grid-template-columns: 1fr; }
+    .isotype-construction { grid-template-columns: 1fr; gap: 12px; }
+    .iso-uses-grid { grid-template-columns: 1fr 1fr; }
+    .iso-pattern-feature { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
+    .palette-secondary { grid-template-columns: repeat(3, 1fr); }
+    .palette-comp { grid-template-columns: 1fr 1fr; }
+    .role-grid { grid-template-columns: repeat(3, 1fr); }
+    .comp-principles { grid-template-columns: 1fr 1fr; }
+    .icons-two-cols { grid-template-columns: 1fr; }
+    .channel-voice-grid { grid-template-columns: 1fr 1fr; }
+    .tone-traits { grid-template-columns: 1fr 1fr; }
+    .tone-compare { grid-template-columns: 1fr; }
+    .app-grid { grid-template-columns: repeat(2, 1fr); }
+    .resource-grid { grid-template-columns: 1fr 1fr; }
+    .resource-strip { grid-template-columns: repeat(2, 1fr); }
+    .contact-strip { flex-direction: column; align-items: flex-start; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 28px; }
+    .construction-arrow { transform: rotate(90deg); }
+    .contrast-rule { grid-template-columns: 1fr; }
+    .size-scale-grid { grid-template-columns: 1fr; }
+    .size-scale-row { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 600px) {
+    .stats-row, .submarcas-grid { grid-template-columns: 1fr 1fr; }
+    .logo-variants { grid-template-columns: 1fr; }
+    .palette-secondary { grid-template-columns: 1fr 1fr; }
+    .palette-comp { grid-template-columns: 1fr 1fr; }
+    .role-grid { grid-template-columns: 1fr; }
+    .channel-voice-grid { grid-template-columns: 1fr; }
+    .tone-traits { grid-template-columns: 1fr 1fr; }
+    .app-grid { grid-template-columns: 1fr; }
+    .resource-grid { grid-template-columns: 1fr; }
+    .resource-strip { grid-template-columns: 1fr; }
+    .iso-uses-grid { grid-template-columns: 1fr; }
+    .comp-principles { grid-template-columns: 1fr; }
+    .pattern-showcase { grid-template-columns: 1fr; }
+  }
+  </style>
+
+  <style id="hub-overrides">
+    /* Brand Hub: sidebar oculto, navegación vía tabs del Hub */
+    #sidebar { display: none !important; }
+    #main { margin-left: 0 !important; }
+    #menu-toggle { display: none !important; }
+    body { overflow-x: hidden; }
+    /* Dar espacio extra al top para que no quede bajo el tab bar del hub */
+    html { scroll-padding-top: 20px; }
+    /* Ocultar logo en portada (ya está en el Brand Hub) */
+    .cover-logo { display: none !important; }
+  </style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-brand">
+    <img class="sb-iso" src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo Jaltech" />
+    <div class="sb-brand-text">
+      <div class="sb-brand-name">Jaltech</div>
+      <div class="sb-brand-sub">Brand Book 2026</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-group">Inicio</div>
+    <a href="#cover" class="sb-link"><span class="num">00</span> Portada</a>
+    <a href="#intro" class="sb-link"><span class="num">01</span> Introducción</a>
+    <div class="sb-group">Identidad</div>
+    <a href="#logo" class="sb-link"><span class="num">02</span> Logo e isotipo</a>
+    <a href="#color" class="sb-link"><span class="num">03</span> Sistema de color</a>
+    <a href="#type" class="sb-link"><span class="num">04</span> Tipografía</a>
+    <div class="sb-group">Lenguaje visual</div>
+    <a href="#composition" class="sb-link"><span class="num">05</span> Composición</a>
+    <a href="#icons" class="sb-link"><span class="num">06</span> Iconografía</a>
+    <a href="#tone" class="sb-link"><span class="num">07</span> Voz y tono</a>
+    <div class="sb-group">Marca aplicada</div>
+    <a href="#jalbot" class="sb-link"><span class="num">08</span> Jalbot</a>
+    <a href="#pattern" class="sb-link"><span class="num">09</span> Usos del isotipo</a>
+    <a href="#apps" class="sb-link"><span class="num">10</span> Aplicaciones</a>
+    <a href="#dodont" class="sb-link"><span class="num">11</span> DOs &amp; DON'Ts</a>
+    <div class="sb-group">Cierre</div>
+    <a href="#resources" class="sb-link"><span class="num">12</span> Contacto</a>
+  </nav>
+  <div class="sb-foot">
+    <div class="sb-version">v2.0 — 2026</div>
+  </div>
+</aside>
+
+<button id="menu-toggle"><span></span><span></span><span></span></button>
+
+<main id="main">
+
+  <!-- 00 PORTADA -->
+  <section id="cover">
+    <div class="cover-glow"></div>
+    <img class="cover-iso-watermark" src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="" />
+    <img class="cover-logo" src="assets/logo/jaltech-horizontal-black.svg" alt="Jaltech" />
+    <div class="cover-content">
+      <div class="cover-meta">
+        <span class="cover-badge">Brand Book</span>
+        <span class="cover-year">2026</span>
+      </div>
+      <span class="cover-sup">Identidad · Lenguaje · Aplicación</span>
+      <h1 class="cover-title">
+        La marca<br>
+        en <span class="green italic">acción</span>.
+      </h1>
+      <p class="cover-desc">
+        Guía oficial de identidad y comunicación de Jaltech. Documento de uso interno para el equipo creativo, comercial, jefes y proveedores externos. Define cómo se ve y cómo se usa la marca en todos sus puntos de contacto.
+      </p>
+      <div class="cover-scroll">Desliza para empezar</div>
+    </div>
+  </section>
+
+  <!-- 01 INTRODUCCIÓN -->
+  <section id="intro" class="section">
+    <div class="section-inner">
+      <div class="sec-tag reveal">01 — Introducción</div>
+      <h2 class="sec-title reveal d1">Quiénes somos.</h2>
+      <p class="sec-lead reveal d2">
+        Jaltech es una empresa colombiana especializada en la <strong>distribución de accesorios tecnológicos</strong>. Trabajamos con aliados mayoristas, distribuidores y comercios en Colombia y la región. No vendemos al consumidor final: nuestra red es el canal.
+      </p>
+
+      <div class="stats-row reveal d2">
+        <div class="stat-box">
+          <div class="num">+1.000</div>
+          <div class="lbl"><strong>Referencias activas</strong>en catálogo actualizado</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">8.000</div>
+          <div class="lbl"><strong>Aliados mayoristas</strong>en toda la red</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">300</div>
+          <div class="lbl"><strong>Pedidos diarios</strong>en operación</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">750</div>
+          <div class="lbl"><strong>Municipios</strong>con cobertura logística</div>
+        </div>
+      </div>
+
+      <div class="purpose-block reveal">
+        <div class="purpose-text">
+          Acercamos los <em>accesorios tecnológicos</em> a la vida de las personas, a través de aliados que mueven la red.
+        </div>
+        <div class="purpose-attr">— Propósito de marca</div>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="reveal">
+        <h3 class="sub-title">10 líneas, un solo proveedor.</h3>
+        <p class="body-text" style="margin-bottom:20px;">El portafolio cubre las principales categorías de accesorios tecnológicos para el canal mayorista. Cada línea responde a una necesidad real del aliado: rotación, especialización o volumen.</p>
+        <div class="brands-strip">
+          <span class="brand-pill main">POS</span>
+          <span class="brand-pill">Cargadores premium</span>
+          <span class="brand-pill">Accesorios PC</span>
+          <span class="brand-pill">Audio</span>
+          <span class="brand-pill">Smartphones</span>
+          <span class="brand-pill">Cables y conectividad</span>
+          <span class="brand-pill">Almacenamiento</span>
+          <span class="brand-pill">Energía portable</span>
+          <span class="brand-pill">Hogar conectado</span>
+          <span class="brand-pill">Gaming</span>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="reveal">
+        <h3 class="sub-title">Sub-marcas del ecosistema.</h3>
+        <p class="body-text" style="margin-bottom:20px;">Jaltech opera como marca madre con sub-marcas especializadas. Cada una tiene su propia identidad pero todas comparten la base del sistema visual.</p>
+        <div class="submarcas-grid">
+          <div class="submarca">
+            <div class="submarca-name verde">Jaltech</div>
+            <div class="submarca-desc">Marca madre. Distribución general de accesorios tecnológicos para el canal.</div>
+          </div>
+          <div class="submarca">
+            <div class="submarca-name azul">Jaltech POS</div>
+            <div class="submarca-desc">Línea especializada en soluciones para punto de venta. Hardware y consumibles.</div>
+          </div>
+          <div class="submarca">
+            <div class="submarca-name dark">Gamer Tech</div>
+            <div class="submarca-desc">Sub-marca para el segmento gamer. Estética propia, oscura, de alto impacto.</div>
+          </div>
+          <div class="submarca">
+            <div class="submarca-name gray">Basik Tech</div>
+            <div class="submarca-desc">Línea de entrada para alta rotación. Esencial, accesible, masiva.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 LOGO E ISOTIPO -->
+  <section id="logo" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">02 — Logo e isotipo</div>
+      <h2 class="sec-title reveal d1">El nombre y <em>la firma</em>.</h2>
+      <p class="sec-lead reveal d2">
+        El sistema visual arranca aquí. Cada elemento tiene reglas de uso claras según contexto, escala y soporte. Nunca se modifica, deforma ni se generan versiones nuevas fuera de este sistema.
+      </p>
+
+      <!-- Origen del nombre -->
+      <div class="reveal">
+        <h3 class="sub-title">El origen del nombre.</h3>
+        <p class="body-text" style="margin-bottom:32px;">El nombre Jaltech tiene dos partes con significado propio. Una habla de quiénes somos. La otra, de qué hacemos.</p>
+
+        <div class="origin-blocks">
+          <div class="origin-block-card">
+            <div class="origin-letters">JA<span class="accent">L</span></div>
+            <div class="origin-breakdown">
+              <div class="origin-breakdown-item">
+                <span class="origin-breakdown-letter">J</span>
+                <span><strong>José Lopera</strong> — hermano fundador.</span>
+              </div>
+              <div class="origin-breakdown-item">
+                <span class="origin-breakdown-letter">A</span>
+                <span><strong>Alejandro Lopera</strong> — hermano fundador.</span>
+              </div>
+              <div class="origin-breakdown-item">
+                <span class="origin-breakdown-letter">L</span>
+                <span><strong>Lopera</strong> — apellido compartido.</span>
+              </div>
+            </div>
+            <div class="origin-meaning">
+              JAL es la firma personal de la empresa. Dos hermanos, un apellido, una historia familiar que sostiene la marca desde su origen.
+            </div>
+          </div>
+
+          <div class="origin-block-card tech">
+            <div class="origin-letters"><span class="accent">T</span>ECH</div>
+            <div class="origin-breakdown">
+              <div class="origin-breakdown-item tech">
+                <span><strong>Accesorios tecnológicos</strong> — la categoría que distribuimos.</span>
+              </div>
+              <div class="origin-breakdown-item tech">
+                <span><strong>Distribución mayorista</strong> — el modelo de negocio.</span>
+              </div>
+              <div class="origin-breakdown-item tech">
+                <span><strong>Aliados</strong> — quienes mueven el portafolio en la red.</span>
+              </div>
+            </div>
+            <div class="origin-meaning">
+              TECH ancla la marca en su realidad operativa. No fabricamos: distribuimos. No vendemos al final: trabajamos con aliados que sí lo hacen.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Isotipo -->
+      <div class="reveal">
+        <h3 class="sub-title">El isotipo.</h3>
+        <p class="body-text" style="margin-bottom:32px;">El isotipo es la firma visual más compacta de la marca. Funciona solo, sin texto, en cualquier contexto donde se necesite presencia de marca.</p>
+
+        <h4 class="mini-title">Construcción</h4>
+        <p class="body-text" style="margin-bottom:24px;">El isotipo nace de la unión visual de la <strong>J</strong> y la <strong>A</strong>, las iniciales de los dos hermanos fundadores. La construcción es limpia y geométrica.</p>
+
+        <div class="isotype-construction">
+          <div class="construction-element">
+            <div class="construction-letter">J</div>
+            <div class="construction-label">José</div>
+          </div>
+          <div class="construction-arrow">+</div>
+          <div class="construction-element">
+            <div class="construction-letter">A</div>
+            <div class="construction-label">Alejandro</div>
+          </div>
+          <div class="construction-arrow">=</div>
+          <div class="construction-element construction-result">
+            <img src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo construido" />
+            <div class="construction-label">Isotipo</div>
+          </div>
+        </div>
+
+        <p class="isotype-meaning">
+          El isotipo nace de la unión de sus formas base y puede leerse como una silueta ascendente, asociada sutilmente con Medellín y su entorno montañoso.
+        </p>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Variantes -->
+      <div class="reveal">
+        <h3 class="sub-title">Variantes oficiales.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Tres formatos (horizontal, vertical, isotipo), dos versiones cada uno (full color y una tinta). Total: 6 variantes oficiales. Estas son las únicas autorizadas.</p>
+
+        <div class="logo-variants">
+          <div class="logo-variant logo-variant--light">
+            <img src="assets/logo/jaltech-horizontal-green-gradient.svg" alt="Jaltech horizontal full color" />
+            <div class="logo-variant-label">Horizontal · Full color</div>
+          </div>
+          <div class="logo-variant logo-variant--dark">
+            <img src="assets/logo/jaltech-horizontal-black.svg" alt="Jaltech horizontal 1 color" />
+            <div class="logo-variant-label">Horizontal · 1 color</div>
+          </div>
+          <div class="logo-variant logo-variant--light">
+            <img src="assets/logo/jaltech-vertical-green-gradient.svg" alt="Jaltech vertical full color" />
+            <div class="logo-variant-label">Vertical · Full color</div>
+          </div>
+          <div class="logo-variant logo-variant--mono">
+            <img src="assets/logo/jaltech-vertical-black.svg" alt="Jaltech vertical 1 color" />
+            <div class="logo-variant-label">Vertical · 1 color</div>
+          </div>
+          <div class="logo-variant logo-variant--light iso">
+            <img src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo full color" />
+            <div class="logo-variant-label">Isotipo · Full color</div>
+          </div>
+          <div class="logo-variant logo-variant--dark iso">
+            <img src="assets/logo/jaltech-isotipo.svg" alt="Isotipo 1 color" />
+            <div class="logo-variant-label">Isotipo · 1 color</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Regla de contraste -->
+      <div class="reveal">
+        <h3 class="sub-title">Regla de contraste.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Esta es una <strong>regla técnica obligatoria</strong>, no una sugerencia. La versión full color del logo y el isotipo se construyen sobre fondos claros. Sobre fondos oscuros, siempre se usa la versión en una tinta.</p>
+
+        <div class="contrast-rule">
+          <div class="contrast-card contrast-card--light">
+            <img src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo full color sobre fondo claro" />
+            <span class="contrast-rule-tag">Correcto</span>
+            <p class="contrast-rule-text">
+              <strong>Full color → fondo claro</strong>
+              Blanco, off-white o gris muy claro. El logo conserva sus colores reales.
+            </p>
+          </div>
+          <div class="contrast-card contrast-card--dark">
+            <img src="assets/logo/jaltech-isotipo.svg" alt="Isotipo 1 color sobre fondo oscuro" />
+            <span class="contrast-rule-tag" style="background:#fff;color:var(--azul);">Correcto</span>
+            <p class="contrast-rule-text">
+              <strong>Fondo oscuro → versión 1 color</strong>
+              Blanco o monocroma. Nunca se usa la versión full color sobre fondos oscuros.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Zona de protección -->
+      <div class="reveal">
+        <h3 class="sub-title">Zona de protección.</h3>
+        <p class="clearspace-info">
+          La zona de protección equivale a la altura de la <span class="key">letra "e"</span> del logotipo. Ningún elemento gráfico, texto, borde o margen debe entrar dentro de esa zona. Esta regla aplica a las 6 variantes del logo, incluyendo el isotipo.
+        </p>
+
+        <div class="clearspace-placeholder">
+          <span class="clearspace-placeholder-tag">Espacio reservado</span>
+          <p class="clearspace-placeholder-text">
+            <strong>Aquí va la imagen de zona de protección del logo.</strong><br>
+            Diagrama del logo horizontal con la altura "e" señalada en los 4 bordes.
+          </p>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Tamaños mínimos -->
+      <div class="reveal">
+        <h3 class="sub-title">Tamaños mínimos.</h3>
+        <p class="body-text" style="margin-bottom:8px;">Cada variante tiene un tamaño mínimo de uso. Por debajo, el logo pierde legibilidad y debe sustituirse por la siguiente versión del sistema. La escala muestra cómo se reduce visualmente cada variante hasta su límite.</p>
+
+        <div class="size-scale">
+          <div class="size-scale-grid">
+            <div class="size-col">
+              <h4 class="mini-title">Escala horizontal</h4>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-horizontal-green-gradient.svg" alt="Logo horizontal 120 px" style="width:120px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Logo horizontal</span>
+                  <span class="size-scale-value">Mínimo 120 px de ancho</span>
+                  <span class="size-scale-note">Límite recomendado para mantener legible el nombre completo.</span>
+                </div>
+              </div>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-horizontal-green-gradient.svg" alt="Logo horizontal reducido" style="width:86px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Reducción crítica</span>
+                  <span class="size-scale-value">Usar con cuidado</span>
+                  <span class="size-scale-note">Si el espacio baja de este punto, el isotipo debe tomar el relevo.</span>
+                </div>
+              </div>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo 24 px" style="width:24px; height:24px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Relevo visual</span>
+                  <span class="size-scale-value">Isotipo 24 px</span>
+                  <span class="size-scale-note">Tamaño mínimo de marca. No usar por debajo de este límite.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="size-col">
+              <h4 class="mini-title">Escala vertical</h4>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-vertical-green-gradient.svg" alt="Logo vertical 60 px" style="height:60px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Logo vertical</span>
+                  <span class="size-scale-value">Mínimo 60 px de alto</span>
+                  <span class="size-scale-note">Funciona mejor en columnas, perfiles o espacios estrechos.</span>
+                </div>
+              </div>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-vertical-green-gradient.svg" alt="Logo vertical reducido" style="height:42px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Reducción crítica</span>
+                  <span class="size-scale-value">Usar con cuidado</span>
+                  <span class="size-scale-note">Cuando el texto pierde lectura, cambiar a isotipo.</span>
+                </div>
+              </div>
+              <div class="size-scale-row">
+                <div class="size-scale-visual">
+                  <img src="assets/logo/jaltech-isotipo-green-gradient.svg" alt="Isotipo 24 px" style="width:24px; height:24px;" />
+                </div>
+                <div class="size-scale-info">
+                  <span class="size-scale-label">Relevo visual</span>
+                  <span class="size-scale-value">Isotipo 24 px</span>
+                  <span class="size-scale-note">Es el límite visual recomendado para mantener la forma.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="size-flow-note">
+          <strong>Flujo de reducción:</strong> a medida que el espacio disminuye, el sistema escala desde el logo horizontal → vertical → isotipo. Cuando el logo completo ya no es legible, el isotipo asume la firma visual de la marca.
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Aplicaciones del isotipo como recurso visual -->
+      <div class="reveal">
+        <div class="sec-tag">Isotipo más allá del logo</div>
+        <h3 class="sub-title">Aplicaciones del isotipo como recurso visual.</h3>
+        <p class="body-text" style="margin-bottom:24px; max-width:680px;">
+          El isotipo no se queda en el logo. Es un activo gráfico flexible que aparece como firma, sello, watermark o textura en distintos puntos de contacto. Siempre conserva su forma original.
+        </p>
+
+        <div class="iso-uses-grid">
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/sello-marca.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Sello de marca</div>
+            <div class="iso-use-desc">Como watermark en presentaciones, papelería interna y portadas. Siempre en intensidad sutil.</div>
+          </div>
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/firma-piezas.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Firma en piezas</div>
+            <div class="iso-use-desc">Como cierre en mailings, posts y materiales largos. Sustituye al logo cuando el espacio es reducido.</div>
+          </div>
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/boton-icono.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Botón o ícono</div>
+            <div class="iso-use-desc">Como botón de marca en interfaces digitales, app icons, favicons y avatares de redes sociales.</div>
+          </div>
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/patron-visual.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Patrón visual</div>
+            <div class="iso-use-desc">Repetido como textura en empaques, material POP, fondos de stand y bolsas de marca.</div>
+          </div>
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/pin-jalbot.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Pin de Jalbot</div>
+            <div class="iso-use-desc">En el pecho de Jalbot. Es la única marca que carga el personaje. Nunca el logo completo.</div>
+          </div>
+          <div class="iso-use">
+            <div class="iso-use-icon">
+              <img src="iconos-ui/sello-calidad.svg" alt="" />
+            </div>
+            <div class="iso-use-title">Sello de calidad</div>
+            <div class="iso-use-desc">Como certificado de origen, garantía o respaldo en stickers, etiquetas y troqueles.</div>
+          </div>
+        </div>
+
+        <div class="iso-pattern-feature">
+          <div class="iso-pattern-bg"></div>
+          <div class="iso-pattern-text">
+            <h4>El isotipo como patrón de marca</h4>
+            <p>Repetido en grilla regular, el isotipo construye una textura propia que funciona como respaldo visual. Se usa en intensidad sutil para fondos institucionales, intensidad media para empaques y papelería, e intensidad alta cuando el patrón mismo es el mensaje.</p>
+          </div>
+          <div class="iso-pattern-visual"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SISTEMA DE COLOR -->
+  <section id="color" class="section">
+    <div class="section-inner">
+      <div class="sec-tag reveal">03 — Sistema de color</div>
+      <h2 class="sec-title reveal d1">El verde manda. <em>Los demás acompañan</em>.</h2>
+      <p class="sec-lead reveal d2">
+        El sistema cromático tiene una sola estrella: el verde Jaltech. Todo lo demás existe para apoyarlo, contrastarlo o darle aire. Naranja, morado, azul y amarillo son acentos que aportan energía, tecnología y contraste, pero no compiten con la identidad.
+      </p>
+
+      <!-- Paleta principal -->
+      <div class="reveal">
+        <h3 class="sub-title">Paleta principal.</h3>
+        <p class="body-text" style="margin-bottom:24px;">El verde es el color de la marca. El azul oscuro es la base sobre la que se construye contraste. Los neutros sostienen el resto del sistema.</p>
+
+        <div class="palette-primary">
+          <div class="swatch on-dark" style="background: var(--verde);">
+            <div class="swatch-name">Verde Jaltech</div>
+            <div class="swatch-hex">#529A00</div>
+            <div class="swatch-role">Color principal de marca. Identidad y CTAs.</div>
+          </div>
+          <div class="swatch on-dark" style="background: var(--azul);">
+            <div class="swatch-name">Azul oscuro</div>
+            <div class="swatch-hex">#1D2333</div>
+            <div class="swatch-role">Base sólida. Fondos, contraste fuerte.</div>
+          </div>
+          <div class="swatch on-light" style="background: var(--off); border: 1px solid var(--gris-200);">
+            <div class="swatch-name">Off-white</div>
+            <div class="swatch-hex">#F6F6F2</div>
+            <div class="swatch-role">Fondo cálido. Texto y reposo visual.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Neutros: 6 tonos -->
+      <div class="reveal">
+        <h3 class="sub-title">Neutros.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Sostienen toda la composición. Se usan para textos, fondos secundarios, divisores y áreas de respiro. Son la base que permite que los colores de marca destaquen.</p>
+
+        <div class="palette-secondary">
+          <div class="swatch swatch--sm on-light" style="background: var(--blanco); border: 1px solid var(--gris-200);">
+            <div class="swatch-name">Blanco</div>
+            <div class="swatch-hex">#FFFFFF</div>
+          </div>
+          <div class="swatch swatch--sm on-light" style="background: var(--gris-100);">
+            <div class="swatch-name">Gris 100</div>
+            <div class="swatch-hex">#EEEEEA</div>
+          </div>
+          <div class="swatch swatch--sm on-light" style="background: var(--gris-200);">
+            <div class="swatch-name">Gris 200</div>
+            <div class="swatch-hex">#D8D8D2</div>
+          </div>
+          <div class="swatch swatch--sm on-light" style="background: var(--gris-400);">
+            <div class="swatch-name">Gris 400</div>
+            <div class="swatch-hex">#9B9B95</div>
+          </div>
+          <div class="swatch swatch--sm on-dark" style="background: var(--gris-600);">
+            <div class="swatch-name">Gris 600</div>
+            <div class="swatch-hex">#5C5C58</div>
+          </div>
+          <div class="swatch swatch--sm on-dark" style="background: var(--gris-800);">
+            <div class="swatch-name">Gris 800</div>
+            <div class="swatch-hex">#2E2E2C</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Complementarios -->
+      <div class="reveal">
+        <h3 class="sub-title">Complementarios.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Cuatro acentos para situaciones específicas. Naranja para energía comercial, morado para detalles tecnológicos, azul para contraste digital y amarillo para puntos de alta visibilidad. Ninguno reemplaza al verde como protagonista.</p>
+
+        <div class="palette-comp">
+          <div class="swatch swatch--md on-dark" style="background: var(--naranja);">
+            <div class="swatch-name">Naranja</div>
+            <div class="swatch-hex">#FF8600</div>
+            <div class="swatch-role">Acento comercial. Energía y acción.</div>
+          </div>
+          <div class="swatch swatch--md on-dark" style="background: var(--morado);">
+            <div class="swatch-name">Morado tech</div>
+            <div class="swatch-hex">#6A2AE1</div>
+            <div class="swatch-role">Detalles tecnológicos y digitales.</div>
+          </div>
+          <div class="swatch swatch--md on-light" style="background: var(--amarillo);">
+            <div class="swatch-name">Amarillo</div>
+            <div class="swatch-hex">#FFBF15</div>
+            <div class="swatch-role">Visibilidad alta. Tags y avisos.</div>
+          </div>
+          <div class="swatch swatch--md on-dark" style="background: var(--azul-extra);">
+            <div class="swatch-name">Azul</div>
+            <div class="swatch-hex">#0063FE</div>
+            <div class="swatch-role">Contraste digital. Enlaces y datos.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Roles de cada color: bloques horizontales iguales -->
+      <div class="reveal">
+        <h3 class="sub-title">Rol de cada color.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Cada color tiene una función dentro del sistema. Usarlo bien es saber cuándo aparece y para qué sirve.</p>
+
+        <div class="role-grid">
+          <div class="role-block on-dark" style="background: var(--verde);">
+            <div>
+              <div class="role-block-name">Verde Jaltech</div>
+              <div class="role-block-role">Identidad</div>
+            </div>
+            <div class="role-block-desc">Logo, CTAs y acentos clave. El color que más se ve en cualquier pieza.</div>
+          </div>
+          <div class="role-block on-dark" style="background: var(--azul);">
+            <div>
+              <div class="role-block-name">Azul oscuro</div>
+              <div class="role-block-role">Base</div>
+            </div>
+            <div class="role-block-desc">Fondos profundos, secciones de soporte, contraste fuerte para que el verde brille.</div>
+          </div>
+          <div class="role-block on-light" style="background: var(--gris-100); border: 1px solid var(--gris-200);">
+            <div>
+              <div class="role-block-name">Neutros</div>
+              <div class="role-block-role">Soporte</div>
+            </div>
+            <div class="role-block-desc">Textos, fondos, divisores, jerarquía visual. Permiten que los colores activos respiren.</div>
+          </div>
+          <div class="role-block on-dark" style="background: var(--naranja);">
+            <div>
+              <div class="role-block-name">Naranja</div>
+              <div class="role-block-role">Energía</div>
+            </div>
+            <div class="role-block-desc">Promociones, lanzamientos, llamados a la acción de alto impacto.</div>
+          </div>
+          <div class="role-block on-dark" style="background: var(--morado);">
+            <div>
+              <div class="role-block-name">Morado tech</div>
+              <div class="role-block-role">Tecnología</div>
+            </div>
+            <div class="role-block-desc">Detalles digitales, gráficos de datos, micro-elementos que aportan modernidad.</div>
+          </div>
+          <div class="role-block on-dark" style="background: var(--azul-extra);">
+            <div>
+              <div class="role-block-name">Azul digital</div>
+              <div class="role-block-role">Contraste</div>
+            </div>
+            <div class="role-block-desc">Acento extendido para uso digital. Enlaces, datos y micro-detalles de UI.</div>
+          </div>
+          <div class="role-block on-light" style="background: var(--amarillo);">
+            <div>
+              <div class="role-block-name">Amarillo funcional</div>
+              <div class="role-block-role">Visibilidad</div>
+            </div>
+            <div class="role-block-desc">Avisos, alertas suaves y puntos de alta visibilidad. Uso puntual.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Coherencia ante todo.</strong> No hay reglas rígidas sobre porcentajes. La regla real es no perder identidad: cualquier pieza debe leerse como Jaltech a primera vista. Si el verde no aparece o la marca no se reconoce, hay que rebalancear.
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TIPOGRAFÍA -->
+  <section id="type" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">04 — Tipografía</div>
+      <h2 class="sec-title reveal d1">Mont, Montserrat, <em>y apoyo</em>.</h2>
+      <p class="sec-lead reveal d2">
+        El sistema tipográfico tiene dos niveles. Las fuentes principales construyen la identidad. Las secundarias dan apoyo cuando las principales no están disponibles. Mont es la fuente preferida; Montserrat es su fuente alternativa más cercana.
+      </p>
+
+      <!-- Principales -->
+      <div class="reveal">
+        <h3 class="sub-title">Fuentes principales.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Mont y Montserrat sostienen la identidad visual de la marca. Se usan en titulares, destacados y números: cualquier elemento donde la tipografía tenga peso visual.</p>
+
+        <div class="type-specimen">
+          <span class="type-specimen-tag principal">Principal</span>
+          <div class="type-specimen-name font-mont">Mont</div>
+          <div class="type-specimen-tagline">La fuente de la marca. Sólida, geométrica, contemporánea.</div>
+          <div class="type-specimen-meta">
+            <div class="type-meta-item">
+              <span class="type-meta-label">Familia</span>
+              <span class="type-meta-value">Mont</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Tipo</span>
+              <span class="type-meta-value">Sans serif</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Uso</span>
+              <span class="type-meta-value">Titulares, destacados, números</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Licencia</span>
+              <span class="type-meta-value">Comercial</span>
+            </div>
+          </div>
+          <div class="type-weights">
+            <span class="weight-pill w300 font-mont">Light 300</span>
+            <span class="weight-pill w400 font-mont">Regular 400</span>
+            <span class="weight-pill w500 font-mont">Medium 500</span>
+            <span class="weight-pill w600 font-mont">SemiBold 600</span>
+            <span class="weight-pill w700 font-mont">Bold 700</span>
+            <span class="weight-pill w800 font-mont">ExtraBold 800</span>
+            <span class="weight-pill w900 font-mont">Black 900</span>
+          </div>
+        </div>
+
+        <div class="type-specimen">
+          <span class="type-specimen-tag principal">Principal · Fuente alternativa</span>
+          <div class="type-specimen-name font-montserrat">Montserrat</div>
+          <div class="type-specimen-tagline">Fuente alternativa cuando Mont no está disponible.</div>
+          <div class="type-specimen-meta">
+            <div class="type-meta-item">
+              <span class="type-meta-label">Familia</span>
+              <span class="type-meta-value">Montserrat</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Tipo</span>
+              <span class="type-meta-value">Sans serif</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Uso</span>
+              <span class="type-meta-value">Titulares, destacados, números</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Licencia</span>
+              <span class="type-meta-value">Google Fonts (libre)</span>
+            </div>
+          </div>
+          <div class="type-weights">
+            <span class="weight-pill w300 font-montserrat">Light 300</span>
+            <span class="weight-pill w400 font-montserrat">Regular 400</span>
+            <span class="weight-pill w500 font-montserrat">Medium 500</span>
+            <span class="weight-pill w600 font-montserrat">SemiBold 600</span>
+            <span class="weight-pill w700 font-montserrat">Bold 700</span>
+            <span class="weight-pill w800 font-montserrat">ExtraBold 800</span>
+            <span class="weight-pill w900 font-montserrat">Black 900</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Secundarias -->
+      <div class="reveal">
+        <h3 class="sub-title">Fuentes secundarias.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Poppins sostiene el cuerpo de texto, descripciones y elementos de interfaz. Aptos es la fuente del entorno Microsoft: se usa de forma contextual cuando el documento vive en ese ecosistema. Las dos tienen menos protagonismo visual que las principales, pero igual rigor en su uso.</p>
+
+        <div class="type-specimen is-secondary">
+          <span class="type-specimen-tag secondary">Secundaria</span>
+          <div class="type-specimen-name font-poppins">Poppins</div>
+          <div class="type-specimen-tagline">Apoyo amigable y de buena legibilidad.</div>
+          <div class="type-specimen-meta">
+            <div class="type-meta-item">
+              <span class="type-meta-label">Familia</span>
+              <span class="type-meta-value">Poppins</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Tipo</span>
+              <span class="type-meta-value">Sans serif</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Uso</span>
+              <span class="type-meta-value">Cuerpo, descripción, UI</span>
+            </div>
+          </div>
+          <div class="type-weights">
+            <span class="weight-pill alt w300 font-poppins">Light 300</span>
+            <span class="weight-pill alt w400 font-poppins">Regular 400</span>
+            <span class="weight-pill alt w500 font-poppins">Medium 500</span>
+            <span class="weight-pill alt w600 font-poppins">SemiBold 600</span>
+            <span class="weight-pill alt w700 font-poppins">Bold 700</span>
+          </div>
+        </div>
+
+        <div class="type-specimen is-secondary">
+          <span class="type-specimen-tag secondary">Secundaria · Entorno Microsoft</span>
+          <div class="type-specimen-name font-aptos">Aptos</div>
+          <div class="type-specimen-tagline">Fuente del entorno Microsoft. Uso contextual, no universal.</div>
+          <div class="type-specimen-meta">
+            <div class="type-meta-item">
+              <span class="type-meta-label">Familia</span>
+              <span class="type-meta-value">Aptos</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Tipo</span>
+              <span class="type-meta-value">Sans serif</span>
+            </div>
+            <div class="type-meta-item">
+              <span class="type-meta-label">Uso</span>
+              <span class="type-meta-value">Cuerpo, descripción, UI — contextual</span>
+            </div>
+          </div>
+          <div class="type-weights">
+            <span class="weight-pill alt w400 font-aptos">Regular 400</span>
+            <span class="weight-pill alt w600 font-aptos">SemiBold 600</span>
+            <span class="weight-pill alt w700 font-aptos">Bold 700</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Jerarquía -->
+      <div class="reveal">
+        <h3 class="sub-title">Jerarquía tipográfica.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Cada nivel cumple una función. Esta jerarquía aplica en piezas digitales y, adaptada en proporciones, en impresos y presentaciones.</p>
+
+        <div class="type-hierarchy">
+          <div class="hierarchy-row">
+            <span class="hierarchy-label">Display</span>
+            <div class="h-h1 font-mont">Mont 900 · 44px</div>
+          </div>
+          <div class="hierarchy-row">
+            <span class="hierarchy-label">Título 1</span>
+            <div class="h-h2 font-mont">Mont 800 · 30px</div>
+          </div>
+          <div class="hierarchy-row">
+            <span class="hierarchy-label">Título 2</span>
+            <div class="h-h3 font-mont">Mont 700 · 22px</div>
+          </div>
+          <div class="hierarchy-row">
+            <span class="hierarchy-label">Body</span>
+            <div class="h-body font-poppins">Body en Poppins/Aptos 400 · 15px. Cuerpo de texto con altura de línea generosa para mejorar la lectura. Aplica en descripciones, párrafos y bloques largos.</div>
+          </div>
+          <div class="hierarchy-row">
+            <span class="hierarchy-label">Caption</span>
+            <div class="h-caption font-poppins">Etiqueta · Caption · 11px</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Tamaños mínimos -->
+      <div class="reveal">
+        <h3 class="sub-title">Tamaños mínimos.</h3>
+        <p class="body-text" style="margin-bottom:8px;">Tamaños mínimos reales por contexto de uso. Por debajo, el texto pierde legibilidad y la pieza pierde fuerza.</p>
+
+        <table class="min-sizes-table">
+          <thead>
+            <tr>
+              <th>Contexto</th>
+              <th>Cuerpo mínimo</th>
+              <th>Recomendado</th>
+              <th>Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Digital (web, app, UI)</td>
+              <td>14 px</td>
+              <td>16 px</td>
+              <td>Lectura en pantalla a distancia normal. Body cómodo desde 16 px.</td>
+            </tr>
+            <tr>
+              <td>Impresión</td>
+              <td>9 pt</td>
+              <td>10–11 pt</td>
+              <td>Documentos, papelería, manuales. En cuerpo no bajar de 9 pt.</td>
+            </tr>
+            <tr>
+              <td>Redes sociales</td>
+              <td>22 px</td>
+              <td>26–32 px</td>
+              <td>Posts, historias y reels. En vertical, mientras más grande, mejor.</td>
+            </tr>
+            <tr>
+              <td>Favicon e ícono</td>
+              <td>16 px</td>
+              <td>24–32 px</td>
+              <td>16 px es el mínimo técnico. 24 px es el mínimo recomendado de marca. 32 px es el óptimo. El isotipo pierde forma por debajo de 24 px, por lo que se recomienda evitar su uso en tamaños muy pequeños.</td>
+            </tr>
+            <tr>
+              <td>POP y físico</td>
+              <td>18 pt</td>
+              <td>24 pt</td>
+              <td>Lectura a 1–2 metros. Stands grandes pueden subir a 40 pt+.</td>
+            </tr>
+            <tr>
+              <td>Fichas comerciales</td>
+              <td>10 pt</td>
+              <td>11–12 pt</td>
+              <td>Datos técnicos pueden bajar a 8 pt en zonas secundarias.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>Regla práctica:</strong> si el texto se vuelve difícil de leer, el problema casi nunca es de tamaño. Suele sobrar contenido. Reducir antes de achicar.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 COMPOSICIÓN -->
+  <section id="composition" class="section">
+    <div class="section-inner">
+      <div class="sec-tag reveal">05 — Composición</div>
+      <h2 class="sec-title reveal d1">Aire, ritmo, <em>jerarquía</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Más que una grilla rígida, Jaltech usa principios de composición flexibles. Lo importante es que la pieza respire, que la jerarquía sea clara y que cada elemento tenga su zona segura.
+      </p>
+
+      <!-- Principios -->
+      <div class="reveal">
+        <h3 class="sub-title">Principios de composición.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Seis principios que guían cómo se arma una pieza Jaltech. No son reglas duras: son criterios para tomar decisiones cuando hay que elegir.</p>
+
+        <div class="comp-principles">
+          <div class="comp-card">
+            <div class="comp-card-title">Aire visual</div>
+            <div class="comp-card-text">El espacio en blanco no es vacío. Es claridad, respiro y respeto por el contenido. Una pieza con aire comunica mejor que una saturada.</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card-title">Jerarquía clara</div>
+            <div class="comp-card-text">Un solo elemento domina visualmente. El resto apoya. Si todo tiene el mismo peso, nada destaca y el mensaje se diluye.</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card-title">Márgenes consistentes</div>
+            <div class="comp-card-text">El contenido necesita aire en los bordes. Los márgenes mantienen el ritmo entre piezas y dejan que el logo respete su zona de protección encima de eso.</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card-title">Zonas seguras</div>
+            <div class="comp-card-text">Texto importante nunca tocando bordes. Logos siempre con zona libre. CTAs en zonas de alta atención visual (centro o esquina inferior derecha).</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card-title">Legibilidad primero</div>
+            <div class="comp-card-text">Si hay duda entre verse "bonito" y leerse claro, gana la legibilidad. Contraste suficiente, tamaños correctos, fuentes oficiales.</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card-title">Composición asimétrica</div>
+            <div class="comp-card-text">Las piezas con un lado más cargado que otro tienen más fuerza visual. La asimetría con criterio aporta carácter y guía mejor la mirada.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Demo aire visual -->
+      <div class="reveal">
+        <h3 class="sub-title">Aire visual en práctica.</h3>
+        <p class="body-text" style="margin-bottom:8px;">La diferencia entre una pieza saturada y una pieza respirada se ve a simple vista. Una intenta decir todo. La otra invita a saber más.</p>
+
+        <div class="comp-demo">
+          <div class="comp-demo-card bad">
+            <span class="comp-demo-tag no">Saturado</span>
+            <div class="comp-demo-title">Cargadores premium para tu portafolio</div>
+            <div class="comp-demo-text">10 referencias disponibles · USB-C, USB-A, Lightning · Voltajes 18W, 25W, 65W · Garantía 1 año · Stock listo · Entrega 24-48h en todo el país · Marcas certificadas</div>
+            <div class="comp-demo-meta">CONTACTO: comercial@jaltech.com · 312 456 7890 · WhatsApp 24/7</div>
+          </div>
+          <div class="comp-demo-card good">
+            <span class="comp-demo-tag ok">Respirado</span>
+            <div class="comp-demo-title">Cargadores premium</div>
+            <div class="comp-demo-text">10 referencias listas. Stock disponible.</div>
+          </div>
+        </div>
+
+        <p class="body-text" style="margin-top:16px; font-size:13px;">Más espacio comunica mejor que más texto. Si todo cabe pero apretado, hay que quitar — no achicar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ICONOGRAFÍA -->
+  <section id="icons" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">06 — Iconografía</div>
+      <h2 class="sec-title reveal d1">Iconos <em>limpios y consistentes</em>.</h2>
+      <p class="sec-lead reveal d2">
+        El sistema tiene dos formas de aplicación: sin contenedor (uso preferido) y con contenedor circular (cuando el icono necesita destacar). Lo importante es la coherencia: que todos los iconos en una pieza pertenezcan al mismo sistema.
+      </p>
+
+      <!-- Dos columnas -->
+      <div class="reveal">
+        <div class="icons-two-cols">
+
+          <!-- Izquierda: sin contenedor -->
+          <div class="icons-col">
+            <span class="icons-col-tag bare">Sin contenedor</span>
+            <div class="icons-col-title">Aplicación directa</div>
+            <div class="icons-col-desc">Iconos lineales sobre el fondo. Base gris por defecto, con acentos en verde, naranja o morado cuando aportan jerarquía visual.</div>
+
+            <div class="icons-grid-bare">
+              <div class="icon-cell">
+                <img src="iconos/mundial.svg" alt="Cobertura" />
+                <div class="icon-cell-label">Base gris</div>
+              </div>
+              <div class="icon-cell">
+                <img src="iconos/terminal-de-punto-de-venta.svg" alt="POS" />
+                <div class="icon-cell-label">Base gris</div>
+              </div>
+              <div class="icon-cell">
+                <img src="iconos/mercadeo-en-linea.svg" alt="Digital" />
+                <div class="icon-cell-label">Base gris</div>
+              </div>
+              <div class="icon-cell accent-verde">
+                <img src="iconos/publicidad.svg" alt="Comercial" />
+                <div class="icon-cell-label">Acento verde</div>
+              </div>
+              <div class="icon-cell accent-naranja">
+                <img src="iconos/publicidad-digital.svg" alt="Pauta" />
+                <div class="icon-cell-label">Acento naranja</div>
+              </div>
+              <div class="icon-cell accent-morado">
+                <img src="iconos/hombre-de-influencia%20(1).svg" alt="Aliados" />
+                <div class="icon-cell-label">Acento morado</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Derecha: con contenedor -->
+          <div class="icons-col">
+            <span class="icons-col-tag contained">Con contenedor</span>
+            <div class="icons-col-title">Uso con contenedor</div>
+            <div class="icons-col-desc">Aplicación sobre contenedor circular en colores corporativos. Se usa cuando el ícono necesita mayor protagonismo visual. También puede aplicarse en contorno gris para usos más sutiles.</div>
+
+            <div class="icons-grid-contained">
+              <div class="icon-ring-cell fill-verde">
+                <div class="icon-ring"><img src="iconos/mundial.svg" alt="Cobertura" /></div>
+                <div class="icon-cell-label">Verde</div>
+              </div>
+              <div class="icon-ring-cell fill-azul">
+                <div class="icon-ring"><img src="iconos/terminal-de-punto-de-venta.svg" alt="POS" /></div>
+                <div class="icon-cell-label">Azul oscuro</div>
+              </div>
+              <div class="icon-ring-cell fill-naranja">
+                <div class="icon-ring"><img src="iconos/publicidad.svg" alt="Comercial" /></div>
+                <div class="icon-cell-label">Naranja</div>
+              </div>
+              <div class="icon-ring-cell fill-morado">
+                <div class="icon-ring"><img src="iconos/publicidad-digital.svg" alt="Pauta" /></div>
+                <div class="icon-cell-label">Morado</div>
+              </div>
+              <div class="icon-ring-cell fill-verde">
+                <div class="icon-ring"><img src="iconos/mercadeo-en-linea.svg" alt="Digital" /></div>
+                <div class="icon-cell-label">Verde</div>
+              </div>
+              <div class="icon-ring-cell outline">
+                <div class="icon-ring"><img src="iconos/hombre-de-influencia%20(1).svg" alt="Aliados" /></div>
+                <div class="icon-cell-label">Contorno gris</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Reglas -->
+      <div class="reveal">
+        <h3 class="sub-title">Principios de iconografía.</h3>
+
+        <div class="icon-rules-block">
+          <ul class="icon-rules-list">
+            <li class="icon-rule-item"><span><strong>Estilo lineal.</strong> Trazo medio, sin rellenos sólidos. Las líneas son la firma del sistema.</span></li>
+            <li class="icon-rule-item"><span><strong>Sin contenedor preferido.</strong> Aplicación directa sobre el fondo siempre que sea posible.</span></li>
+            <li class="icon-rule-item"><span><strong>Contenedor circular cuando hace falta destacar.</strong> Nunca cuadrados duros.</span></li>
+            <li class="icon-rule-item"><span><strong>Color base gris.</strong> Neutro por defecto, con acentos en verde, naranja o morado según el contexto.</span></li>
+            <li class="icon-rule-item"><span><strong>Tamaño mínimo:</strong> Interfaces pequeñas, piezas comerciales y presentaciones deben ajustar el tamaño del ícono según distancia de lectura y jerarquía visual.</span></li>
+            <li class="icon-rule-item"><span><strong>Grosor consistente.</strong> Todos los iconos del sistema mantienen el mismo grosor visual de línea.</span></li>
+            <li class="icon-rule-item"><span><strong>Aplicación:</strong> catálogos, banners, redes, web, presentaciones, POP, fichas comerciales.</span></li>
+            <li class="icon-rule-item"><span><strong>Nunca:</strong> mezclar estilos visuales distintos dentro de una misma pieza.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 VOZ Y TONO -->
+  <section id="tone" class="section section--dark">
+    <div class="section-inner">
+      <div class="sec-tag reveal">07 — Voz y tono</div>
+      <h2 class="sec-title reveal d1" style="color:#fff;">Cómo suena <em>Jaltech</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Cuando Jaltech se comunica con el aliado, debe sentirse como un proveedor confiable que conoce el negocio. No vendemos: acompañamos. No prometemos lo imposible: cumplimos lo que ofrecemos. La voz de marca traduce esa relación en cada palabra.
+      </p>
+
+      <!-- 4 rasgos -->
+      <div class="reveal">
+        <h3 class="sub-title">Los 4 rasgos de la voz.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Estos cuatro rasgos definen cómo debe sonar Jaltech en cualquier canal. No son adjetivos sueltos: son criterios para revisar si una pieza tiene el tono correcto.</p>
+
+        <div class="tone-traits">
+          <div class="tone-trait">
+            <div class="tone-trait-num">01</div>
+            <div class="tone-trait-name">Cercano</div>
+            <div class="tone-trait-desc">Habla como si conociera al aliado. Cálido sin perder profesionalismo.</div>
+          </div>
+          <div class="tone-trait">
+            <div class="tone-trait-num">02</div>
+            <div class="tone-trait-name">Cálido</div>
+            <div class="tone-trait-desc">Humano y accesible. Responde sin sonar a guion ni a máquina automatizada.</div>
+          </div>
+          <div class="tone-trait">
+            <div class="tone-trait-num">03</div>
+            <div class="tone-trait-name">Servicial</div>
+            <div class="tone-trait-desc">Orientado a resolver. El aliado siente que la marca está para apoyarlo.</div>
+          </div>
+          <div class="tone-trait">
+            <div class="tone-trait-num">04</div>
+            <div class="tone-trait-name">Experto sin ser complejo</div>
+            <div class="tone-trait-desc">Sabe del negocio. No usa jerga innecesaria. Es claro sin ser condescendiente.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Comparativo sí/no -->
+      <div class="reveal">
+        <h3 class="sub-title" style="color:#fff;">Frases de referencia.</h3>
+        <p class="body-text" style="margin-bottom:24px;">La forma más rápida de calibrar el tono es comparar. Estas frases muestran cómo sí habla Jaltech y cómo no.</p>
+
+        <div class="tone-compare">
+          <div class="tc-cell tc-cell--si">
+            <div class="tc-label">
+              <span class="tc-mark">✓</span> Así sí habla Jaltech
+            </div>
+            <ul class="tc-list">
+              <li class="tc-item">"Tenemos el stock listo. Te lo enviamos hoy."</li>
+              <li class="tc-item">"Fortalece tu portafolio con productos de alta rotación."</li>
+              <li class="tc-item">"Más de 1.000 referencias en un solo proveedor."</li>
+              <li class="tc-item">"Tus clientes piden cargadores todos los días."</li>
+              <li class="tc-item">"Quedo atenta a cualquier pedido o consulta."</li>
+            </ul>
+          </div>
+          <div class="tc-cell tc-cell--no">
+            <div class="tc-label">
+              <span class="tc-mark">×</span> Así no habla Jaltech
+            </div>
+            <ul class="tc-list">
+              <li class="tc-item">"¡Somos líderes en tecnología de vanguardia!"</li>
+              <li class="tc-item">"Transformamos el ecosistema digital de tu empresa."</li>
+              <li class="tc-item">"¡No te pierdas esta oferta increíble y exclusiva!"</li>
+              <li class="tc-item">"Llevamos la innovación a otro nivel."</li>
+              <li class="tc-item">"Proveemos soluciones integrales de alto valor."</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Voz por canal -->
+      <div class="reveal">
+        <div class="sec-tag">Adaptación por canal</div>
+        <h3 class="sub-title" style="color:#fff;">El tono no cambia, el formato sí</h3>
+        <p class="body-text" style="margin-bottom:32px;">La voz de Jaltech es la misma en cualquier canal. Lo que cambia es la longitud, el ritmo y la cantidad de información, según el contexto de lectura.</p>
+
+        <div class="channel-voice-grid">
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/whatsapp.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">Mensajería</div>
+              <div class="ch-voice-title">WhatsApp</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Conversacional y corto.</strong> Máximo 4 líneas sin imagen. Sin preámbulos: el primer renglón ya es útil. El mensaje funciona solo.</div>
+          </div>
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/mailing.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">Email</div>
+              <div class="ch-voice-title">Mailing comercial</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Estructura jerarquizada:</strong> titular como beneficio, cuerpo como argumento, CTA único. El asunto es lo más importante: específico y útil, nunca genérico.</div>
+          </div>
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/redes.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">Social</div>
+              <div class="ch-voice-title">Redes</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Visual primero, copy de apoyo.</strong> El texto acompaña la imagen, no la reemplaza. Mantener identidad sin mezclarse con estética de sub-marcas más juveniles.</div>
+          </div>
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/catalogo.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">Material comercial</div>
+              <div class="ch-voice-title">Catálogo</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Nombre del producto, beneficios clave</strong>, datos técnicos cuando aporten, código y precio. El texto refuerza la oportunidad comercial para el aliado.</div>
+          </div>
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/web.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">Sitio</div>
+              <div class="ch-voice-title">Web</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Lenguaje B2B claro.</strong> Arquitectura orientada al aliado: producto, código, disponibilidad, contacto del asesor. Flujo directo a la conversación comercial.</div>
+          </div>
+
+          <div class="ch-voice">
+            <div class="ch-voice-icon">
+              <img src="iconos-ui/pop.svg" alt="" />
+            </div>
+            <div class="ch-voice-head">
+              <div class="ch-voice-tag">POP / Stand / Feria</div>
+              <div class="ch-voice-title">Pieza física</div>
+            </div>
+            <div class="ch-voice-rule"><strong>Impacto en 3 segundos.</strong> Máximo 6 palabras en titular. Logo + producto + CTA. Lectura a varios metros de distancia.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 JALBOT -->
+  <section id="jalbot" class="section">
+    <div class="section-inner">
+      <div class="sec-tag reveal">08 — Jalbot</div>
+      <h2 class="sec-title reveal d1">El personaje que <em>acompaña</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Jalbot es la mascota oficial de Jaltech. Existe desde hace tiempo en catálogos, campañas y comunicación interna. Aquí formalizamos su rol, sus contextos de aparición y sus reglas de uso.
+      </p>
+
+      <!-- Hero Jalbot -->
+      <div class="jalbot-hero reveal">
+        <div class="jalbot-hero-text">
+          <p class="body-text">
+            <strong>Jalbot lleva el isotipo Jaltech en el pecho</strong> (no el logo completo). Su rol es humanizar la marca sin reemplazarla: aporta cercanía cuando la pieza lo necesita, pero no protagoniza siempre. Es una firma visual amigable, no un protagonista comercial.
+          </p>
+          <div class="jalbot-quote">
+            "Jalbot firma y acompaña. No siempre protagoniza."
+          </div>
+        </div>
+        <div class="jalbot-image-wrap">
+          <img class="jalbot-image" src="jalbot/jalbot.webp" alt="Jalbot, mascota oficial de Jaltech" />
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Roles -->
+      <div class="reveal">
+        <h3 class="sub-title">Los 4 roles de Jalbot.</h3>
+        <p class="body-text" style="margin-bottom:24px;">Jalbot cumple cuatro funciones distintas según el contexto. Cada rol tiene su momento. Reconocerlos ayuda a saber cuándo usarlo y cuándo no.</p>
+
+        <div class="jalbot-roles">
+          <div class="jalbot-role">
+            <div class="jalbot-role-name">Orientar</div>
+            <div class="jalbot-role-desc">Guía al aliado a entender qué hay disponible, cómo acceder y qué hacer a continuación.</div>
+          </div>
+          <div class="jalbot-role">
+            <div class="jalbot-role-name">Activar</div>
+            <div class="jalbot-role-desc">Mueve a la acción: pedir, escribir, consultar el catálogo, aprovechar una campaña.</div>
+          </div>
+          <div class="jalbot-role">
+            <div class="jalbot-role-name">Acompañar</div>
+            <div class="jalbot-role-desc">Está presente sin presionar. Refuerza la cercanía y continuidad de la relación.</div>
+          </div>
+          <div class="jalbot-role">
+            <div class="jalbot-role-name">Celebrar</div>
+            <div class="jalbot-role-desc">Reconoce hitos, logros, fechas especiales del canal y momentos del equipo.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Cuándo sí / cuándo no -->
+      <div class="reveal">
+        <h3 class="sub-title">Cuándo aparece Jalbot.</h3>
+        <p class="body-text" style="margin-bottom:24px;">No todas las piezas necesitan Jalbot. La regla es simple: aparece cuando aporta cercanía o humaniza un mensaje. No aparece cuando puede restarle seriedad o claridad a una pieza comercial o institucional.</p>
+
+        <div class="jalbot-when">
+          <div class="jw-col jw-col--si">
+            <div class="jw-head">Sí aparece</div>
+            <ul class="jw-list">
+              <li>Campañas de cercanía y comunicación relacional</li>
+              <li>Fechas especiales: vacaciones, fin de año, aniversarios</li>
+              <li>Activaciones, lanzamientos y celebraciones de la marca</li>
+              <li>Pausas operativas, mensajes de bienvenida o agradecimiento</li>
+              <li>Comunicación interna con el equipo Jaltech</li>
+              <li>Contenidos de marca y piezas culturales</li>
+              <li>Material de onboarding para aliados nuevos</li>
+            </ul>
+          </div>
+          <div class="jw-col jw-col--no">
+            <div class="jw-head">No aparece</div>
+            <ul class="jw-list">
+              <li>Fichas técnicas de producto</li>
+              <li>Listados de precios y catálogos transaccionales</li>
+              <li>Comunicación institucional formal o seria</li>
+              <li>Piezas comerciales de alto enfoque transaccional</li>
+              <li>Documentos legales o avisos formales</li>
+              <li>Cuando su presencia se siente forzada o decorativa</li>
+              <li>Crisis comunicacional o mensajes sensibles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animaciones sugeridas -->
+      <div class="anim-suggestions reveal">
+        <h4>Recursos sugeridos para producir</h4>
+        <p>Ideas de animación para que el equipo creativo evalúe y produzca cuando aporten al mensaje. No son piezas existentes: son recomendaciones de uso.</p>
+        <ul class="anim-suggestions-list">
+          <li><strong>Jalbot saludando</strong> — para apertura de campañas, bienvenida o intro de piezas.</li>
+          <li><strong>Jalbot señalando una promo</strong> — apoyo a CTAs en banners o stories.</li>
+          <li><strong>Jalbot cargando una caja</strong> — refuerzo de mensajes de logística y entrega.</li>
+          <li><strong>Jalbot celebrando</strong> — hitos comerciales, aniversarios, cumpleaños del canal.</li>
+          <li><strong>Jalbot con un signo de pregunta</strong> — FAQs, soporte, ayuda al aliado.</li>
+          <li><strong>Jalbot dormido</strong> — comunicación de vacaciones o pausas operativas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 USOS DEL ISOTIPO -->
+  <section id="pattern" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">09 — Usos del isotipo</div>
+      <h2 class="sec-title reveal d1">El isotipo como <em>recurso visual</em>.</h2>
+      <p class="sec-lead reveal d2">
+        El isotipo puede apoyar la identidad sin convertirse en decoración excesiva. Su uso debe ser sutil, limpio y siempre subordinado al mensaje principal.
+      </p>
+
+      <div class="reveal">
+        <div class="pattern-showcase">
+          <div class="pattern-card watermark">
+            <span class="pattern-card-label">Marca de agua sutil</span>
+          </div>
+          <div class="pattern-card texture">
+            <span class="pattern-card-label">Textura gráfica inspirada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pattern-uses reveal">
+        <div class="pattern-use">
+          <h4>Uso recomendado</h4>
+          <p>Fondos institucionales, portadas internas y piezas donde se necesite presencia de marca sin usar el logo completo.</p>
+        </div>
+        <div class="pattern-use">
+          <h4>Regla principal</h4>
+          <p>No repetir el isotipo como wallpaper ni usarlo como textura protagonista. Debe sentirse como apoyo gráfico, no como ruido visual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 APLICACIONES -->
+  <section id="apps" class="section apps-section">
+    <div class="section-inner">
+      <div class="sec-tag reveal">10 — Aplicaciones</div>
+      <h2 class="sec-title reveal d1">Jaltech aplicado al <em>mundo real</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Así se ve la marca en los canales donde opera. Cada aplicación tiene sus propias reglas, pero todas comparten el mismo sistema visual y el mismo tono.
+      </p>
+
+      <div class="app-grid reveal">
+
+        <div class="app-category-divider">
+          <div class="app-category-name">Canales digitales</div>
+          <div class="app-category-count">6 aplicaciones</div>
+        </div>
+
+        <article class="app-card mailing">
+          <div class="app-card-content">
+            <div class="app-card-tag">Mailing — Email</div>
+            <h3 class="app-card-headline">Estructura: titular → argumento → CTA</h3>
+            <p class="app-card-copy">Asunto específico. Banner con beneficio. Un solo CTA dominante.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Banner 800×400 px con producto en contexto · render o mockup · paleta consonante con marca.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Banner real de mailing o template de campaña activa.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card redes">
+          <div class="app-card-content">
+            <div class="app-card-tag">Redes — Instagram / TikTok</div>
+            <h3 class="app-card-headline">Visual primero. Copy de apoyo. Sin mezcla de estéticas.</h3>
+            <p class="app-card-copy">Relación imagen/copy 80/20. El verde solo en acento.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Post 1080×1350 px · Story/Reel 1080×1920 px · producto en contexto o render 3D.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Mockup de post, carrusel o reel real una vez se produzca.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card whatsapp">
+          <div class="app-card-content">
+            <div class="app-card-tag">WhatsApp — Mensajes directos</div>
+            <h3 class="app-card-headline">4 líneas máx. Sin preámbulo. Accionable desde el primer párrafo.</h3>
+            <p class="app-card-copy">Negritas con criterio. Emojis ocasionalmente y con propósito.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen (opcional)</strong>
+                Pieza visual cuando aporte · 1080×1920 px vertical · texto legible en preview pequeño.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Captura real de mensaje o conversación con aliado.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card web">
+          <div class="app-card-content">
+            <div class="app-card-tag">Sitio web — jaltechsas.com</div>
+            <h3 class="app-card-headline">Lenguaje B2B. Arquitectura orientada al aliado.</h3>
+            <p class="app-card-copy">Producto → código → precio → contacto. Flujo claro.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Hero 1920×900 px · galería de producto 600×600 px · imágenes de logística y cobertura.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Captura del sitio actual o mockup de landing en producción.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card catalogo">
+          <div class="app-card-content">
+            <div class="app-card-tag">Catálogo — Digital / Impreso</div>
+            <h3 class="app-card-headline">Nombre, beneficios, iconos, imagen, precio.</h3>
+            <p class="app-card-copy">El texto refuerza la oportunidad de negocio, no la historia de marca.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Producto aislado sobre fondo blanco o gris suave · 600×600 px digital · 300 dpi en impreso.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Página real del catálogo o ficha de producto editorial.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card pop">
+          <div class="app-card-content">
+            <div class="app-card-tag">POP / Stand / Feria</div>
+            <h3 class="app-card-headline">Impacto en 3 segundos. Máximo 6 palabras en titular.</h3>
+            <p class="app-card-copy">Logo + producto + CTA. Nada más. Sin texto de relleno.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Producto destacado en alta resolución · 300 dpi mínimo · sangrado 3 mm · vector cuando sea posible.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Pieza POP real instalada o render del display en punto de venta.
+            </p>
+          </div>
+        </article>
+
+        <div class="app-category-divider">
+          <div class="app-category-name">Material comercial y físico</div>
+          <div class="app-category-count">3 aplicaciones</div>
+        </div>
+
+        <article class="app-card ficha">
+          <div class="app-card-content">
+            <div class="app-card-tag">Ficha comercial</div>
+            <h3 class="app-card-headline">Una página, escaneable en 10 segundos.</h3>
+            <p class="app-card-copy">Header con código. Beneficios en bullets cortos. Bloque comercial destacado.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Imagen</strong>
+                Producto principal 800×800 px · vista frontal y de detalle · packaging si es relevante.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Ficha comercial real con producto destacado y datos.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card empaques">
+          <div class="app-card-content">
+            <div class="app-card-tag">Empaques</div>
+            <h3 class="app-card-headline">Identidad clara desde 1–2 metros.</h3>
+            <p class="app-card-copy">Logo dominante. Patrón de marca como soporte sutil. Datos técnicos en zona secundaria.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Producción</strong>
+                300 dpi mínimo · vector siempre que sea posible · foto de producto en uso real cuando aplique.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Mockup de empaque real o foto del producto empacado.
+            </p>
+          </div>
+        </article>
+
+        <article class="app-card aliados">
+          <div class="app-card-content">
+            <div class="app-card-tag">Material para aliados</div>
+            <h3 class="app-card-headline">Plantillas listas para que el aliado las use con sus clientes.</h3>
+            <p class="app-card-copy">Marca Jaltech secundaria, producto protagonista. Espacio editable para identidad del aliado.</p>
+            <div class="app-card-image-note">
+              <div>
+                <strong>Formato</strong>
+                Variable según uso (post, banner, ficha) · siempre con espacio para que el aliado integre su marca.
+              </div>
+            </div>
+          </div>
+          <div class="app-card-preview">
+            <span class="app-card-preview-tag">Espacio editable</span>
+            <p class="app-card-preview-text">
+              <strong>Insertar ejemplo visual aquí</strong>
+              Plantilla editable o pieza de apoyo comercial real.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 DOs & DON'Ts -->
+  <section id="dodont" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">11 — DOs &amp; DON'Ts</div>
+      <h2 class="sec-title reveal d1">Lo que sí. <em>Lo que no</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Reglas rápidas para producir piezas alineadas con la marca. No reemplaza el resto del Brand Book: lo resume en un vistazo. Si algo no aparece aquí, vale la pena revisar las secciones específicas.
+      </p>
+
+      <!-- Visual y diseño -->
+      <div class="reveal">
+        <h3 class="sub-title">Visual y diseño.</h3>
+
+        <div class="dd-grid">
+          <div class="dd-col dd-col--do">
+            <div class="dd-head">Sí hacer</div>
+
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Verde Jaltech como protagonista.</strong> El verde firma la marca; siempre debe verse en cada pieza.
+                <span class="example">Ejemplo: CTAs, acentos, elementos clave en verde #529A00.</span>
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Aire visual generoso.</strong> Espacio en blanco como herramienta de jerarquía y respiración.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Logo según contraste.</strong> Full color sobre fondo claro; una tinta sobre fondo oscuro.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Mont/Montserrat para titulares.</strong> Poppins/Aptos solo como apoyo cuando las principales no estén disponibles.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Iconografía consistente.</strong> Todos los iconos del sistema mantienen el mismo grosor y estilo lineal.
+              </div>
+            </div>
+          </div>
+
+          <div class="dd-col dd-col--dont">
+            <div class="dd-head">No hacer</div>
+
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>No deformar el logo.</strong> Nunca rotarlo, inclinar, estirar o cambiar sus colores oficiales.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>No usar full color sobre fondo oscuro.</strong> Ahí va la versión en una tinta. Es regla técnica.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>No mezclar estilos de iconos.</strong> Stock genérico, emojis o iconos de otro sistema rompen la coherencia.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>No saturar la pieza.</strong> Si todo cabe pero apretado, hay que quitar contenido — no achicar texto.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>No agregar tipografías nuevas.</strong> El sistema es cerrado: Mont/Montserrat + Poppins/Aptos. Punto.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <!-- Comunicación y copy -->
+      <div class="reveal">
+        <h3 class="sub-title">Comunicación y copy.</h3>
+
+        <div class="dd-grid">
+          <div class="dd-col dd-col--do">
+            <div class="dd-head">Sí hacer</div>
+
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Hablar de "accesorios tecnológicos".</strong> No "tecnología" en general. Somos distribuidores, no fabricantes.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Beneficio antes que descripción.</strong> Empezar por lo que gana el aliado, no por lo que es el producto.
+                <span class="example">Ejemplo: "Tus clientes piden cargadores todos los días."</span>
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Datos concretos.</strong> Las cifras de Jaltech son fuertes: úsalas. +1.000 referencias, 8.000 aliados, entregas en 24–48h.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✓</span>
+              <div class="dd-text">
+                <strong>Llamar "aliado" cuando aporta cercanía.</strong> "Distribuidor" o "mayorista" cuando el contexto sea más técnico.
+              </div>
+            </div>
+          </div>
+
+          <div class="dd-col dd-col--dont">
+            <div class="dd-head">No hacer</div>
+
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>Lenguaje corporativo vacío.</strong> "Soluciones integrales", "ecosistema digital", "valor agregado" no dicen nada concreto.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>Hablarle al consumidor final.</strong> Jaltech vende al canal. El aliado lleva el producto al usuario, no Jaltech directamente.
+                <span class="example">Evitar: "Lleva el mejor audífono a tu día a día." (en mailing a aliados)</span>
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>Promesas exageradas.</strong> "El mejor del mercado", "innovación a otro nivel" sin dato que las respalde.
+              </div>
+            </div>
+            <div class="dd-item">
+              <span class="dd-marker">✗</span>
+              <div class="dd-text">
+                <strong>Voseo o regionalismos marcados.</strong> Español neutro siempre, salvo en contextos internos muy específicos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ACCESO Y CONTACTO -->
+<!-- ============================================================
+  TODO: ENLACES DE DESCARGA — reemplazar href="#" con URLs reales
+  
+  LOGOS:
+  <!-- TODO: pegar aquí enlace final de descarga de logos (SVG + PNG) -->
+  
+  ISOTIPO:
+  <!-- TODO: pegar aquí enlace final de descarga del isotipo -->
+  
+  TIPOGRAFÍAS:
+  <!-- TODO: pegar aquí enlace final de descarga de Mont / Montserrat -->
+  
+  JALBOT:
+  <!-- TODO: pegar aquí enlace final de descarga de renders PNG de Jalbot -->
+  
+  ICONOGRAFÍA:
+  <!-- TODO: pegar aquí enlace final de descarga de íconos duotono SVG -->
+  
+  APLICACIONES / MOCKUPS:
+  <!-- TODO: pegar aquí enlace final de mockups y renders de aplicaciones -->
+  
+  BRAND ASSETS GENERAL:
+  <!-- TODO: pegar aquí enlace a carpeta Drive/Dropbox/Notion con todos los assets -->
+  
+============================================================ -->
+  <section id="resources" class="section section--off">
+    <div class="section-inner">
+      <div class="sec-tag reveal">12 — Acceso y contacto</div>
+      <h2 class="sec-title reveal d1">Recursos y <em>validación</em>.</h2>
+      <p class="sec-lead reveal d2">
+        Los assets oficiales de marca deben usarse desde las carpetas aprobadas. Para validar una pieza, solicitar un recurso o resolver dudas de aplicación, contacta al equipo creativo.
+      </p>
+
+      <div class="resource-strip reveal">
+        <div class="resource-strip-item">
+          <div class="resource-strip-label">Logos</div>
+          <div class="resource-strip-path">assets/logo/</div>
+        </div>
+        <div class="resource-strip-item">
+          <div class="resource-strip-label">Iconografía</div>
+          <div class="resource-strip-path">/iconos/ · /iconos-ui/</div>
+        </div>
+        <div class="resource-strip-item">
+          <div class="resource-strip-label">Jalbot</div>
+          <div class="resource-strip-path">/jalbot/</div>
+        </div>
+        <div class="resource-strip-item">
+          <div class="resource-strip-label">Fuentes</div>
+          <div class="resource-strip-path">Mont · Aptos</div>
+        </div>
+      </div>
+
+      <div class="contact-strip reveal">
+        <div class="contact-text">
+          <div class="contact-title">¿Necesitas ayuda con la marca?</div>
+          <div class="contact-sub">Escríbenos para validar piezas, solicitar assets oficiales o revisar aplicaciones especiales.</div>
+        </div>
+        <a class="contact-email" href="mailto:dir.creativa@jaltechsas.com">dir.creativa@jaltechsas.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section id="cierre">
+    <div class="cierre-inner">
+      <img class="cierre-logo" src="assets/logo/jaltech-horizontal-black.svg" alt="Jaltech" />
+      <div class="cierre-label">La marca en una frase</div>
+      <h2 class="cierre-quote">
+        Jaltech es el aliado<br>que <em>mueve</em> el canal.
+      </h2>
+      <p class="cierre-sub">
+        Esta guía es una herramienta viva. Crece con la marca, se ajusta con el equipo y se actualiza cuando algo nuevo aparece.
+      </p>
+      <a class="cierre-contact" href="mailto:dir.creativa@jaltechsas.com">
+        <span class="cierre-contact-label">Dirección creativa</span>
+        <span class="cierre-contact-mail">dir.creativa@jaltechsas.com</span>
+      </a>
+      <div class="cierre-sig">Brand Book · Jaltech® · 2026</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Jaltech® 2026</div>
+    <div class="footer-info">Documento interno · Versión 2.0 · dir.creativa@jaltechsas.com</div>
+  </footer>
+
+</main>
+
+<script>
+  // Sidebar: link activo según scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const sbLinks = document.querySelectorAll('.sb-link');
+  function setActiveLink() {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.getBoundingClientRect().top;
+      if (top <= 120) current = s.id;
+    });
+    sbLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', setActiveLink);
+  setActiveLink();
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Toggle menu mobile
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  menuToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+  sbLinks.forEach(l => l.addEventListener('click', () => sidebar.classList.remove('open')));
+</script>
+
+</body>
+</html>

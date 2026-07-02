@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaltech — Brand Deck Interno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g:#529A00;
+  --g2:#6BBF00;
+  --gd:rgba(82,154,0,.13);
+  --gm:rgba(82,154,0,.28);
+  --navy:#1D2333;
+  --navy1:#222a3d;
+  --navy2:#191f2e;
+  --light:#F4F4EF;
+  --muted:rgba(244,244,239,.5);
+  --faint:rgba(244,244,239,.18);
+  --border:rgba(244,244,239,.09);
+  --bg:rgba(244,244,239,.04);
+  --D:'Mont','Montserrat',sans-serif;
+  --B:'Poppins',sans-serif;
+}
+html,body{height:100%;overflow:hidden;background:var(--navy);color:var(--light);font-family:var(--B)}
+
+/* ENGINE */
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden}
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;
+  padding:clamp(48px,6vh,88px) clamp(56px,9vw,160px);
+  opacity:0;pointer-events:none;
+  transition:opacity .42s ease,transform .42s cubic-bezier(.4,0,.2,1);
+  transform:translateY(22px);background:var(--navy);
+}
+.slide.active{opacity:1;pointer-events:all;transform:translateY(0)}
+.slide.exit{opacity:0;transform:translateY(-12px)}
+
+/* CHROME */
+.bar{position:fixed;top:0;left:0;height:2px;background:var(--g);transition:width .36s ease;z-index:300}
+.lm{position:fixed;top:26px;left:clamp(28px,4vw,54px);z-index:100;display:flex;align-items:center}
+.ct2{position:fixed;top:26px;right:clamp(28px,4vw,54px);font-family:var(--D);font-size:12px;letter-spacing:.12em;color:var(--muted);z-index:100}
+.ct2 b{color:var(--light)}
+
+/* NAV */
+.nav{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:100}
+.dots{display:flex;gap:5px;align-items:center}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--faint);cursor:pointer;transition:all .25s;border:none;padding:0;flex-shrink:0}
+.dot.active{background:var(--g);width:16px;border-radius:2.5px}
+.nb{background:none;border:1px solid var(--border);color:var(--muted);padding:7px 15px;border-radius:2px;cursor:pointer;font-family:var(--B);font-size:12px;letter-spacing:.1em;transition:all .22s;text-transform:uppercase}
+.nb:hover{border-color:var(--g);color:var(--light)}
+
+/* TEXTURES */
+.bdots{position:absolute;inset:0;background-image:radial-gradient(rgba(244,244,239,.05) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.bgrid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.blob{position:absolute;border-radius:50%;background:radial-gradient(circle,var(--gd),transparent 66%);pointer-events:none}
+
+/* TYPE SCALE */
+.K{font-family:var(--D);font-size:clamp(12px, 1.2vw, 14px);letter-spacing:.2em;text-transform:uppercase;color:var(--g);font-weight:700;display:flex;align-items:center;gap:10px}
+.K::before{content:'';display:block;width:22px;height:1.5px;background:var(--g);flex-shrink:0}
+.TH{font-family:var(--D);font-size:clamp(56px,9vw,124px);font-weight:900;line-height:.9;letter-spacing:-.028em}
+.TX{font-family:var(--D);font-size:clamp(34px,5.2vw,72px);font-weight:800;line-height:.96;letter-spacing:-.02em}
+.TL{font-family:var(--D);font-size:clamp(24px,3.2vw,48px);font-weight:700;line-height:1.06;letter-spacing:-.015em}
+.TM{font-family:var(--D);font-size:clamp(18px,2.2vw,32px);font-weight:600;line-height:1.15}
+.TB{font-size:clamp(16px,1.6vw,22px);font-weight:400;line-height:1.65;color:var(--muted);font-family:var(--B)}
+.TS{font-size:clamp(14px,1.2vw,17px);font-weight:300;line-height:1.7;color:var(--muted);font-family:var(--B)}
+.tg{color:var(--g2)} .td{color:var(--muted)} .tf{color:var(--faint)}
+.mk{display:block;width:36px;height:2.5px;background:var(--g);margin-bottom:22px}
+
+/* LAYOUT */
+.w-max{width:100%;max-width:1120px;margin:0 auto}
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:stretch}
+.sp7{display:grid;grid-template-columns:1.85fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
+.cx{text-align:center;max-width:880px;margin:0 auto}
+
+/* BULLETS */
+.bl{list-style:none;margin-top:28px}
+.bl li{display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);font-family:var(--B);font-size:clamp(16px,1.6vw,22px);font-weight:400}
+.bl li:last-child{border-bottom:none}
+.bl li::before{content:'';display:block;min-width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:5px}
+
+/* COMPARE */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:24px}
+.cno{padding:26px 30px;background:rgba(150,25,25,.07);border:1px solid rgba(150,25,25,.15);border-radius:2px 0 0 2px}
+.cye{padding:26px 30px;background:rgba(82,154,0,.07);border:1px solid var(--gm);border-radius:0 2px 2px 0}
+.clb{font-size:12px;letter-spacing:.18em;font-weight:700;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);font-family:var(--D)}
+.clb.n{color:#e05050} .clb.y{color:var(--g2)}
+.ci{padding:13px 0;border-bottom:1px solid var(--border);font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:var(--muted);font-weight:300;font-family:var(--B)}
+.ci:last-child{border-bottom:none}
+
+/* RULES */
+.rr{display:flex;align-items:flex-start;gap:28px;padding:24px 0;border-bottom:1px solid var(--border)}
+.rr:first-child{border-top:1px solid var(--border)}
+.rn{font-family:var(--D);font-size:clamp(36px,4.5vw,60px);font-weight:900;line-height:1;min-width:72px;text-align:right;color:rgba(82,154,0,.14)}
+
+/* INFO BOX */
+.ib{padding:20px 24px;border-left:2px solid var(--g);background:var(--bg);margin-bottom:10px}
+.ibl{font-size:12px;letter-spacing:.22em;color:var(--g);font-weight:700;margin-bottom:7px;font-family:var(--D)}
+.ibt{font-size:clamp(14px,1.2vw,16px);color:var(--muted);font-weight:300;line-height:1.65;font-family:var(--B)}
+
+/* CHANNEL GROUPS */
+.cgl{font-size:12px;letter-spacing:calc(.18em - 1px);color:var(--g);font-weight:700;font-family:var(--D);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.cgl::before{content:'';display:block;width:14px;height:1px;background:var(--gm)}
+.cw{display:flex;flex-wrap:wrap;gap:8px}
+.ct_{font-size:clamp(14px,1.1vw,16px);font-weight:500;font-family:var(--B);border:1px solid var(--border);color:var(--light);padding:8px 16px;border-radius:2px;letter-spacing:.04em}
+
+/* PORTFOLIO CARDS */
+.pc{padding:20px 22px;border:1px solid var(--border);border-top:2.5px solid var(--g)}
+.pc-l{font-size:12px;letter-spacing:.2em;color:var(--g);font-weight:700;font-family:var(--D);margin-bottom:10px}
+.pc-t{font-size:clamp(15px,1.2vw,17px);color:var(--muted);font-weight:300;line-height:1.6;font-family:var(--B)}
+
+/* PHYSICAL BRAND */
+.ph{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:26px}
+.ph-card{padding:22px 22px;border:1px solid var(--border);position:relative;overflow:hidden}
+.ph-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--g)}
+.ph-icon{display:block;margin-bottom:14px}
+.ph-title{font-family:var(--D);font-size:clamp(14px,1.2vw,16px);font-weight:700;letter-spacing:.06em;margin-bottom:7px;color:var(--light)}
+.ph-body{font-size:clamp(14px,1.1vw,16px);color:var(--muted);font-weight:300;line-height:1.55;font-family:var(--B)}
+
+/* JALBOT CRITERIA */
+.jcrit{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.jcrit-col{padding:18px 14px;border:1px solid var(--border)}
+.jcrit-col.yes{border-top:2px solid var(--g)}
+.jcrit-col.no{border-top:2px solid rgba(150,25,25,.5)}
+.jcrit-lbl{font-size:11px;letter-spacing:.2em;font-weight:700;font-family:var(--D);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.jcrit-lbl.y{color:var(--g2)} .jcrit-lbl.n{color:#e05050}
+.jcrit-item{font-size:clamp(14px,1.1vw,16px);color:var(--muted);font-weight:300;line-height:1.55;padding:6px 0;border-bottom:1px solid var(--border);font-family:var(--B)}
+.jcrit-item:last-child{border-bottom:none}
+
+/* VISUAL SYSTEM */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.vs-card{padding:22px 24px;border:1px solid var(--border);border-top:2.5px solid var(--g)}
+.vs-lbl{font-size:12px;letter-spacing:.2em;color:var(--g);font-weight:700;font-family:var(--D);margin-bottom:14px}
+.vs-swatch{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.vs-dot{width:16px;height:16px;border-radius:2px;flex-shrink:0;margin-top:3px}
+.vs-swatch-text{font-size:clamp(14px,1.2vw,16px);color:var(--muted);font-weight:300;line-height:1.55;font-family:var(--B)}
+.vs-body{font-size:clamp(14px,1.2vw,16px);color:var(--muted);font-weight:300;line-height:1.65;font-family:var(--B)}
+.vs-rule{font-size:clamp(13px,1.1vw,15px);color:var(--light);font-weight:500;font-family:var(--D);margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+
+/* SVG ICON HELPERS */
+.ico{display:block}
+
+/* ANIM */
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.slide.active .a1{animation:up .48s ease .06s both}
+.slide.active .a2{animation:up .48s ease .14s both}
+.slide.active .a3{animation:up .48s ease .25s both}
+.slide.active .a4{animation:up .48s ease .38s both}
+.slide.active .a5{animation:up .48s ease .52s both}
+.slide.active .a6{animation:up .48s ease .66s both}
+.slide.active .a7{animation:up .48s ease .80s both}
+
+/* SLIDE VARIANTS */
+.sg{background:var(--g)}
+.sg .K{color:rgba(29,35,51,.55)} .sg .K::before{background:rgba(29,35,51,.4)}
+.sm{background:var(--navy1)}
+.sc{background:var(--navy2)}
+.sep{display:block;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);margin:32px 0}
+
+/* ACCENT BARS */
+.vbar{width:3px;border-radius:2px;background:var(--gm);flex-shrink:0}
+</style>
+</head>
+<body>
+
+<div class="bar" id="bar"></div>
+<div class="lm">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4721.98 990.18" style="height:17px;width:auto;display:block" aria-label="Jaltech">
+    <defs><style>.cls-1{fill:#fff}</style></defs>
+    <g>
+      <path class="cls-1" d="M1455.42,979.35c-.06-.02-.12-.04-.18-.05-176.2-56.05-210.83-300.79-210.83-300.79l-109.99-532.53C1101.06,0,966.18.08,957.04.08h-98.84l.04-.08h-335.86c-.23,0-.44.03-.63.08-1.92.52-2.24,3.4-.16,4.21,89.33,34.95,113.22,158.42,113.95,162.27,0,.06.02.09.02.09l.03.11,49.71,243.48,60.64,297.5c50.33,287.88,304.04,282.44,304.04,282.44h404.03c6.41,0,7.61-9.07,1.44-10.83Z"/>
+      <path class="cls-1" d="M585.3,143.83c-5.67-22.35-12.92-39.33-21.14-55.23h.01c-3.52-7.42-7.42-14.21-11.59-20.43,0,0,0-.02-.03-.05-.04-.06-.12-.19-.24-.38-.08-.11-.15-.22-.22-.33-5.86-9-64.12-94.21-147.04-58.03-.12.04-.24.1-.36.15-33.47,14.73-55.69,37.49-70.37,60-.08.13-.17.27-.25.4-11.27,17.37-18.05,34.56-22.06,47.77-1.17,3.85-4.82,19.25-9.53,39.74-12.35,53.65-32.03,140.34-33.69,147.8-.07.33-.11.5-.11.5l-51.6,252.81s0,.09-.04.26c-.59,3.7-7.66,46.89-21.26,104.11-25.99,109.3-60.43,268.32-150.26,303.9-10.13,4.49-21.44,7.93-33.96,10.64-2.16.47-6.77,1.38-6.91,1.4-6.8,1.33-5.88,11.32,1.06,11.32,96.88,0,397.22-.44,397.22-.44,242.28-10.34,285.46-241.98,292.25-295.98.87-6.94.58-13.97-.83-20.83-26.67-129.22-108.03-525.09-109.05-529.1Z"/>
+    </g>
+    <g>
+      <path class="cls-1" d="M1732.59,656.35c0,38.31-20.24,57.48-60.67,57.48h-39.93l-8.77,55.08c6.39,2.67,14.22,4.79,23.54,6.39,9.31,1.6,19.03,2.79,29.15,3.59,10.1.8,18.89,1.2,26.34,1.2,35.14,0,62.27-10.24,81.44-30.74,19.16-20.47,28.73-50.69,28.73-90.6V210.09h-79.82v446.26Z"/>
+      <path class="cls-1" d="M2178.85,216.07c-5.33-3.99-11.46-5.97-18.37-5.97h-81.44c-6.91,0-13.04,1.98-18.35,5.97-5.33,3.99-9.06,9.18-11.18,15.57l-174.03,548.45h82.22l52.65-177.23h218.03l52.65,177.23h83.02l-174.03-548.45c-2.12-6.39-5.85-11.58-11.16-15.57ZM2030.04,536.6l64.98-218.74c2.66-7.99,5.05-15.97,7.19-23.96,2.12-7.99,4.25-15.43,6.39-22.36h22.34c2.13,6.93,4.25,14.37,6.39,22.36,2.12,7.99,4.25,15.97,6.39,23.96l64.98,218.74h-178.66Z"/>
+      <path class="cls-1" d="M2558.84,713.03c-17.57,0-30.62-4.12-39.13-12.38-8.52-8.25-12.76-20.87-12.76-37.92V210.09h-79.04v464.62c0,30.33,8.78,55.48,26.34,75.45,17.57,19.95,46.58,29.93,87.02,29.93,36.72,0,73.45-.28,110.17-.8s72.91-2.12,108.57-4.79l-3.99-61.47h-197.18Z"/>
+      <polygon class="cls-1" points="2879.76 210.09 2704.93 210.09 2704.93 278.73 2879.76 278.73 2879.76 780.09 2959.59 780.09 2959.59 278.73 3135.22 278.73 3135.22 210.09 2959.59 210.09 2879.76 210.09"/>
+      <path class="cls-1" d="M3298.87,288.32c7.45-7.99,19.16-11.98,35.14-11.98h219.54l3.19-61.47c-24.49-1.6-50.17-2.79-77.04-3.58-26.87-.8-54.16-1.2-81.82-1.2h-81.44c-33,0-59.21,8.77-78.64,26.34-19.43,17.57-29.41,41.51-29.93,71.85v373.62c.52,29.81,10.5,53.62,29.93,71.44,19.43,17.84,45.64,26.75,78.64,26.75,26.61,0,53.75-.14,81.44-.4,27.66-.28,54.95-.66,81.82-1.2,26.87-.52,52.55-1.6,77.04-3.19l-3.19-60.67h-219.54c-15.97,0-27.69-4.12-35.14-12.38-7.45-8.25-11.16-21.15-11.16-38.71v-152.49h234.69v-61.46h-234.69v-122.94c0-17.57,3.72-30.34,11.16-38.33Z"/>
+      <path class="cls-1" d="M3935.53,707.84c-23.69,1.34-52.83,2-87.42,2s-60.93-6.65-80.62-19.96c-19.7-13.3-33.68-35.52-41.91-66.65-8.26-31.14-12.38-73.85-12.38-128.13s4.12-97.01,12.38-128.13c8.23-31.13,22.21-53.35,41.91-66.66,19.69-13.3,46.56-19.96,80.62-19.96,21.82,0,40.59.28,56.28.8,15.69.54,30.47,1.2,44.32,2,13.82.8,28.73,2,44.7,3.59l7.99-59.87c-15.45-4.25-30.34-7.57-44.7-9.97-14.37-2.4-30.08-4.12-47.11-5.19-17.03-1.06-37.52-1.6-61.47-1.6-53.23,0-95.93,9.18-128.12,27.53-32.22,18.37-55.48,48.3-69.86,89.82-14.37,41.51-21.56,97.39-21.56,167.65s7.19,126.14,21.56,167.65c14.37,41.51,37.64,71.45,69.86,89.8,32.19,18.37,74.89,27.55,128.12,27.55,36.73,0,67.46-1.47,92.22-4.39,24.74-2.93,48.82-7.85,72.25-14.77l-7.99-59.87c-22.36,3.19-45.38,5.47-69.06,6.79Z"/>
+      <polygon class="cls-1" points="4421.3 443.2 4178.61 443.2 4178.61 210.09 4098.79 210.09 4098.79 780.09 4178.61 780.09 4178.61 509.47 4421.3 509.47 4421.3 780.09 4501.94 780.09 4501.94 210.09 4421.3 210.09 4421.3 443.2"/>
+      <path class="cls-1" d="M4721.65,242.06c-.26-2.1-.86-4.35-1.84-6.71-1.02-2.36-2.49-4.77-4.47-7.2-1.97-2.43-4.65-4.61-8.01-6.57-3.36-1.92-7.52-3.51-12.47-4.78-5-1.25-11.02-1.92-18.11-1.93l-11.75-.03-6.34-.03h-3.73s-14.38-.04-14.38-.04c-10.59-.04-18.87,1.25-24.92,3.85-6.04,2.61-10.59,5.66-13.66,9.19-3.04,3.54-4.96,7.12-5.69,10.72-.79,3.6-1.18,6.41-1.18,8.41l-.12,35.81v1.48l-.1,35.83c-.01,1.99.36,4.8,1.12,8.41.72,3.6,2.62,7.17,5.63,10.75,3.05,3.56,7.58,6.63,13.6,9.28,6.04,2.64,14.3,3.96,24.91,3.99l8.77.03,9.49.03,8.02.03,9.9.03c7.09.01,13.12-.59,18.12-1.82,4.97-1.24,9.15-2.81,12.52-4.72,3.36-1.92,6.05-4.09,8.04-6.51,1.99-2.41,3.47-4.81,4.51-7.17.99-2.35,1.61-4.6,1.87-6.71.24-2.1.36-3.85.37-5.21l.1-36.57.12-36.56c0-1.38-.1-3.13-.33-5.24Z"/>
+      <path class="cls-1" d="M4683.91,251.47c-1.99-2.36-4.96-4.41-8.93-6.08-3.96-1.69-9.45-2.55-16.41-2.56-6.96-.03-12.46.81-16.42,2.55-4,1.73-6.97,3.73-8.97,6.04-2.02,2.3-3.24,4.62-3.77,6.99-.48,2.36-.73,4.24-.75,5.6v4.11l-.17,54.31,14.92.04.06-16.25v-.37c0-1.74.45-3.17,1.3-4.28.88-1.12,1.83-1.99,2.81-2.61,1.25-.76,2.62-1.3,4.12-1.67.85-.24,1.93-.61,3.18-1.09.98-.37,2.15-.79,3.44-1.21,1.31-.45,2.65-.89,4.02-1.4l10.17,28.97,15.69.04-11.84-34.01c3.75-1.96,6.54-4.31,8.4-6.99,1.9-2.64,3.01-5.53,3.39-8.64v-.55c.14-.52.22-1.2.22-2.07v-1.67s.03-4.48.03-4.48c0-1.37-.27-3.23-.73-5.6-.5-2.36-1.74-4.72-3.73-7.1Z"/>
+    </g>
+  </svg>
+</div>
+<div class="ct2"><b id="cn">1</b> / 16</div>
+
+<div class="deck" id="deck">
+
+<!-- 02 PORTADA -->
+<div class="slide sc" id="s1">
+  <div class="blob" style="width:700px;height:700px;right:-160px;top:-180px;opacity:.6"></div>
+  <div class="bdots" style="opacity:.3"></div>
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">Accesorios tecnológicos · B2B · Colombia</span>
+    <div style="margin-top:22px">
+      <div class="TH a2">Jaltech.</div>
+      <div class="TH a3" style="font-style:italic;font-weight:300;color:var(--g2)">Your connection.</div>
+    </div>
+    <div style="margin-top:40px;max-width:460px" class="a4">
+      <span class="mk"></span>
+      <p class="TB">Jaltech es el aliado que hace que los accesorios tecnológicos lleguen al mercado.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 03 POSICIONAMIENTO -->
+<div class="slide" id="s2">
+  <div class="blob" style="width:480px;height:480px;left:-90px;bottom:-110px;opacity:.45"></div>
+  <div style="position:relative;z-index:1;max-width:960px;width:100%;margin:0 auto">
+    <span class="K a1">Posicionamiento</span>
+    <div style="margin-top:26px">
+      <div class="TX a2 td">No es un proveedor más.</div>
+      <div class="TX a3">Es el socio que<br><span class="tg">no deja quedar mal.</span></div>
+    </div>
+    <ul class="bl a4" style="max-width:600px">
+      <li>Portafolio de accesorios tecnológicos listo para despachar</li>
+      <li>+8.000 distribuidores activos en todo el país</li>
+      <li>Años de relación — no solo de ventas</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 04 PROPÓSITO -->
+<div class="slide sg" id="s3">
+  <div style="position:relative;z-index:1;max-width:900px;width:100%;margin:0 auto">
+    <span class="K a1" style="color:rgba(29,35,51,.6)">Propósito · Lo que mueve todo</span>
+    <div style="margin-top:28px">
+      <div class="TX a2" style="color:var(--navy)">Acercar la tecnología</div>
+      <div class="TX a3" style="color:#fff">a la vida de las personas.</div>
+    </div>
+    <div style="margin-top:34px;max-width:660px" class="a4">
+      <span class="mk" style="background:rgba(29,35,51,.35)"></span>
+      <p style="font-size:clamp(16px,1.7vw,22px);font-weight:400;color:rgba(29,35,51,.72);line-height:1.65;font-family:var(--B)">
+        Jaltech lo hace a través de accesorios que se venden todos los días: en el mostrador, en el bolsillo y en el negocio de los clientes de sus aliados.
+      </p>
+    </div>
+    <div style="margin-top:22px" class="a5">
+      <p style="font-size:clamp(18px,1.8vw,24px);font-weight:700;color:var(--navy);opacity:.88;font-family:var(--D)">
+        El distribuidor es el canal. Jaltech es el respaldo.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- 05 PORTAFOLIO -->
+<div class="slide sm" id="s4">
+  <div class="bgrid" style="opacity:.13"></div>
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">Portafolio · Lo que Jaltech ofrece</span>
+    <div class="TL a2" style="margin-top:20px;max-width:720px">
+      Accesorios en <span class="tg">líneas que rotan</span> todos los días.
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:28px" class="a3">
+      <div class="pc">
+        <div style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/>
+          </svg>
+        </div>
+        <div class="pc-l">ENERGÍA</div>
+        <div class="pc-t">Cargadores premium, basik, power banks, reguladores</div>
+      </div>
+      <div class="pc">
+        <div style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <div class="pc-l">AUDIO</div>
+        <div class="pc-t">Audífonos, parlantes, micrófonos, headsets</div>
+      </div>
+      <div class="pc">
+        <div style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+        <div class="pc-l">CONECTIVIDAD</div>
+        <div class="pc-t">Cables, hubs, adaptadores, routers, CCTV</div>
+      </div>
+      <div class="pc">
+        <div style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="pc-l">POS</div>
+        <div class="pc-t">Impresoras, lectores, terminales, biométricos</div>
+      </div>
+      <div class="pc">
+        <div style="margin-bottom:12px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+          </svg>
+        </div>
+        <div class="pc-l">GAMER / PC</div>
+        <div class="pc-t">Teclados, mouse, periféricos, accesorios smartphone</div>
+      </div>
+    </div>
+    <p class="TS a4" style="margin-top:20px">Más de 1.000 referencias activas. Portafolio actualizado mensualmente.</p>
+  </div>
+</div>
+
+<!-- 06 BENEFICIOS -->
+<div class="slide" id="s5">
+  <div class="blob" style="width:440px;height:440px;right:5%;top:50%;transform:translateY(-50%);opacity:.38"></div>
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">Lo que define la relación</span>
+    <div style="margin-top:30px;max-width:820px;display:flex;gap:28px;align-items:stretch" class="a2">
+      <div class="vbar"></div>
+      <div>
+        <div class="TX" style="line-height:1.1">Respuesta inmediata.</div>
+        <div class="TX" style="line-height:1.1;margin-top:6px">Despacho rápido.</div>
+        <div class="TX tg" style="line-height:1.1;margin-top:6px">Sin dejar quedar mal<br>a ningún aliado.</div>
+      </div>
+    </div>
+    <p class="a3 TB" style="margin-top:32px;max-width:580px;color:var(--light)">Y eso se nota en los márgenes y en la reputación del aliado.</p>
+    <p class="TS a4" style="margin-top:10px;font-style:italic">No es promesa. Es lo que dicen quienes llevan años trabajando con Jaltech.</p>
+  </div>
+</div>
+
+<!-- SLIDE A — MODELO B2B -->
+<div class="slide sc" id="sA">
+  <div class="bgrid" style="opacity:.11"></div>
+  <div style="position:relative;z-index:1;max-width:1000px;width:100%;margin:0 auto">
+    <span class="K a1">Cómo opera Jaltech</span>
+    <div class="TL a2" style="margin-top:22px;max-width:820px">
+      Jaltech mueve accesorios tecnológicos a través de <span class="tg">mayoristas, distribuidores<br>y aliados comerciales</span> en todo <br> el país.
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px" class="a3">
+      <div class="ib" style="margin-bottom:0">
+        <div class="ibl" style="font-size:clamp(16px,1.4vw,18px);letter-spacing:0.05em">Cómo llega al mercado</div>
+        <div class="ibt" style="font-size:clamp(15px,1.3vw,17px)">Jaltech no vende directamente al consumidor final. Opera a través de distribuidores que llevan los accesorios a tiendas, mostradores y superficies.<br><br><span style="color:var(--light);font-weight:500">Ellos son el canal. Jaltech es el respaldo.</span></div>
+      </div>
+      <div class="ib" style="margin-bottom:0">
+        <div class="ibl" style="font-size:clamp(14px,1.2vw,16px);letter-spacing:0.05em">Qué ofrece como respaldo</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:2px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round"><polyline points="2 7 5.5 10.5 12 4"/></svg>
+            <span class="ibt" style="color:var(--light);font-size:clamp(15px,1.3vw,17px)">+1.000 referencias activas · Entrega inmediata</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round"><polyline points="2 7 5.5 10.5 12 4"/></svg>
+            <span class="ibt" style="color:var(--light);font-size:clamp(15px,1.3vw,17px)">+8.000 aliados activos · Cobertura nacional</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round"><polyline points="2 7 5.5 10.5 12 4"/></svg>
+            <span class="ibt" style="color:var(--light);font-size:clamp(15px,1.3vw,17px)">Crédito propio · Actualización mensual del portafolio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 07 PERSONALIDAD -->
+<div class="slide sm" id="s6">
+  <div class="bgrid" style="opacity:.12"></div>
+  <div style="position:relative;z-index:1" class="sp7 w-max">
+    <div>
+      <span class="K a1">Personalidad de marca</span>
+      <div style="margin-top:24px">
+        <div class="TX a2">Experta <span class="tf" style="font-size:.48em;font-weight:300">pero</span> cercana.</div>
+        <div class="TX a3">Sólida <span class="tf" style="font-size:.48em;font-weight:300">pero</span> ágil.</div>
+      </div>
+      <div style="margin-top:30px" class="a4">
+        <span class="mk"></span>
+        <p class="TB" style="color:var(--muted)">Jaltech no habla de arriba.<br>Está antes, durante y después del pedido.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px" class="a5">
+      <div style="padding:22px 24px;border:1px solid var(--gm);border-left:2.5px solid var(--g);background:rgba(82,154,0,.05)">
+        <p style="font-size:11px;letter-spacing:.2em;color:var(--g);font-weight:700;font-family:var(--D);margin-bottom:10px">SÍ ES</p>
+        <p class="TB" style="color:var(--light)">El aliado que tiene accesorios listos para despachar, responde rápido y avisa antes de que un problema genere consecuencias.</p>
+      </div>
+      <div style="padding:22px 24px;border:1px solid var(--border);border-left:2.5px solid rgba(170,35,35,.45)">
+        <p style="font-size:11px;letter-spacing:.2em;color:#df4f4f;font-weight:700;font-family:var(--D);margin-bottom:10px">NO ES</p>
+        <p class="TB">El que manda un PDF con 200 referencias y desaparece hasta el siguiente pedido.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 08 TONO -->
+<div class="slide" id="s7">
+  <div class="blob" style="width:520px;height:520px;right:-90px;bottom:-130px;opacity:.38"></div>
+  <div style="position:relative;z-index:1;max-width:840px;width:100%;margin:0 auto">
+    <span class="K a1">Cómo habla Jaltech</span>
+    <div style="margin-top:30px;display:flex;flex-direction:column;gap:4px">
+      <div class="TH a2" style="opacity:.16;font-weight:900">Directo.</div>
+      <div class="TH a3" style="opacity:.48;font-weight:900">Natural.</div>
+      <div class="TH tg a4" style="font-weight:900">Sin relleno.</div>
+    </div>
+    <p class="TB a5" style="margin-top:30px;max-width:460px">Como un asesor que conoce el negocio y habla claro — no como un folleto.</p>
+  </div>
+</div>
+
+<!-- 09 ASÍ SÍ / ASÍ NO -->
+<div class="slide sm" id="s8">
+  <div style="position:relative;z-index:1;width:100%;max-width:1100px;margin:0 auto">
+    <span class="K a1">Calibrador de voz — usar antes de publicar cualquier pieza</span>
+    <div class="TL a2" style="margin-top:16px;margin-bottom:22px">Así sí. Así no.</div>
+    <div class="cmp a3">
+      <div class="cno">
+        <div class="clb n" style="font-size:clamp(15px,1.4vw,18px);letter-spacing:0.05em">✗ &nbsp;Así no</div>
+        <div class="ci">"Soluciones tecnológicas innovadoras para cada necesidad"</div>
+        <div class="ci">"Comprometidos con la excelencia y la calidad"</div>
+        <div class="ci">"Líderes en el sector tecnológico nacional"</div>
+      </div>
+      <div class="cye">
+        <div class="clb y" style="font-size:clamp(15px,1.4vw,18px);letter-spacing:0.05em">✓ &nbsp;Así sí</div>
+        <div class="ci">"Cargadores que rotan todos los días — asegura el stock hoy"</div>
+        <div class="ci">"Jaltech responde, despacha y no deja quedar mal al aliado"</div>
+        <div class="ci">"Portafolio de accesorios de alta rotación, listo para vender"</div>
+      </div>
+    </div>
+    <p class="TS a4" style="margin-top:18px;font-style:italic">El filtro siempre es el mismo: ¿le sirve al aliado para vender más, confiar más o entender mejor?</p>
+  </div>
+</div>
+
+<!-- SLIDE B — SISTEMA VISUAL -->
+<div class="slide sc" id="sB">
+  <div class="bgrid" style="opacity:.12"></div>
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">Sistema visual · Para uso en todas las piezas</span>
+    <div class="TL a2" style="margin-top:18px;max-width:640px">Los elementos visuales de Jaltech no son decorativos. <span class="tg">Son criterio.</span></div>
+    <div class="vs-grid a3">
+      <div class="vs-card">
+        <div class="vs-lbl">COLORES PRIMARIOS</div>
+        <div class="vs-swatch">
+          <div class="vs-dot" style="background:#529A00"></div>
+          <div class="vs-swatch-text"><strong style="color:var(--light);font-weight:500">#529A00 · Verde Jaltech</strong><br>Va en lo que importa: precio, beneficio, dato clave. No en decoración.</div>
+        </div>
+        <div class="vs-swatch">
+          <div class="vs-dot" style="background:#1D2333"></div>
+          <div class="vs-swatch-text"><strong style="color:var(--light);font-weight:500">#1D2333 · Azul oscuro</strong><br>El fondo. Da peso y seriedad sin necesitar más elementos.</div>
+        </div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-lbl">TIPOGRAFÍA</div>
+        <div class="vs-body">
+          <strong style="color:var(--light);font-weight:600;font-family:var(--D);font-size:clamp(15px,1.3vw,18px)">Mont · Montserrat</strong><br>
+          Titulares, kickers y jerarquía principal.<br><br>
+          <strong style="color:var(--light);font-weight:500;font-size:clamp(15px,1.3vw,18px);font-family:var(--B)">Poppins · Aptos</strong><br>
+          Cuerpo de texto, descripciones, apoyo digital.
+        </div>
+      </div>
+      <div class="vs-card" style="grid-column:span 2">
+        <div class="vs-lbl">USO DEL COLOR EN LA PRÁCTICA</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+          <div>
+            <div class="vs-body"><strong style="color:var(--g2);font-weight:500">Verde Jaltech</strong><br>Úsalo para lo que importa: el precio, el beneficio, el dato que el aliado necesita ver primero. No para decorar.</div>
+            <div class="vs-rule">Si no hay razón, no va.</div>
+          </div>
+          <div>
+            <div class="vs-body"><strong style="color:var(--light);font-weight:500">Azul oscuro</strong><br>Es el fondo. Estabiliza cualquier pieza y da seriedad sin necesidad de agregar más elementos.</div>
+            <div class="vs-rule">Cuando hay duda, este color.</div>
+          </div>
+          <div>
+            <div class="vs-body"><strong style="color:var(--muted);font-weight:500">Otro color</strong><br>Justificarlo antes de usarlo. Si no se puede explicar en una oración por qué está, se saca.</div>
+            <div class="vs-rule">Si no se puede, no va.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 10 ENTORNO FÍSICO -->
+<div class="slide" id="s9">
+  <div class="bdots" style="opacity:.24"></div>
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">La marca en el mundo físico</span>
+    <div class="TL a2" style="margin-top:18px;max-width:740px">
+      Jaltech no vive solo en pantallas.<br>
+      <span class="tg">Vive en el estante, en la vitrina y en el empaque que el cliente toca antes de decidir.</span>
+    </div>
+    <div class="ph a3">
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </span>
+        <div class="ph-title">Empaques</div>
+        <div class="ph-body">Verde y blanco Jaltech. Información clara, diseño limpio. El empaque es el primer vendedor.</div>
+      </div>
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="10" y1="3" x2="10" y2="17"/><line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+        </span>
+        <div class="ph-title">Vitrinas</div>
+        <div class="ph-body">Exhibición ordenada con jerarquía de producto. El punto de venta habla de marca.</div>
+      </div>
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </span>
+        <div class="ph-title">Material POP</div>
+        <div class="ph-body">Stopper, cenefa, colgante, display. Todo coherente con el sistema de marca.</div>
+      </div>
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round">
+            <rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/>
+          </svg>
+        </span>
+        <div class="ph-title">Exhibidores</div>
+        <div class="ph-body">Estructura física con identidad Jaltech. Verde protagonista, logo visible, producto accesible.</div>
+      </div>
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 22l9-18 9 18"/><line x1="3" y1="22" x2="21" y2="22"/><line x1="7" y1="22" x2="9" y2="16"/><line x1="17" y1="22" x2="15" y2="16"/>
+          </svg>
+        </span>
+        <div class="ph-title">Stands y ferias</div>
+        <div class="ph-body">La marca a escala. Misma energía, mismo tono que en lo digital.</div>
+      </div>
+      <div class="ph-card">
+        <span class="ph-icon">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/>
+          </svg>
+        </span>
+        <div class="ph-title">Material para aliados</div>
+        <div class="ph-body">Volantes, carpetas, merch. El distribuidor también es un punto de contacto de marca.</div>
+      </div>
+    </div>
+    <p class="TS a4" style="margin-top:16px">Mismo verde, mismo tono, misma claridad — en pantalla y en el punto de venta.</p>
+  </div>
+</div>
+
+<!-- 11 ECOSISTEMA CANALES -->
+<div class="slide sm" id="s10">
+  <div style="position:relative;z-index:1" class="w-max">
+    <span class="K a1">Ecosistema de marca · Digital y físico</span>
+    <div style="margin-top:20px" class="a2">
+      <span class="TL td">El canal cambia. </span>
+      <span class="TL">Jaltech es la misma.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px" class="a3">
+      <div style="padding:24px 28px;border:1px solid var(--border);border-top:2.5px solid var(--g)">
+        <div class="cgl" style="margin-bottom:14px;font-size:clamp(14px,1.3vw,16px)">Canal digital</div>
+        <div class="cw" style="gap:9px">
+          <div class="ct_">Mailing</div>
+          <div class="ct_">WhatsApp</div>
+          <div class="ct_">Redes sociales</div>
+          <div class="ct_">Web / Landing</div>
+          <div class="ct_">Pauta digital</div>
+          <div class="ct_">E-commerce</div>
+        </div>
+      </div>
+      <div style="padding:24px 28px;border:1px solid var(--border);border-top:2.5px solid var(--g)">
+        <div class="cgl" style="margin-bottom:14px;font-size:clamp(14px,1.3vw,16px)">Canal físico</div>
+        <div class="cw" style="gap:9px">
+          <div class="ct_">Empaques</div>
+          <div class="ct_">Vitrinas</div>
+          <div class="ct_">Material POP</div>
+          <div class="ct_">Catálogo impreso</div>
+          <div class="ct_">Ferias / stands</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:26px" class="a4">
+      <span class="mk"></span>
+      <div class="TM tg">Siempre clara. Siempre útil. Siempre enfocada en el aliado.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 12 PRINCIPIOS -->
+<div class="slide" id="s11">
+  <div class="blob" style="width:440px;height:440px;right:-20px;top:50%;transform:translateY(-50%);opacity:.28"></div>
+  <div style="position:relative;z-index:1;max-width:860px;width:100%;margin:0 auto">
+    <span class="K a1">Tres reglas · Sin excepción</span>
+    <div style="margin-top:24px">
+      <div class="rr a2">
+        <div class="rn">01</div>
+        <div class="TM">Si no le sirve al aliado,<br><span class="tg">no va.</span></div>
+      </div>
+      <div class="rr a3">
+        <div class="rn">02</div>
+        <div class="TM">Primero el beneficio,<br><span class="td" style="font-weight:400">luego la descripción.</span></div>
+      </div>
+      <div class="rr a4">
+        <div class="rn">03</div>
+        <div class="TM">Nunca genérico.<br><span class="td" style="font-weight:400">Hay alguien real al otro lado.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 13 JALBOT -->
+<div class="slide sc" id="s12">
+  <div class="bgrid" style="opacity:.12"></div>
+  <div style="position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;grid-template-columns:1.35fr 1fr" class="sp">
+    <div>
+      <span class="K a1">Sistema de marca · Personaje</span>
+      <div class="TX a2" style="margin-top:22px">Jalbot.</div>
+      <div class="TL tg a3">El rostro humano de la marca.</div>
+      <div style="margin-top:22px" class="a4">
+        <span class="mk"></span>
+        <p class="TB">Aparece cuando la marca necesita conectar — no cuando necesita informar, vender o explicar.</p>
+      </div>
+      <div class="jcrit a5">
+        <div class="jcrit-col yes">
+          <div class="jcrit-lbl y" style="font-size:clamp(14px,1.2vw,16px);letter-spacing:0.05em">Aparece en</div>
+          <div class="jcrit-item">Comunicaciones de relación</div>
+          <div class="jcrit-item">Campañas de cercanía o celebración</div>
+          <div class="jcrit-item">WhatsApp personal, no comercial</div>
+          <div class="jcrit-item">Pausas operativas y activaciones</div>
+        </div>
+        <div class="jcrit-col no">
+          <div class="jcrit-lbl n" style="font-size:clamp(14px,1.2vw,16px);letter-spacing:0.05em">No aparece en</div>
+          <div class="jcrit-item">Piezas de producto, precio o promo</div>
+          <div class="jcrit-item">Comunicación institucional o formal</div>
+          <div class="jcrit-item">Presentaciones técnicas o comerciales</div>
+          <div class="jcrit-item">Material POS o empaques</div>
+        </div>
+      </div>
+    </div>
+    <div class="a3" style="display:flex;justify-content:center;align-items:flex-end">
+      <div style="max-width:480px;width:100%;position:relative;background:none;line-height:0">
+        <img src="../assets/jalbot/jalbot-saludando.png" style="width:100%;height:auto;object-fit:contain;object-position:center bottom;" alt="Jalbot">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 14 REGLA DE ORO -->
+<div class="slide sg" id="s13">
+  <div style="position:relative;z-index:1" class="cx">
+    <span class="K a1" style="justify-content:center;color:rgba(29,35,51,.5)">La regla de oro</span>
+    <div style="margin-top:34px" class="a2">
+      <p style="font-size:clamp(16px,1.6vw,20px);font-weight:300;color:#fff;line-height:1.7;max-width:620px;margin:0 auto;font-family:var(--B)">
+        Antes de publicar cualquier pieza —<br>
+        banner, mailing, WhatsApp, catálogo, pauta, empaque —<br>
+        hay una sola pregunta:
+      </p>
+    </div>
+    <div style="margin-top:30px" class="a3">
+      <div style="font-family:var(--D);font-size:clamp(28px,4.5vw,58px);font-weight:900;color:var(--navy);line-height:1.1;max-width:780px;margin:0 auto">
+        ¿Le sirve al aliado para<br>vender más, confiar más<br>o entender mejor?
+      </div>
+    </div>
+    <div style="margin-top:30px" class="a4">
+      <div style="display:inline-flex;align-items:center;border:1.5px solid rgba(29,35,51,.25);border-radius:2px;overflow:hidden">
+        <div style="padding:12px 26px;border-right:1px solid rgba(29,35,51,.15);display:flex;align-items:center;gap:12px">
+          <span style="font-family:var(--D);font-size:clamp(22px,2.6vw,32px);font-weight:900;color:rgba(29,35,51,.22);text-decoration:line-through">No</span>
+          <span style="font-size:13px;color:rgba(29,35,51,.35);font-weight:300;letter-spacing:.06em;font-family:var(--B)">no va</span>
+        </div>
+        <div style="padding:12px 26px;background:rgba(29,35,51,.06);display:flex;align-items:center;gap:12px">
+          <span style="font-family:var(--D);font-size:clamp(22px,2.6vw,32px);font-weight:900;color:var(--navy)">Sí</span>
+          <span style="font-size:13px;color:rgba(29,35,51,.6);font-weight:600;letter-spacing:.06em;font-family:var(--B)">→ va</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 15 CIERRE -->
+<div class="slide" id="s14">
+  <div class="bdots" style="opacity:.26"></div>
+  <div class="blob" style="width:560px;height:560px;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.34"></div>
+  <div style="position:relative;z-index:1" class="cx">
+    <span class="K a1" style="justify-content:center">Esto no es para archivar</span>
+    <div style="margin-top:30px">
+      <div class="TL a2 td" style="font-weight:400">Cada pieza de Jaltech</div>
+      <div class="TL a3">pasa por este criterio.</div>
+      <div class="TL tg a4">Siempre.</div>
+    </div>
+    <div style="margin-top:34px" class="a5">
+      <span class="sep"></span>
+      <p class="TS" style="max-width:580px;margin:0 auto">
+        Empaques, banners, mailings, WhatsApp, redes, catálogo, stands.<br>
+        El tono es siempre el mismo. La intención también.
+      </p>
+    </div>
+    <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:26px" class="a6">
+      <span style="font-size:12px;letter-spacing:.16em;color:var(--muted);font-family:var(--D);font-weight:600">JALTECH SAS</span>
+      <span style="font-size:12px;color:var(--faint);font-family:var(--D)">·</span>
+      <span style="font-size:12px;letter-spacing:.16em;color:var(--muted);font-family:var(--D);font-weight:600">BRAND DECK 2026</span>
+      <span style="font-size:12px;color:var(--faint);font-family:var(--D)">·</span>
+      <span style="font-size:12px;letter-spacing:.16em;color:var(--g);font-family:var(--D);font-weight:700">USO INTERNO</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="nav">
+  <button class="nb" id="pv">← Ant.</button>
+  <div class="dots" id="dots"></div>
+  <button class="nb" id="nx">Sig. →</button>
+</div>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+const cnEl=document.getElementById('cn');
+const barEl=document.getElementById('bar');
+const dotsC=document.getElementById('dots');
+let a=-1;const tot=slides.length;
+
+slides.forEach((_,i)=>{
+  const d=document.createElement('button');
+  d.className='dot'+(i===0?' active':'');
+  d.setAttribute('aria-label','Slide '+(i+1));
+  d.onclick=()=>go(i);
+  dotsC.appendChild(d);
+});
+
+function go(n){
+  if(n===a||n<0||n>=tot)return;
+  if(a>=0){
+    slides[a].classList.remove('active');
+    slides[a].classList.add('exit');
+    const p=a;setTimeout(()=>slides[p].classList.remove('exit'),430);
+  }
+  a=n;
+  slides[a].classList.add('active');
+  cnEl.textContent=a+1;
+  barEl.style.width=((a+1)/tot*100)+'%';
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===a));
+}
+
+document.getElementById('pv').onclick=()=>go(a-1);
+document.getElementById('nx').onclick=()=>go(a+1);
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown'].includes(e.key))go(a+1);
+  if(['ArrowLeft','ArrowUp'].includes(e.key))go(a-1);
+  if(e.key==='Home')go(0);
+  if(e.key==='End')go(tot-1);
+});
+let sx=0;
+document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-sx;
+  if(Math.abs(dx)>42){dx<0?go(a+1):go(a-1)}
+});
+go(0);
+</script>
+</body>
+</html>

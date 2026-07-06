@@ -10,7 +10,94 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" /> -->
+
+  <style id="local-fonts">
+    /* --- Mont --- */
+    @font-face {
+      font-family: 'Mont';
+      src: url('assets/fonts/mont/Mont-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mont';
+      src: url('assets/fonts/mont/Mont-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mont';
+      src: url('assets/fonts/mont/Mont-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mont';
+      src: url('assets/fonts/mont/Mont-Heavy.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Mont';
+      src: url('assets/fonts/mont/Mont-Black.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* --- Montserrat (Variable) --- */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+      font-weight: 100 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* --- Poppins --- */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-Italic.ttf') format('truetype');
+      font-weight: 400; font-style: italic; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-Medium.ttf') format('truetype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('assets/fonts/poppins/Poppins-Black.ttf') format('truetype');
+      font-weight: 900; font-style: normal; font-display: swap;
+    }
+  </style>
 
   <style>
   :root {
@@ -35,12 +122,12 @@
     --gris-600:        #5C5C58;
     --gris-800:        #2E2E2C;
     --azul-extra:      #0063FE;
-    --amarillo:        #FFBF15;
+    --amarillo:        #FFBF15; 
     --error:           #D93B3B;
     /* Tipografía: Mont/Montserrat principales · Poppins/Aptos secundarias */
-    --font-display:    'Mont', 'Montserrat', sans-serif;
-    --font-body:       'Aptos', 'Poppins', sans-serif;
-    --font-secondary:  'Aptos', 'Poppins', sans-serif;
+    --font-display:    'Mont', 'Montserrat', 'Poppins', sans-serif;
+    --font-body:       'Poppins', 'Montserrat', 'Aptos', sans-serif;
+    --font-secondary:  'Poppins', 'Montserrat', 'Aptos', sans-serif;
     --sidebar-w:       220px;
     --content-max:     900px;
     --pad-xl:          120px 60px;
@@ -154,7 +241,7 @@
   .sec-title {
     font-family: var(--font-display); font-weight: 800;
     font-size: clamp(32px, 4vw, 54px);
-    line-height: 1.04; letter-spacing: -0.03em;
+    line-height: 1.04; letter-spacing: -0.03em; 
     margin-bottom: 14px;
   }
   .sec-title em { font-style: italic; color: var(--verde); }
@@ -274,7 +361,7 @@
     color: rgba(255,255,255,0.32); margin-bottom: 24px;
   }
   .cover-title {
-    font-family: var(--font-display); font-weight: 800;
+    font-family: var(--font-display); font-weight: 900;
     font-size: clamp(54px, 8.5vw, 130px);
     line-height: 0.92; letter-spacing: -0.04em;
     color: #fff; margin-bottom: 32px;
@@ -2065,7 +2152,7 @@
         <span class="cover-year">2026</span>
       </div>
       <span class="cover-sup">Identidad · Lenguaje · Aplicación</span>
-      <h1 class="cover-title">
+      <h1 class="cover-title" style="font-family: 'Mont', 'Montserrat', sans-serif; font-weight: 900;">
         La marca<br>
         en <span class="green italic">acción</span>.
       </h1>
@@ -2080,7 +2167,7 @@
   <section id="intro" class="section">
     <div class="section-inner">
       <div class="sec-tag reveal">01 — Introducción</div>
-      <h2 class="sec-title reveal d1">Quiénes somos.</h2>
+      <h2 class="sec-title reveal d1" style="font-family: 'Mont', 'Montserrat', sans-serif; font-weight: 900;">El sistema de marca de Jaltech.</h2>
       <p class="sec-lead reveal d2">
         Jaltech es una empresa colombiana especializada en la <strong>distribución de accesorios tecnológicos</strong>. Trabajamos con aliados mayoristas, distribuidores y comercios en Colombia y la región. No vendemos al consumidor final: nuestra red es el canal.
       </p>

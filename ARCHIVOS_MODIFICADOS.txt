@@ -1,0 +1,218 @@
+GUÍA CREATIVA JALTECH — ARCHIVOS PARA SUBIR AL REPOSITORIO brand-jaltech
+Generado: 2026-07-28
+
+Conserva la estructura de carpetas tal como viene en este paquete.
+Copia el contenido sobre la raíz del repositorio.
+
+
+═══════════════════════════════════════════════════════════
+1. ARCHIVOS QUE DEBES SUBIR O REEMPLAZAR
+═══════════════════════════════════════════════════════════
+
+NUEVOS — página, estilos y comportamiento
+  guia-agencia.html
+  assets/agency-guide/guia.css
+  assets/agency-guide/guia.js
+
+NUEVOS — logos derivados de archivos oficiales del repositorio
+  assets/logo/jaltech-horizontal-white.svg
+      Mismos vectores de jaltech-horizontal-black.svg, relleno blanco.
+  assets/logo/jaltech-horizontal-white.png
+      Rasterizado del anterior. El repositorio no tiene PNG horizontal blanco.
+  assets/logo/jaltech-isotipo-white.png
+      Rasterizado del oficial assets/logo/jaltech-isotipo-white.svg (que ya existe).
+
+REEMPLAZAR — 51 iconos de assets/icons/
+  Los archivos del repositorio usan clases .st0 / .st1 con un bloque <defs>
+  vacío: ningún archivo trae su definición de color, por eso todos se
+  renderizan negros en cualquier navegador. Estas versiones llevan el color
+  escrito como atributo fill en cada trazo, sin filtros CSS:
+      -white.svg    →  blanco #ffffff
+      -outline.svg  →  gris #5B6270
+      -accent.svg   →  gris #5B6270 + acento verde Jaltech #529A00
+
+  Se conservan nombre, ruta, viewBox y geometría. Solo cambia el color.
+
+  PENDIENTE DE VALIDACIÓN: como los archivos originales no traen color, no
+  hay forma de saber qué clase era el acento en las versiones -accent. Se
+  asignó .st1 → verde. Si algún icono queda invertido, avísame.
+
+  Listado (51 archivos):
+      assets/icons/boton-icono-outline.svg
+      assets/icons/boton-icono-white.svg
+      assets/icons/catalogo-outline.svg
+      assets/icons/catalogo-white.svg
+      assets/icons/colores-outline.svg
+      assets/icons/corporativo-accent.svg
+      assets/icons/corporativo-outline.svg
+      assets/icons/corporativo-white.svg
+      assets/icons/distribuidores-accent.svg
+      assets/icons/distribuidores-outline.svg
+      assets/icons/distribuidores-white.svg
+      assets/icons/firma-piezas-outline.svg
+      assets/icons/firma-piezas-white.svg
+      assets/icons/fotografia-outline.svg
+      assets/icons/hombre-de-influencia-accent.svg
+      assets/icons/hombre-de-influencia-outline.svg
+      assets/icons/hombre-de-influencia-white.svg
+      assets/icons/mailing-outline.svg
+      assets/icons/mailing-white.svg
+      assets/icons/mercadeo-en-linea-accent.svg
+      assets/icons/mercadeo-en-linea-outline.svg
+      assets/icons/mercadeo-en-linea-white.svg
+      assets/icons/mundial-accent.svg
+      assets/icons/mundial-outline.svg
+      assets/icons/mundial-white.svg
+      assets/icons/patron-visual-outline.svg
+      assets/icons/patron-visual-white.svg
+      assets/icons/pin-jalbot-outline.svg
+      assets/icons/pin-jalbot-white.svg
+      assets/icons/pop-outline.svg
+      assets/icons/pop-white.svg
+      assets/icons/publicidad-accent.svg
+      assets/icons/publicidad-digital-accent.svg
+      assets/icons/publicidad-digital-outline.svg
+      assets/icons/publicidad-digital-white.svg
+      assets/icons/publicidad-outline.svg
+      assets/icons/publicidad-white.svg
+      assets/icons/redes-outline.svg
+      assets/icons/redes-white.svg
+      assets/icons/sello-calidad-outline.svg
+      assets/icons/sello-calidad-white.svg
+      assets/icons/sello-marca-outline.svg
+      assets/icons/sello-marca-white.svg
+      assets/icons/terminal-de-punto-de-venta-accent.svg
+      assets/icons/terminal-de-punto-de-venta-outline.svg
+      assets/icons/terminal-de-punto-de-venta-white.svg
+      assets/icons/tipografia-outline.svg
+      assets/icons/web-outline.svg
+      assets/icons/web-white.svg
+      assets/icons/whatsapp-outline.svg
+      assets/icons/whatsapp-white.svg
+
+
+═══════════════════════════════════════════════════════════
+2. RECURSOS REUTILIZADOS DESDE EL REPOSITORIO
+═══════════════════════════════════════════════════════════
+
+No se incluyen en este paquete. La guía apunta a sus rutas actuales.
+
+  assets/logo/
+      jaltech-horizontal-green-gradient.png / .svg
+      jaltech-horizontal-green-white-gradient.png / .svg
+      jaltech-horizontal-black.png / .svg
+      jaltech-vertical-green-gradient.png / .svg
+      jaltech-vertical-black.png / .svg
+      jaltech-isotipo-green-gradient.png / .svg
+      jaltech-isotipo.png / .svg
+      jaltech-isotipo-white.svg
+
+  assets/lineas-negocio/partners-pos/
+      logo-1 / logo-2 / logo-3 (.png y .svg)
+      isotipo-1 / isotipo-2 / isotipo-3 (.png y .svg)
+
+  assets/lineas-negocio/jaltech-pos/
+      logo-horizontal-1 / logo-horizontal-2 (.png y .svg)
+      logo-vertical-1 / logo-vertical-2 (.png y .svg)
+      isotipo-1 / isotipo-2 (.png y .svg)
+
+  assets/lineas-negocio/tecnigo/
+      logo-1 / logo-2 / logo-3 (.png y .svg)
+      logo-v2-1 / logo-v2-2 (.png y .svg)
+      isotipo-1 / isotipo-2 / isotipo-3 (.png y .svg)
+
+  assets/jalbot/
+      jalbot-isotipo.png            (portada)
+
+  assets/images/
+      estilo-de-vida.png            (fotografía de estilo de vida)
+      productos-collage.png         (collage de productos)
+      texture.webp                  (fondo con textura)
+      degrade.webp                  (fondo con degradado)
+      corporativo-boletin.webp      (carrusel corporativo)
+      pauta-corporativo.webp        (carrusel corporativo)
+      boletin-distribuidores.webp   (carrusel distribuidores)
+      boletin-distribuidores-2.webp (carrusel distribuidores)
+      boletin-distribuidores-3.webp (carrusel distribuidores)
+      boletin-jaltech-pos.webp      (carrusel Partner POS · referencia)
+      pieza-jaltech-pos.webp        (carrusel Partner POS · referencia)
+      pieza-jaltech-pos-2.webp      (carrusel Partner POS · referencia)
+      pauta-tecnigo1.webp           (carrusel TecniGo)
+      pauta-tecnigo-2.webp          (carrusel TecniGo)
+      pauta-tecnigo-3.webp          (carrusel TecniGo)
+
+  assets/campaigns/
+      jalbot-pos.png                (carrusel distribuidores)
+
+  assets/protection/
+      area-de-proteccion1.png  +  area-de-proteccion2.svg   (Jaltech)
+      area-de-proteccion3.png  +  area-de-proteccion4.svg   (TecniGo)
+      area-de-proteccion5.png  +  area-de-proteccion6.svg   (Partner POS)
+
+  assets/fonts/
+      mont/Mont-Regular · SemiBold · Bold · Heavy
+      montserrat/Montserrat-VariableFont_wght · Italic-VariableFont_wght
+      poppins/Poppins-Light · Regular · Medium · SemiBold
+      Oswald-ExtraLight.ttf · Oswald-SemiBold.ttf
+
+Todas estas rutas fueron verificadas contra el repositorio: 130 referencias
+comprobadas, ninguna rota.
+
+
+═══════════════════════════════════════════════════════════
+3. RECURSOS FALTANTES QUE AÚN DEBES CARGAR
+═══════════════════════════════════════════════════════════
+
+Nada de esto rompe la guía: cada punto muestra un contenedor limpio,
+un botón desactivado o una etiqueta "Pendiente". Ningún enlace es falso.
+
+a) ENLACE DEL BANCO DE PRODUCTOS
+   Hoy muestra "Enlace pendiente" con el botón desactivado.
+   Para activarlo, edita la primera línea útil de assets/agency-guide/guia.js:
+       var BANCO_PRODUCTOS_URL = "";
+   Pega la URL entre las comillas. No hay que tocar nada más.
+
+b) TIPOGRAFÍA APTO
+   No existe en el repositorio. Aparece en Recursos como alternativa del
+   sistema, sin botón de descarga. Si consigues los archivos, súbelos a
+   assets/fonts/apto/ y avísame para añadirla.
+
+c) PIEZAS PROPIAS DE PARTNER POS
+   El carrusel usa hoy tres piezas de Jaltech POS como referencia de
+   categoría, con la aclaración visible encima. Cuando existan piezas
+   dirigidas a desarrolladores e integradores, se reemplazan.
+
+d) SVG DE JALTECH A COLOR — INCOMPLETOS EN EL REPOSITORIO
+   Estos cuatro archivos definen sus degradados pero NO traen el bloque
+   <style> que asigna las clases cls-1…cls-15, y su etiqueta <image> no
+   tiene href. Cualquier navegador los pinta negros:
+       assets/logo/jaltech-horizontal-green-gradient.svg
+       assets/logo/jaltech-horizontal-green-white-gradient.svg
+       assets/logo/jaltech-vertical-green-gradient.svg
+       assets/logo/jaltech-isotipo-green-gradient.svg
+   Por eso toda vista previa de la guía usa los PNG oficiales (que sí están
+   correctos) y los SVG se ofrecen solo como descarga. Si los reexportas
+   desde Illustrator con "Estilo CSS: atributos de presentación", quedan
+   utilizables también en pantalla.
+
+e) PALETA TECNIGO — POR CONFIRMAR
+   Se usan #FFE000 (amarillo) y #3A3A3A (carbón), tomados del Brand Hub del
+   repositorio, donde están marcados como aproximados. Confirma los valores
+   oficiales y los ajusto.
+
+f) OPCIONAL — EJEMPLOS DE FONDO
+   "Fondos y composición" usa hoy un azul sólido eléctrico generado por CSS
+   más texture.webp y degrade.webp. Si prefieres imágenes propias para los
+   tres casos, súbelas y las conecto.
+
+
+═══════════════════════════════════════════════════════════
+NOTA SOBRE CACHÉ
+═══════════════════════════════════════════════════════════
+
+El HTML llama a sus archivos con versión:
+    assets/agency-guide/guia.css?v=15
+    assets/agency-guide/guia.js?v=15
+Si en el futuro editas el CSS o el JS, sube el número de versión en las dos
+referencias dentro de guia-agencia.html para que Vercel no sirva la copia
+anterior desde caché.

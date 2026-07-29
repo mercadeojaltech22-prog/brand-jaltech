@@ -609,3 +609,13 @@ details.acc .acc__body{padding:0 22px 22px;font-size:14.5px;color:var(--gray-600
   .side__label{padding:8px 12px 5px}
   .side__foot{padding:14px 26px 16px}
 }
+
+/* Flechas del carrusel Partner POS */
+#partner .gal__nav--partner {
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 0 0 12px;
+}

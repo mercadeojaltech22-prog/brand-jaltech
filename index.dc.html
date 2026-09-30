@@ -1371,6 +1371,119 @@ strong.em{font-weight:600;color:inherit}
 @container site (max-width:900px){.hb-t{font-size:30px}}
 .hdr{overflow-x:clip}
 html,body{overflow-x:clip}
+/* ===================== MÓVIL (360–430 px) · revisión por componente ===================== */
+@container site (max-width:720px){
+  /* Tabs y chips: una línea con scroll, ancho natural, borde de fundido */
+  .tabs,.subnav-in,.pills,.frow{flex-wrap:nowrap;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar,.pills::-webkit-scrollbar{display:none}
+  .tab,.pill,.chip,.subnav a{flex:0 0 auto;white-space:nowrap}
+  .tabs{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);padding-right:24px}
+  .pills{gap:8px;margin-inline:-20px;padding:2px 20px 6px}
+  .filters{padding:10px 0}
+  .filters .chip{min-height:38px;padding:7px 13px}
+  .filters .flabel{font-size:12px;flex:0 0 auto}
+
+  /* Color: principales en 1 columna de ancho completo */
+  .col-main{grid-template-columns:1fr!important;gap:12px!important}
+  .col-main .swc .fill{height:112px}
+  .col-comp{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .col-comp .swc .fill{height:84px}
+  .swc .info{padding:12px 14px 14px}
+  .swc .role{font-size:13.5px;line-height:1.5}
+  .neutrals{grid-template-columns:repeat(3,1fr)}
+  .neutrals div{padding:30px 10px 10px}
+
+  /* Logo: versiones en 2 columnas con miniatura amplia */
+  .ver{grid-template-columns:1fr 1fr;gap:10px}
+  .var .st{aspect-ratio:4/3;padding:14px}
+  .var .st img{max-width:86%;max-height:60%}
+  .var .cap{padding:10px 12px;font-size:12.5px;line-height:1.35}
+  /* Mínimos: filas separadas (figura + dato) */
+  .mins2{grid-template-columns:1fr;gap:10px}
+  .mins2 > div{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
+  .mins2 .mstage{margin:0;height:92px}
+  .mins2 .big-num{font-size:26px}
+
+  /* Ecosistema: Jaltech grande arriba, flujo vertical */
+  .eco-root{flex-direction:column;align-items:flex-start;gap:14px}
+  .eco-root .ph{width:100%!important;height:auto!important;padding:26px 20px;justify-content:center;border-radius:16px}
+  .eco-root .ph img{width:70%!important;max-width:320px!important;max-height:none!important;height:auto}
+  .conn{margin-left:24px}
+  .terr3{grid-template-columns:1fr}
+  .terr3 .core{grid-column:auto}
+  .ids{grid-template-columns:1fr}
+  .id-pos .logo-img{height:58px}
+  .partner{grid-template-columns:1fr;margin-left:22px}
+  .partner .logo-img{height:44px;width:auto;max-width:100%}
+  .port{grid-template-columns:1fr;grid-template-rows:none}
+  .id-small{grid-template-columns:120px 1fr}
+  .id-small .logo-img{height:44px}
+  .tecnigo .logo-img{max-width:170px;height:48px}
+
+  /* Voz, principios, tipografía por territorio: bloques apilados con aire */
+  .traits{grid-template-columns:1fr;gap:26px}
+  .traits div{max-width:none}
+  .prin2{grid-template-columns:1fr;gap:14px}
+
+  /* Crear: diferencias prácticas como bloques, no tabla */
+  .cmp{overflow:visible}
+  .cmp > div{display:block;min-width:0;padding:14px 16px}
+  .cmp > div.cmp-h{display:none}
+  .cmp > div > span{display:block;padding:0 0 8px;font-size:15px}
+  .cmp > div > p{padding:8px 0;border-top:1px solid var(--line);background:none!important}
+  .cmp > div > p:nth-of-type(1)::before{content:"Distribuidores";display:block;font-size:12px;font-weight:600;color:var(--green)}
+  .cmp > div > p:nth-of-type(2)::before{content:"Corporativo";display:block;font-size:12px;font-weight:600;color:var(--muted)}
+  .cmp > div > p:nth-of-type(3)::before{content:"Institucional";display:block;font-size:12px;font-weight:600;color:var(--muted)}
+  /* Canales: wireframes que caben en el panel */
+  .ch-wf{padding:16px;min-height:0}
+  .wf-mail,.wf-web,.wf-page,.wf-a4,.wf-phone{max-width:100%}
+  .wf-row{width:100%;justify-content:center}
+  .wf-row .wf-sq{width:58%}.wf-row .wf-st{width:32%}
+  .wf-sq.big{width:78%}
+  .wf-box .face{width:150px}
+  /* Video */
+  .v916{margin:0 auto;max-width:200px}
+
+  /* Jalbot: imagen primero, completa, sin altura fija */
+  .jb2{gap:20px}
+  .jb2-art{height:auto!important;display:block}
+  .jb2-art img{position:static!important;display:block;width:100%!important;max-width:420px!important;height:auto!important;margin:0 auto!important;transform:none}
+  .jb-intro{padding:40px 0}
+  .poses{grid-template-columns:1fr 1fr;gap:10px}
+  .pst{height:170px;padding:10px 10px 0}
+  .pst img{max-height:160px}
+  .pose figcaption{padding:10px 12px 12px}
+  .pose .kw{font-size:13px}
+  .jb-real{display:flex;height:auto;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-inline:-20px;padding:0 20px 6px;scrollbar-width:none}
+  .jb-real button,.jb-real button:last-child{flex:0 0 78%;height:230px;scroll-snap-align:start;grid-column:auto}
+
+  /* Recursos: 1 columna, preview grande, botones cómodos */
+  .rgrid{grid-template-columns:1fr}
+  .res .prev{aspect-ratio:16/10}
+  .dl .btn{flex:1 1 auto;justify-content:center;min-height:44px}
+  .dl .vec{flex:1 1 auto}
+  .dl .vec .btn{width:100%}
+  .ic-dl .btn{flex:1 1 30%;min-height:40px}
+
+  /* UI Kit: tokens cortos en 2 columnas */
+  .tok-grid{grid-template-columns:1fr 1fr}
+  .scale{grid-template-columns:repeat(4,1fr)}
+}
+/* Teléfonos estrechos (≤ 380 px) */
+@container site (max-width:380px){
+  .col-comp{grid-template-columns:1fr!important}
+  .poses{grid-template-columns:1fr}
+  .pst{height:200px}.pst img{max-height:190px}
+  .mins2 > div{grid-template-columns:130px 1fr}
+  .ver{gap:8px}
+  .var .cap{font-size:12px}
+}
+@container site (max-width:720px){
+  .mins2 > div{grid-template-rows:auto auto;row-gap:2px}
+  .mins2 > div > .mstage{grid-row:1 / span 2}
+  .mins2 > div > p{margin:0}
+}
+@container site (max-width:720px){.swc .fill[style*="F6F6F2"]{box-shadow:inset 0 0 0 1px #D8D8D2!important}}
 </style>
 </head>
 <body>
@@ -1524,9 +1637,9 @@ html,body{overflow-x:clip}
 </div>
 <div class="tabpanel" id="t-color" role="tabpanel">
   <p class="lead" style="max-width:62ch;margin-bottom:24px"><strong class="em">El verde manda.</strong> El azul oscuro es la base de contraste y los neutros sostienen el sistema. Los complementarios acompañan; ninguno reemplaza al verde.</p>
-  <div style="display:grid;grid-template-columns:2fr 2fr 1.3fr;gap:14px" class="colgrid"><div class="swc rv lg" style="--d:Logo, CTAs y acentos clave. El color que más se ve en cualquier pieza.ms"><div class="fill" style="background:#529A00;color:#1D2333;">Verde Jaltech</div><div class="info"><div class="row"><b>#529A00</b><button class="copy" type="button" data-copy="#529A00">Copiar</button></div><p class="role"><b>Identidad.</b> Logo, CTAs y acentos clave. El color que más se ve en cualquier pieza.</p></div></div><div class="swc rv lg" style="--d:Fondos profundos, secciones de soporte, contraste fuerte para que el verde brille.ms"><div class="fill" style="background:#1D2333;color:#fff;">Azul oscuro</div><div class="info"><div class="row"><b>#1D2333</b><button class="copy" type="button" data-copy="#1D2333">Copiar</button></div><p class="role"><b>Base.</b> Fondos profundos, secciones de soporte, contraste fuerte para que el verde brille.</p></div></div><div class="swc rv lg" style="--d:Texto y reposo visual.ms"><div class="fill" style="background:#F6F6F2;color:#1D2333;box-shadow:inset 0 -1px 0 #DCDCD5;">Off-white</div><div class="info"><div class="row"><b>#F6F6F2</b><button class="copy" type="button" data-copy="#F6F6F2">Copiar</button></div><p class="role"><b>Fondo cálido.</b> Texto y reposo visual.</p></div></div></div>
+  <div style="display:grid;grid-template-columns:2fr 2fr 1.3fr;gap:14px" class="colgrid col-main"><div class="swc rv lg" style="--d:Logo, CTAs y acentos clave. El color que más se ve en cualquier pieza.ms"><div class="fill" style="background:#529A00;color:#1D2333;">Verde Jaltech</div><div class="info"><div class="row"><b>#529A00</b><button class="copy" type="button" data-copy="#529A00">Copiar</button></div><p class="role"><b>Identidad.</b> Logo, CTAs y acentos clave. El color que más se ve en cualquier pieza.</p></div></div><div class="swc rv lg" style="--d:Fondos profundos, secciones de soporte, contraste fuerte para que el verde brille.ms"><div class="fill" style="background:#1D2333;color:#fff;">Azul oscuro</div><div class="info"><div class="row"><b>#1D2333</b><button class="copy" type="button" data-copy="#1D2333">Copiar</button></div><p class="role"><b>Base.</b> Fondos profundos, secciones de soporte, contraste fuerte para que el verde brille.</p></div></div><div class="swc rv lg" style="--d:Texto y reposo visual.ms"><div class="fill" style="background:#F6F6F2;color:#1D2333;box-shadow:inset 0 -1px 0 #DCDCD5;">Off-white</div><div class="info"><div class="row"><b>#F6F6F2</b><button class="copy" type="button" data-copy="#F6F6F2">Copiar</button></div><p class="role"><b>Fondo cálido.</b> Texto y reposo visual.</p></div></div></div>
   <h3 class="h3" style="margin:32px 0 14px">Complementarios</h3>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px" class="colgrid"><div class="swc rv" style="--d:Promociones, lanzamientos, llamados a la acción de alto impacto.ms"><div class="fill" style="background:#FF8600;color:#1D2333;">Naranja</div><div class="info"><div class="row"><b>#FF8600</b><button class="copy" type="button" data-copy="#FF8600">Copiar</button></div><p class="role"><b>Energía.</b> Promociones, lanzamientos, llamados a la acción de alto impacto.</p></div></div><div class="swc rv" style="--d:Detalles digitales, gráficos de datos, micro-elementos.ms"><div class="fill" style="background:#6A2AE1;color:#fff;">Morado tech</div><div class="info"><div class="row"><b>#6A2AE1</b><button class="copy" type="button" data-copy="#6A2AE1">Copiar</button></div><p class="role"><b>Tecnología.</b> Detalles digitales, gráficos de datos, micro-elementos.</p></div></div><div class="swc rv" style="--d:Avisos, alertas suaves y puntos de alta visibilidad. Uso puntual.ms"><div class="fill" style="background:#FFBF15;color:#1D2333;">Amarillo</div><div class="info"><div class="row"><b>#FFBF15</b><button class="copy" type="button" data-copy="#FFBF15">Copiar</button></div><p class="role"><b>Visibilidad.</b> Avisos, alertas suaves y puntos de alta visibilidad. Uso puntual.</p></div></div><div class="swc rv" style="--d:Enlaces, datos y micro-detalles de UI.ms"><div class="fill" style="background:#0063FE;color:#fff;">Azul</div><div class="info"><div class="row"><b>#0063FE</b><button class="copy" type="button" data-copy="#0063FE">Copiar</button></div><p class="role"><b>Contraste digital.</b> Enlaces, datos y micro-detalles de UI.</p></div></div></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px" class="colgrid col-comp"><div class="swc rv" style="--d:Promociones, lanzamientos, llamados a la acción de alto impacto.ms"><div class="fill" style="background:#FF8600;color:#1D2333;">Naranja</div><div class="info"><div class="row"><b>#FF8600</b><button class="copy" type="button" data-copy="#FF8600">Copiar</button></div><p class="role"><b>Energía.</b> Promociones, lanzamientos, llamados a la acción de alto impacto.</p></div></div><div class="swc rv" style="--d:Detalles digitales, gráficos de datos, micro-elementos.ms"><div class="fill" style="background:#6A2AE1;color:#fff;">Morado tech</div><div class="info"><div class="row"><b>#6A2AE1</b><button class="copy" type="button" data-copy="#6A2AE1">Copiar</button></div><p class="role"><b>Tecnología.</b> Detalles digitales, gráficos de datos, micro-elementos.</p></div></div><div class="swc rv" style="--d:Avisos, alertas suaves y puntos de alta visibilidad. Uso puntual.ms"><div class="fill" style="background:#FFBF15;color:#1D2333;">Amarillo</div><div class="info"><div class="row"><b>#FFBF15</b><button class="copy" type="button" data-copy="#FFBF15">Copiar</button></div><p class="role"><b>Visibilidad.</b> Avisos, alertas suaves y puntos de alta visibilidad. Uso puntual.</p></div></div><div class="swc rv" style="--d:Enlaces, datos y micro-detalles de UI.ms"><div class="fill" style="background:#0063FE;color:#fff;">Azul</div><div class="info"><div class="row"><b>#0063FE</b><button class="copy" type="button" data-copy="#0063FE">Copiar</button></div><p class="role"><b>Contraste digital.</b> Enlaces, datos y micro-detalles de UI.</p></div></div></div>
   <h3 class="h3" style="margin:32px 0 14px">Neutros</h3>
   <div class="neutrals"><div class="rv" style="--d:0ms;background:#FFFFFF;color:#1D2333">Blanco<small>#FFFFFF</small></div><div class="rv" style="--d:50ms;background:#EEEEEA;color:#1D2333">Gris 100<small>#EEEEEA</small></div><div class="rv" style="--d:100ms;background:#D8D8D2;color:#1D2333">Gris 200<small>#D8D8D2</small></div><div class="rv" style="--d:150ms;background:#9B9B95;color:#1D2333">Gris 400<small>#9B9B95</small></div><div class="rv" style="--d:200ms;background:#5C5C58;color:#fff">Gris 600<small>#5C5C58</small></div><div class="rv" style="--d:250ms;background:#2E2E2C;color:#fff">Gris 800<small>#2E2E2C</small></div></div>
   <div class="g12" style="margin-top:28px">

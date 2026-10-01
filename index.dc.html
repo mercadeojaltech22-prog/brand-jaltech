@@ -1577,6 +1577,17 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   .partner{margin-left:12px;padding:14px}
   .partner::before{left:-12px;width:9px}
 }
+/* Hero: saltos explícitos por dispositivo (escritorio/tablet sin cambios) */
+.hb-t br.m{display:none}
+@container site (max-width:720px){
+  .hb-t br.d{display:none!important}
+  .hb-t br.m,.hb-t br:not(.d){display:inline!important}
+  .hb-t{font-size:29px;line-height:1.12;white-space:normal}
+  /* Tarjeta Usar Jalbot: texto arriba, Jalbot centrado abajo */
+  .t-jalbot{padding:20px!important;min-height:0}
+  .t-jalbot p{max-width:none;padding-right:48px}
+  .t-jalbot .jb-img{position:static!important;display:block;margin:18px auto 4px;width:auto!important;height:200px!important;max-width:72%;object-fit:contain;object-position:center bottom}
+}
 </style>
 </head>
 <body>
@@ -1607,7 +1618,7 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
     <div class="hb">
       <img fetchpriority="high" decoding="async" class="hb-img" src="assets/images/inicio%20brand.webp" alt="Jalbot señala un portátil con el universo visual de Jaltech">
       <div class="hb-txt">
-        <h1 class="hb-t">Todo lo que necesitas<br>para usar la marca<br><span>Jaltech</span></h1>
+        <h1 class="hb-t">Todo lo que<br class="m"> necesitas<br class="d"> para<br class="m"> usar la marca<br> <span>Jaltech</span></h1>
         <p class="hb-lead">Conoce la identidad, crea piezas y descarga recursos oficiales.</p>
       </div>
     </div>

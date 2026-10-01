@@ -1484,6 +1484,99 @@ html,body{overflow-x:clip}
   .mins2 > div > p{margin:0}
 }
 @container site (max-width:720px){.swc .fill[style*="F6F6F2"]{box-shadow:inset 0 0 0 1px #D8D8D2!important}}
+/* ===================== MOBILE-ONLY · pulido de lectura (≤720 px) ===================== */
+@container site (max-width:720px){
+  /* Página y cards */
+  .wrap{padding:0 22px}
+  .panel,.tile{padding:18px}
+  .task{padding:20px}
+  .stp{padding:18px}
+  .pr,.ddc{padding:18px}
+  .logo-intro{padding:20px}
+  .eco{padding:18px}
+  /* Lectura: cuerpo 15–16 px, interlineado cómodo, sin anchos de escritorio */
+  p,li,dd{line-height:1.58}
+  h1,h2,h3,h4{text-wrap:balance}
+  p,li,dd{text-wrap:pretty}
+  .lead{font-size:17px;line-height:1.55;max-width:none!important}
+  .page-head{padding-top:36px;padding-bottom:28px;gap:12px}
+  .page-head .lead,.sec-head p,.task p,.hx-lead{max-width:none!important}
+  .sec-head{gap:10px;margin-bottom:22px}
+  .sec-head p,.sec-head .muted{font-size:15.5px}
+  .small,.muted.small,p.small{font-size:14.5px;line-height:1.55}
+  .task p{font-size:15px}
+  .rl li{font-size:15px}
+  .rl{gap:12px}
+  .prin p,.pr p,.traits p,.fact,.partner p,.id-small p,.tz span,.swc .role,.stp ul,.cmp p,.cmp > div > p,.cpr > *,.emb p,.vcap,.pose span,.kv2,.tsb span,.inline-note,.fondo .t,.res .meta{font-size:15px;line-height:1.55}
+  .stp ul{gap:6px}
+  .tile h3,.panel h3,.task h3,.pr h4,.ddc h4,.stp h3{margin-bottom:4px}
+  .task{gap:10px}
+  .pr,.ddc{gap:14px}
+  /* Títulos y textos apilados, nunca lado a lado */
+  .ttl{flex-direction:column;align-items:flex-start;gap:2px}
+  .id-small{grid-template-columns:1fr;gap:10px}
+  .id-small .logo-img{width:auto;max-width:180px;object-position:left}
+  .ch-top{gap:12px}
+  /* Mínimos: figura arriba, dato abajo */
+  .mins2 > div{display:block}
+  .mins2 > div > .mstage{height:88px;margin:0 0 8px}
+  .mins2 > div > p{display:inline}
+  .mins2 > div > p.small{display:block;margin-top:2px}
+  /* Tabs y chips: 14–15 px, padding y separación, activo visible */
+  .tabs{gap:4px;scroll-padding-inline:22px}
+  .tab{font-size:14.5px;padding:12px 14px}
+  .subnav-in{gap:2px;scroll-padding-inline:22px}
+  .subnav a{font-size:14.5px;padding:0 13px}
+  .pills{gap:8px;scroll-padding-inline:22px;margin-inline:-22px;padding:2px 22px 6px}
+  .pill{font-size:14.5px;padding:10px 16px}
+  .frow{gap:8px;scroll-padding-inline:22px;margin-inline:-22px;padding-inline:22px}
+  .filters .chip{font-size:14px;padding:8px 14px}
+  .tsb{padding:16px 18px}
+  /* Menú móvil: panel limpio con márgenes reales */
+  .sheet{left:0;right:0;top:calc(100% + 6px);border:0;border-radius:18px;padding:6px 20px;box-shadow:0 22px 44px -18px rgba(29,35,51,.45),0 0 0 1px var(--line)}
+  .sheet a{min-height:54px;font-size:17px;font-weight:600;padding:0 2px;border-bottom:1px solid var(--line)}
+  .sheet a:last-child{border-bottom:0}
+  .sheet a .i{color:var(--muted);margin-right:2px}
+  .sheet a[aria-current="page"] .i{color:var(--green)}
+  /* Hero */
+  .hb-lead{font-size:16px}
+  /* Otros ajustes de lectura */
+  .eco-terr{padding:18px}
+  .tz{padding:16px 18px}
+  .chan-panel{padding:18px}
+  .jb2-txt .def2{font-size:16px}
+  .jb2-txt .quote-l{font-size:17px}
+  .hier div{padding:10px 0}
+  .vwrap{padding:16px}
+}
+/* Scrim y bloqueo de fondo con el menú abierto (solo móvil, el botón no existe en escritorio) */
+.menu-scrim{position:fixed;inset:0;background:rgba(29,35,51,.32);z-index:35;opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s linear .2s}
+html.menu-open .menu-scrim{opacity:1;visibility:visible;transition:opacity .2s}
+html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
+@container site (max-width:720px){.sheet{left:12px;right:12px}}
+@container site (max-width:1060px){.sec-head{grid-template-columns:1fr}}
+@container site (max-width:720px){
+  .sec-head{grid-template-columns:1fr!important;gap:10px}
+  .hb-t{font-size:29px;line-height:1.12}
+  .hb-t br{display:none}
+  .hb-lead{max-width:none}
+}
+@container site (max-width:720px){
+  .circ{width:54px;height:54px}.circ img{width:28px;height:28px}
+  .icset{gap:12px}
+  .ddv{aspect-ratio:auto;min-height:124px}
+  .tyx2{padding:12px 10px}
+  .tbl{font-size:13.5px}
+  .tbl th{white-space:normal}
+  .tbl th,.tbl td{padding:9px 8px}
+}
+@container site (max-width:720px){
+  .eco{padding:14px}
+  .eco-terr{padding:16px}
+  .id-pos{padding:16px}
+  .partner{margin-left:12px;padding:14px}
+  .partner::before{left:-12px;width:9px}
+}
 </style>
 </head>
 <body>
@@ -2013,7 +2106,7 @@ html,body{overflow-x:clip}
 <section class="view" id="r-uikit">
   <div class="wrap uk">
     <a class="backlink" href="#recursos/r-lib"><svg class="i i-sm" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>Volver a Recursos</a>
-    <div class="sec-head" style="margin-top:18px"><h2 class="h2">UI Kit</h2><p class="muted">Tokens de diseño y componentes para interfaces digitales de Jaltech: portales, catálogos y herramientas del ecosistema B2B.</p></div>
+    <div class="sec-head" style="margin-top:18px"><h2 class="h2">UI Kit Jaltech</h2><p class="muted">Tokens de diseño y componentes para interfaces digitales de Jaltech: portales, catálogos y herramientas del ecosistema B2B.</p></div>
 
     <h3 class="h3 uk-t">Colores de marca</h3>
     <div class="tok-grid">
@@ -2338,6 +2431,21 @@ html,body{overflow-x:clip}
     location.hash='inicio'; window.scrollTo(0,0); run();
   });});
   setTimeout(run,reduce?0:250);
+})();
+(function(){
+  const sheet=document.getElementById('sheet'),btn=document.getElementById('menuBtn'); if(!sheet||!btn) return;
+  const scrim=document.createElement('div'); scrim.className='menu-scrim'; document.body.appendChild(scrim);
+  const sync=()=>document.documentElement.classList.toggle('menu-open',sheet.classList.contains('open'));
+  new MutationObserver(sync).observe(sheet,{attributes:true,attributeFilter:['class']});
+  const close=()=>{sheet.classList.remove('open');btn.setAttribute('aria-expanded','false');};
+  scrim.addEventListener('click',close);
+  sheet.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('open')){close();btn.focus();}});
+  window.addEventListener('resize',()=>{if(getComputedStyle(btn).display==='none') close();});
+  // Chips: el elegido queda completo a la vista
+  document.querySelectorAll('.pill,.chip,.tsb').forEach(c=>c.addEventListener('click',()=>{
+    const p=c.parentElement; if(p.scrollWidth>p.clientWidth){c.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'nearest'});}
+  }));
 })();
 </script>
 </body></html>

@@ -40,19 +40,8 @@ p{margin:0}
 .i{width:20px;height:20px;flex:none}
 .i-sm{width:16px;height:16px}
 
-/* ---------- Barra de la maqueta ---------- */
-.wf{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;padding:10px clamp(16px,3vw,32px);background:#2A3044;color:#E8ECF5;font-size:13px}
-.wf strong{font-weight:600}
-.wf .legend{color:#B4BCCE;display:flex;align-items:center;gap:8px}
-.wf .legend span{width:22px;height:14px;border-radius:4px;background:repeating-linear-gradient(135deg,#3C4460 0 5px,#58627E 5px 6px)}
-.wf .ctl{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-.seg{display:inline-flex;background:#363D55;border-radius:8px;padding:3px}
-.seg button{font:inherit;font-size:13px;font-weight:500;color:#C9D0E0;background:none;border:0;padding:6px 12px;border-radius:6px;cursor:pointer}
-.seg button[aria-pressed="true"]{background:#E8ECF5;color:#2A3044}
-
 /* ---------- Marco ---------- */
 .frame{background:var(--bg);container-type:inline-size;container-name:site;min-height:100vh;margin:0 auto;max-width:100%;transition:max-width .35s var(--ease)}
-body.mobile .frame{max-width:390px;box-shadow:0 0 0 1px var(--line)}
 .wrap{max-width:1320px;margin:0 auto;padding:0 40px}
 .band{padding:72px 0}
 .b-white{background:var(--white)}
@@ -78,7 +67,6 @@ h4{font-size:16px;line-height:1.35;font-weight:600;letter-spacing:0}
 /* ---------- Notas de wireframe ---------- */
 .note{display:block;margin:20px 0 0;padding:10px 14px;border-left:3px solid var(--meta);background:var(--meta-bg);color:var(--meta);font-size:13px;line-height:1.55;border-radius:0 8px 8px 0;max-width:90ch}
 .note b{font-weight:600}
-body.notes-off .note{display:none}
 
 /* ---------- Placeholders ---------- */
 .ph{position:relative;border-radius:16px;background:repeating-linear-gradient(135deg,#F1F2F4 0 10px,#E5E7EB 10px 11px);border:1px dashed #D3D6DD;display:flex;align-items:flex-end;padding:12px 14px;font-size:12.5px;font-weight:500;color:var(--muted);min-height:48px;overflow:hidden}
@@ -120,10 +108,6 @@ body.notes-off .note{display:none}
 .sheet.open{opacity:1;visibility:visible;transform:none;transition:opacity .22s var(--ease),transform .22s var(--ease)}
 .sheet a{display:flex;justify-content:space-between;align-items:center;min-height:52px;font-size:18px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
 .sheet a[aria-current="page"]{color:var(--green)}
-.hdr-prov{display:none;align-items:center;gap:16px;margin-left:auto}
-.hdr-prov .t{font-weight:600;font-size:15px}
-body.route-proveedores .nav,body.route-proveedores .hdr .menu-btn{display:none!important}
-body.route-proveedores .hdr-prov{display:flex}
 
 /* ---------- Subnavegación con indicador animado ---------- */
 .subnav{position:sticky;top:var(--hdr);z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -422,7 +406,6 @@ body.route-proveedores .hdr-prov{display:flex}
   .band{padding:44px 0}
   .nav{display:none}
   .menu-btn{display:inline-flex}
-  .hdr-prov .t{display:none}
   .g12 > *{grid-column:1/-1!important;grid-row:auto!important}
   .hero{padding:36px 24px 0;border-radius:22px;margin-top:12px;min-height:0}
   .hero-art{min-height:280px}
@@ -1224,8 +1207,6 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 /* ===== v7 ===== */
 .hero-alt{margin-top:56px}
 .hero-alt .hA,.hero-alt .hB{display:none}
-.hero-alt[data-hero="a"] .hA{display:grid}
-.hero-alt[data-hero="b"] .hB{display:grid}
 .hx-t{color:var(--navy);font-size:clamp(34px,4.2vw,56px);line-height:1.06}
 .hx-t .w{color:#fff;position:relative;display:inline-block}
 .hx-t .w::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;border-radius:3px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease) 1.1s}
@@ -1360,8 +1341,6 @@ strong.em{font-weight:600;color:inherit}
 .firma{margin-top:16px;display:flex;gap:20px;align-items:center;background:#fff;border-radius:20px;padding:16px 22px;box-shadow:inset 0 0 0 1px var(--line)}
 .firma img{width:120px;height:auto}
 /* Iconos */
-.ic-card .prev img{max-width:42%;max-height:52%}
-.ic-dl .btn{padding:7px 10px;font-size:12.5px}
 @container site (max-width:720px){.traits{gap:24px}.firma{flex-direction:column;align-items:flex-start}}
 .hb-txt{width:37%;left:6%}
 .hb-t{font-size:clamp(26px,2.8vw,40px)}
@@ -1464,7 +1443,6 @@ html,body{overflow-x:clip}
   .dl .btn{flex:1 1 auto;justify-content:center;min-height:44px}
   .dl .vec{flex:1 1 auto}
   .dl .vec .btn{width:100%}
-  .ic-dl .btn{flex:1 1 30%;min-height:40px}
 
   /* UI Kit: tokens cortos en 2 columnas */
   .tok-grid{grid-template-columns:1fr 1fr}
@@ -1589,6 +1567,184 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   .t-jalbot p{max-width:none;padding-right:48px}
   .t-jalbot .jb-img{position:static!important;display:block;margin:18px auto 4px;width:auto!important;height:200px!important;max-width:72%;object-fit:contain;object-position:center bottom}
 }
+
+/* ================= Reestructura de navegación ================= */
+:root{--sub:80px}
+/* Inicio · tres puertas */
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.doors .task{min-height:0}
+.doors .task p{font-size:15px;font-weight:500;color:var(--ink-2);padding-right:48px}
+.doors .t-green p{color:var(--navy)}
+.doors .art{flex:none;height:240px;min-height:0;margin-top:14px}
+.doors .icon-row img{width:48px;height:48px}
+.prov-line{margin-top:22px;font-size:15px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.prov-line a{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--navy);text-underline-offset:3px}
+.prov-line a:hover{color:var(--green)}
+/* Nivel 2 · navegación interna (Marca y pasos de Crear) */
+.subnav.l2{background:rgba(246,246,242,.94);padding:12px 0;border-bottom:1px solid var(--line)}
+.subnav.l2 .subnav-in{height:auto;gap:6px;padding:6px;border-radius:18px;background:var(--green-soft);box-shadow:inset 0 0 0 1px rgba(82,154,0,.16)}
+.subnav.l2 a{flex:1 1 0;justify-content:center;gap:10px;min-height:44px;padding:0 18px;border-radius:13px;font-size:16px;font-weight:500;color:var(--ink-2);transition:background .2s,color .2s,box-shadow .2s}
+.subnav.l2 a:hover{background:rgba(255,255,255,.65);color:var(--navy)}
+.subnav.l2 a.on{background:var(--white);color:var(--navy);font-weight:600;box-shadow:0 1px 2px rgba(29,35,51,.08),0 8px 18px -12px rgba(29,35,51,.45),inset 0 -3px 0 var(--green)}
+.subnav.l2 .ind{display:none}
+.subnav.stepper .sn{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;background:var(--white);color:var(--navy);box-shadow:inset 0 0 0 1px rgba(29,35,51,.14);transition:background .2s,box-shadow .2s}
+.subnav.stepper a.on .sn{background:var(--green);color:var(--navy);box-shadow:none}
+.subnav.stepper .sh{display:none}
+.step-k{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;font-size:13px;font-weight:600;letter-spacing:.02em;color:#3F7A00}
+.step-k::before{content:"";width:18px;height:2px;border-radius:2px;background:currentColor}
+.b-navy .step-k{color:#9ED36A}
+/* Nivel 3 · pestañas de Identidad */
+#m-identidad .tabs{gap:0;margin-bottom:24px}
+#m-identidad .tab{font-size:14px;font-weight:500;padding:9px 14px;color:var(--muted)}
+#m-identidad .tab:hover{color:var(--navy)}
+#m-identidad .tab[aria-selected="true"]{color:var(--navy);font-weight:600}
+#m-identidad .tabs .ind{height:2px}
+/* Voz · síntesis */
+.voz-sum{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap}
+.voz-sum p{max-width:62ch}
+@container site (max-width:1060px){.doors .art{height:200px}.subnav.stepper .fl{display:none}.subnav.stepper .sh{display:inline}}
+@media (max-width:720px){:root{--sub:60px}}
+@container site (max-width:720px){
+  .doors{grid-template-columns:1fr;gap:14px}
+  .doors .art{height:180px}
+  .prov-line{font-size:14.5px}
+  .subnav.l2{padding:8px 0}
+  .subnav.l2 .subnav-in{padding:4px;gap:4px;border-radius:15px;-webkit-mask-image:none;mask-image:none}
+  .subnav.l2 a{font-size:14.5px;padding:0 12px;min-height:44px;border-radius:11px}
+  #s-marca .subnav.l2{position:relative;top:auto;background:transparent;border-bottom:0;padding:0 0 4px;-webkit-backdrop-filter:none;backdrop-filter:none}
+  #s-marca .subnav.l2 .subnav-in{display:grid;grid-template-columns:1fr 1fr;overflow:visible}
+  #s-marca .subnav.l2 a{min-height:48px;padding:0 8px;white-space:normal;text-align:center}
+  .subnav.stepper .subnav-in{display:flex;overflow-x:auto;scroll-padding-inline:16px}
+  .subnav.stepper a{flex:0 0 auto;gap:8px;padding:0 14px 0 8px}
+  .subnav.stepper .sn{width:24px;height:24px;font-size:12.5px}
+  .subnav.stepper .fl{display:none}
+  .subnav.stepper .sh{display:inline}
+  #m-identidad .tabs{margin-bottom:20px}
+  #m-identidad .tab{font-size:14px;padding:10px 12px}
+  .voz-sum{flex-direction:column;align-items:flex-start}
+  .voz-sum .btn{width:100%}
+}
+@media (prefers-reduced-motion: reduce){.subnav.l2 a,.subnav.stepper .sn{transition:none}}
+
+/* ================= Ajustes de prueba con usuarios ================= */
+/* Ecosistema: territorios informativos con CTA explícito */
+.terr3 .tz{cursor:default}
+.terr3 .tz:hover{transform:none}
+.tz-go{align-self:flex-start;margin-top:6px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;text-decoration-color:rgba(29,35,51,.35);padding:6px 0;min-height:32px;transition:text-decoration-color .2s,gap .2s}
+.tz-go:hover{text-decoration-color:currentColor;gap:9px}
+.tz.core .tz-go{color:var(--navy)}
+/* Crear: regreso contextual y paso siguiente */
+.ctx-back{margin:-8px 0 18px}
+.ctx-back a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 14px 8px 12px;border-radius:999px;background:var(--green-soft)}
+.ctx-back a:hover{background:#E2EED3}
+.next-step{margin-top:40px;display:flex;justify-content:flex-end}
+.next-step a{display:inline-flex;align-items:center;gap:12px;padding:12px 16px 12px 18px;border-radius:14px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;color:var(--navy);transition:box-shadow .2s,transform .2s}
+.b-white .next-step a{background:var(--bg)}
+.next-step a:hover{box-shadow:inset 0 0 0 1.5px var(--green);transform:translateY(-2px)}
+.next-step a > span{font-size:13px;color:var(--muted)}
+.next-step b{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px}
+.next-step .sn{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;background:var(--green);color:var(--navy)}
+.step-jb{padding-top:56px}
+/* Recursos: notas */
+.rnote{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:0 0 14px;padding:12px 16px;border-radius:12px;background:var(--green-soft);font-size:14.5px;color:var(--ink-2)}
+.rnote[hidden]{display:none}
+.rnote b{font-weight:600;color:var(--navy)}
+.rnote p{flex:1 1 420px;margin:0}
+.uik-note{font-size:13.5px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.uik-note b{font-weight:600;color:var(--navy)}
+/* Recursos: Jalbot sin cuadrícula */
+.res .prev.jbp{background:#fff;padding:10px;border-radius:18px 18px 0 0;box-shadow:inset 0 0 0 1px var(--line)}
+.res .prev.jbp img{max-width:92%;max-height:94%}
+.res .tbg{font-size:12.5px;color:var(--muted);margin-top:2px}
+/* Recursos: descargas más livianas */
+.res .dl a.btn[download]{padding:7px 12px;font-size:13px;border-radius:9px;gap:6px;background:var(--white);color:var(--navy);border:1.5px solid var(--navy)}
+.res .dl a.btn.sec[download]{border-color:#CDD1D9}
+.res .dl a.btn[download]:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:none}
+.res .body{gap:10px}
+/* Recursos: biblioteca de iconos por estilo */
+.icolib{grid-column:1/-1;margin-top:18px;padding-top:26px;border-top:1px solid var(--line)}
+.icolib[hidden]{display:none}
+.icolib-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-bottom:6px}
+.icg-group{margin-top:22px}
+.icg-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;margin-bottom:12px}
+.icg-head .h3{font-size:17px}
+.icg-head .h3 span{font-size:13px;font-weight:500;color:var(--muted);margin-left:4px}
+.icg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.ico{margin:0;background:var(--white);border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;display:flex;flex-direction:column}
+.ico .ip{height:92px;display:grid;place-items:center;background:var(--bg)}
+.ico .ip.dk{background:var(--navy)}
+.ico .ip img{width:52px;height:52px;object-fit:contain}
+.ico figcaption{padding:8px 10px 6px;display:flex;flex-direction:column;gap:2px}
+.ico figcaption b{font-size:13px;font-weight:600;line-height:1.3;color:var(--navy)}
+.ico-dl{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;min-height:30px;font-size:12.5px;font-weight:600;color:#3F7A00;text-decoration:none;border-radius:6px}
+.ico-dl:hover{text-decoration:underline;text-underline-offset:3px}
+.ico-dl:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@container site (max-width:720px){
+  .tz-go{min-height:40px}
+  .next-step{justify-content:stretch}
+  .next-step a{width:100%;justify-content:space-between;flex-wrap:wrap}
+  .res .dl a.btn[download]{min-height:40px}
+  .icg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .ico .ip{height:84px}
+  .ico-dl{min-height:36px}
+  .rnote{font-size:14px}
+}
+@container site (max-width:380px){.icg-grid{gap:6px}}
+
+
+/* ===== Ajuste puntual: Recursos compactos (logos + Jalbot) ===== */
+/* Logos e isotipos: tarjetas más bajas y fáciles de escanear */
+.res[data-type="logos"] .prev{
+  aspect-ratio:16/7;
+  min-height:0;
+  padding:14px 18px;
+}
+.res[data-type="logos"] .prev img{
+  max-width:72%;
+  max-height:64%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+.res[data-type="logos"] .body{
+  padding:12px 14px 14px;
+  gap:7px;
+}
+.res[data-type="logos"] .meta{font-size:12.5px}
+.res[data-type="logos"] .dl{gap:6px}
+.res[data-type="logos"] .dl a.btn[download]{padding:6px 10px;font-size:12.5px}
+.res[data-type="logos"] .vec small{font-size:11px}
+
+/* Jalbot: tarjetas un poco más compactas y pose completa centrada */
+.res[data-type="jalbot"] .prev.jbp{
+  aspect-ratio:4/3;
+  min-height:0;
+  padding:12px 16px;
+  display:grid;
+  place-items:center;
+}
+.res[data-type="jalbot"] .prev.jbp img{
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+  transform:none;
+}
+.res[data-type="jalbot"]:hover .prev.jbp img{transform:scale(1.015)}
+.res[data-type="jalbot"] .body{
+  padding:12px 14px 14px;
+  gap:7px;
+}
+.res[data-type="jalbot"] .meta,
+.res[data-type="jalbot"] .tbg{font-size:12.5px}
+.res[data-type="jalbot"] .dl a.btn[download]{padding:6px 10px;font-size:12.5px}
+
+@container site (max-width:720px){
+  .res[data-type="logos"] .prev{aspect-ratio:16/8;padding:12px 16px}
+  .res[data-type="jalbot"] .prev.jbp{aspect-ratio:4/3;padding:10px 14px}
+}
 </style>
 </head>
 <body>
@@ -1610,7 +1766,6 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   <a href="#inicio" class="logo hdr-logo" aria-label="Inicio"><img src="assets/logo/jaltech-horizontal-green-gradient.png" alt="Jaltech"></a>
   <nav class="nav" aria-label="Principal"><a href="#inicio" data-route="inicio">Inicio</a><a href="#marca" data-route="marca">Marca</a><a href="#crear" data-route="crear">Crear</a><a href="#recursos" data-route="recursos">Recursos</a><a href="https://brand-jaltech.vercel.app/guia-agencia.html#inicio" class="nav-prov" target="_blank" rel="noopener">Para proveedores ↗</a></nav>
   <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Abrir menú"><svg class="i"><use href="#i-menu"/></svg></button>
-  <div class="hdr-prov"><span class="t">Para proveedores y agencias</span><a href="#inicio" class="btn sec">Volver al Hub</a></div>
   <div class="sheet" id="sheet"><a href="#inicio" data-route="inicio">Inicio <svg class="i"><use href="#i-arrow"/></svg></a><a href="#marca" data-route="marca">Marca <svg class="i"><use href="#i-arrow"/></svg></a><a href="#crear" data-route="crear">Crear <svg class="i"><use href="#i-arrow"/></svg></a><a href="#recursos" data-route="recursos">Recursos <svg class="i"><use href="#i-arrow"/></svg></a><a href="https://brand-jaltech.vercel.app/guia-agencia.html#inicio" target="_blank" rel="noopener">Para proveedores <svg class="i"><use href="#i-ext"/></svg></a></div>
 </div></header>
 <main>
@@ -1628,54 +1783,27 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   <div class="band b-white">
     <div class="wrap">
       <div class="sec-head rv"><h2 class="h2">¿Qué necesitas hacer?</h2></div>
-      <div class="g12 bento">
-        <a class="task t-white t-main s7 rv" href="#marca/m-identidad">
-          <h3 class="h3">Conocer la identidad</h3>
-          <p>Logo, color, tipografía, composición, iconografía, voz y reglas de uso.</p>
-          <div class="logo-stage"><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-green-gradient.png" alt="Logo Jaltech"></div>
+      <div class="doors">
+        <a class="task t-white door rv" href="#marca">
+          <h3 class="h3">Conocer la marca</h3>
+          <p>Identidad · Ecosistema · Conocer más · Jalbot</p>
+          <div class="logo-stage art"><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-green-gradient.png" alt="Logo Jaltech"></div>
           <span class="go"><svg class="i"><use href="#i-arrow"/></svg></span>
         </a>
-        <a class="task t-green t-main s5 rv" style="--d:80ms" href="#crear">
+        <a class="task t-green door rv" style="--d:80ms" href="#crear">
           <h3 class="h3">Crear una pieza</h3>
-          <p>Criterios paso a paso, por territorio y por canal.</p>
-          <div class="media"><img loading="lazy" decoding="async" class="img" style="object-position:top" src="assets/images/boletin-distribuidores.webp" alt="Boletín Distribuidores"></div>
+          <p>Para quién · Dónde va a salir · Qué cuidar · Ejemplos</p>
+          <div class="media art"><img loading="lazy" decoding="async" class="img" style="object-position:top" src="assets/images/boletin-distribuidores.webp" alt="Boletín Distribuidores"></div>
           <span class="go"><svg class="i"><use href="#i-arrow"/></svg></span>
         </a>
-        <a class="task t-soft t-sec t-jalbot s4 rv" href="#marca/m-jalbot">
-          <h3 class="h3">Usar Jalbot</h3>
-          <p>Quién es y cuándo aparece.</p>
-          <img loading="lazy" decoding="async" class="jb-img" src="assets/jalbot/jalbot-saludando.png" alt="">
-          <span class="go"><svg class="i"><use href="#i-arrow"/></svg></span>
-        </a>
-        <a class="task t-white t-sec s4 rv" style="--d:60ms" href="#recursos">
+        <a class="task t-white door rv" style="--d:160ms" href="#recursos">
           <h3 class="h3">Descargar recursos</h3>
-          <p>Logos, iconos, imágenes, Jalbot y UI Kit Jaltech.</p>
-          <div class="icon-row"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/corporativo-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-accent.svg" alt=""></div>
+          <p>Logos · Iconos · Imágenes · Jalbot · UI&nbsp;Kit</p>
+          <div class="icon-row art"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/corporativo-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-accent.svg" alt=""><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-accent.svg" alt=""></div>
           <span class="go"><svg class="i"><use href="#i-arrow"/></svg></span>
         </a>
-        <a class="task t-white t-sec s4 rv" style="--d:120ms" href="#marca/m-ecosistema">
-          <h3 class="h3">Explorar marcas y líneas</h3>
-          <p>Territorios, líneas y marcas del ecosistema.</p>
-          <div class="logo-row"><img loading="lazy" decoding="async" src="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.png" alt="Jaltech POS"><img loading="lazy" decoding="async" src="assets/lineas-negocio/partners-pos/logo-3.png" alt="Partner POS"><img loading="lazy" decoding="async" src="assets/lineas-negocio/basik-tech/logo-horizontal-4.png" alt="Basik Tech"><img loading="lazy" decoding="async" src="assets/lineas-negocio/gamer-tech/logo-horizontal-3.png" alt="Gamer Tech"></div>
-          <span class="go"><svg class="i"><use href="#i-arrow"/></svg></span>
-        </a>
-        <a class="task t-prov s12 rv" href="https://brand-jaltech.vercel.app/guia-agencia.html#inicio" target="_blank" rel="noopener">
-          <div><h3 class="h3">Soy proveedor o agencia</h3><p>Lo mínimo para producir con la marca sin errores.</p></div>
-          <span class="go"><svg class="i"><use href="#i-ext"/></svg></span>
-        </a>
       </div>
-    </div>
-  </div>
-
-  <div class="band b-soft">
-    <div class="wrap">
-      <div class="quick-head rv"><h2 class="h2">Accesos rápidos</h2></div>
-      <div class="quick">
-        <a class="qa rv" href="#recursos" data-preset="logos"><span class="ic"><svg class="i"><use href="#i-dl"/></svg></span><span><b>Descargar logo principal</b><small>Descarga en PNG</small></span></a>
-        <a class="qa rv" style="--d:60ms" href="#marca/m-identidad" data-tab="t-color"><span class="ic"><svg class="i"><use href="#i-eye"/></svg></span><span><b>Consultar paleta</b><small>Consulta en Identidad</small></span></a>
-        <a class="qa rv" style="--d:120ms" href="#marca/m-identidad" data-tab="t-tipo"><span class="ic"><svg class="i"><use href="#i-mail"/></svg></span><span><b>Consultar / solicitar tipografías</b><small>Consulta y solicitud</small></span></a>
-        <a class="qa rv" style="--d:180ms" href="#recursos" data-preset="jalbot"><span class="ic"><svg class="i"><use href="#i-folder"/></svg></span><span><b>Ver recursos de Jalbot</b><small>Recursos filtrados</small></span></a>
-      </div>
+      <p class="prov-line rv"><span>¿Eres proveedor o agencia?</span> <a href="https://brand-jaltech.vercel.app/guia-agencia.html#inicio" target="_blank" rel="noopener">Ver Guía Creativa para proveedores y agencias <svg class="i i-sm"><use href="#i-ext"/></svg></a></p>
     </div>
   </div>
   <div class="wrap"><div class="foot"><span>Brand Hub Jaltech</span><span>Dudas de marca: <a href="mailto:dir.creativa@jaltechsas.com">dir.creativa@jaltechsas.com</a></span></div></div>
@@ -1684,10 +1812,10 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
 <section class="screen" id="s-marca" aria-label="Marca" data-views>
   <div class="wrap page-head rv">
     <h1 class="h1">Marca</h1>
-    <p class="lead">Identidad, ecosistema, presentación y Jalbot: lo que define cómo se ve y cómo habla Jaltech.</p>
+    <p class="lead">Identidad, ecosistema, Jalbot y más: lo que define cómo se ve y cómo habla Jaltech.</p>
   </div>
-  <nav class="subnav" aria-label="En esta sección"><div class="wrap"><div class="subnav-in">
-    <a href="#marca/m-identidad">Identidad</a><a href="#marca/m-ecosistema">Ecosistema</a><a href="#marca/m-presentacion">Presentación</a><a href="#marca/m-jalbot">Jalbot</a><span class="ind"></span>
+  <nav class="subnav l2" aria-label="Secciones de Marca"><div class="wrap"><div class="subnav-in">
+    <a href="#marca/m-identidad">Identidad</a><a href="#marca/m-ecosistema">Ecosistema</a><a href="#marca/m-presentacion">Conocer más</a><a href="#marca/m-jalbot">Jalbot</a><span class="ind"></span>
   </div></div></nav>
 
   <section class="band view" id="m-identidad">
@@ -1814,11 +1942,10 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
     <div class="panel soft"><h3 class="h3" style="margin-bottom:12px">Así sí</h3><ul class="rl"><li class="y"><span class="m"><svg class="i i-sm"><use href="#i-check"/></svg></span><span>“Tenemos el stock listo. Te lo enviamos hoy.”</span></li><li class="y"><span class="m"><svg class="i i-sm"><use href="#i-check"/></svg></span><span>“Fortalece tu portafolio con productos de alta rotación.”</span></li><li class="y"><span class="m"><svg class="i i-sm"><use href="#i-check"/></svg></span><span>“Tus clientes piden cargadores todos los días.”</span></li><li class="y"><span class="m"><svg class="i i-sm"><use href="#i-check"/></svg></span><span>“Quedo atenta a cualquier pedido o consulta.”</span></li></ul></div>
     <div class="panel"><h3 class="h3" style="margin-bottom:12px">Así no</h3><ul class="rl"><li class="n"><span class="m"><svg class="i i-sm"><use href="#i-x"/></svg></span><span>“¡Somos líderes en tecnología de vanguardia!”</span></li><li class="n"><span class="m"><svg class="i i-sm"><use href="#i-x"/></svg></span><span>“Transformamos el ecosistema digital de tu empresa.”</span></li><li class="n"><span class="m"><svg class="i i-sm"><use href="#i-x"/></svg></span><span>“¡No te pierdas esta oferta increíble y exclusiva!”</span></li><li class="n"><span class="m"><svg class="i i-sm"><use href="#i-x"/></svg></span><span>“Proveemos soluciones integrales de alto valor.”</span></li></ul></div>
   </div>
-  <div class="g12" style="margin-top:16px">
-    <div class="panel navy s6"><h3 class="h3">Distribuidores</h3><p class="muted" style="margin-top:8px">Más comercial, dinámico y orientado a acción. Beneficio directo, oportunidad clara, CTA fuerte.</p></div>
-    <div class="panel s6"><h3 class="h3">Corporativo</h3><p class="muted" style="margin-top:8px">Más institucional, confiable y empresarial. Argumentos claros, cifras cuando aportan, cierre profesional.</p></div>
+  <div class="panel voz-sum rv">
+    <p><strong class="em">La voz Jaltech es una sola.</strong> Siempre cercana, clara, útil y confiable; puede modularse según el territorio.</p>
+    <a class="btn sec" href="#crear/c-territorio">Ver cómo se aplica por territorio <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
   </div>
-  <p class="small muted" style="margin-top:14px"><strong class="em">No son dos voces</strong>: son dos matices del mismo tono. La adaptación por canal está en <a href="#crear/c-canal" style="font-weight:600">Crear / Por canal</a>.</p>
 </div>
 <div class="tabpanel" id="t-dos" role="tabpanel">
   <h3 class="h3" style="margin-bottom:14px">Visual</h3>
@@ -1843,10 +1970,10 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
         <div class="eco-terr rv" style="--d:250ms">
           <span class="kind">A. Territorios de comunicación</span>
           <p class="muted small">Misma marca, mismo logo. Lo que cambia es el lenguaje visual alrededor de la marca.</p>
-          <div class="terr3">
-            <a class="tz core" href="#crear/c-territorio" data-terr="dist"><span class="tag">Territorio core</span><b>Distribuidores <svg class="i i-sm"><use href="#i-arrow"/></svg></b><span>Distribuidores, mayoristas, aliados comerciales y puntos de venta. Promociones, lanzamientos, portafolio y temporadas.</span></a>
-            <a class="tz" href="#crear/c-territorio" data-terr="corp"><b>Corporativo <svg class="i i-sm"><use href="#i-arrow"/></svg></b><span>Empresas y organizaciones. Soluciones, productividad e institucionalidad.</span></a>
-            <a class="tz" href="#crear/c-territorio" data-terr="inst"><b>Institucional <svg class="i i-sm"><use href="#i-arrow"/></svg></b><span>Mismo sistema de identidad Jaltech. Fondo sólido como uso preferido.</span></a>
+          <div class="terr3" id="eco-terr">
+            <div class="tz core"><span class="tag">Territorio core</span><b>Distribuidores</b><span>Distribuidores, mayoristas, aliados comerciales y puntos de venta. Promociones, lanzamientos, portafolio y temporadas.</span><a class="tz-go" href="#crear/c-territorio" data-terr="dist">Ver cómo aplicarlo <svg class="i i-sm"><use href="#i-arrow"/></svg></a></div>
+            <div class="tz"><b>Corporativo</b><span>Empresas y organizaciones. Soluciones, productividad e institucionalidad.</span><a class="tz-go" href="#crear/c-territorio" data-terr="corp">Ver cómo aplicarlo <svg class="i i-sm"><use href="#i-arrow"/></svg></a></div>
+            <div class="tz"><b>Institucional</b><span>Mismo sistema de identidad Jaltech. Fondo sólido como uso preferido.</span><a class="tz-go" href="#crear/c-territorio" data-terr="inst">Ver cómo aplicarlo <svg class="i i-sm"><use href="#i-arrow"/></svg></a></div>
           </div>
         </div>
         <div class="conn" style="--d:400ms"></div>
@@ -1874,7 +2001,7 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
             </div>
           </div>
         </div>
-        <div class="eco-sep rv" style="--d:800ms">Carril independiente dentro del ecosistema</div>
+        <div class="eco-sep rv" style="--d:800ms">Marca independiente dentro del ecosistema</div>
         <article class="tecnigo rv" style="--d:880ms">
           <img loading="lazy" decoding="async" class="logo-img" src="assets/lineas-negocio/tecnigo/logo-2.png" alt="TecniGo">
           <div><h3 class="h3">TecniGo</h3><p><strong class="em">Marca independiente</strong> con logo, color y tipografía propios —Oswald SemiBold en títulos y Poppins en texto—. Está orientada al usuario final y mantiene una identidad diferenciada de Jaltech, cuya comunicación está enfocada en el canal B2B.</p></div>
@@ -1944,30 +2071,32 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   </section>
 </section>
 
-<section class="screen" id="s-crear" aria-label="Crear">
+<section class="screen" id="s-crear" aria-label="Crear" data-views>
   <div class="wrap page-head rv">
     <h1 class="h1">Crear</h1>
-    <p class="lead">Ya conoces la marca. Aquí tienes los criterios para aplicarla por territorio, canal y formato.</p>
+    <p class="lead">Ya conoces la marca. Aplícala en cuatro pasos: para quién es, dónde va a salir, qué debes cuidar y ejemplos reales.</p>
   </div>
-  <nav class="subnav" aria-label="En esta sección"><div class="wrap"><div class="subnav-in">
-    <a href="#crear/c-pieza">Cómo hacer una pieza</a><a href="#crear/c-territorio">Por territorio</a><a href="#crear/c-canal">Por canal</a><a href="#crear/c-fundamentos">Fundamentos</a><a href="#crear/c-video">Video y embajadoras</a><a href="#crear/c-ejemplos">Ejemplos</a><span class="ind"></span>
+  <nav class="subnav l2 stepper" aria-label="Pasos para crear una pieza"><div class="wrap"><div class="subnav-in">
+    <a href="#crear/c-territorio"><span class="sn">1</span><span class="fl">¿Para quién?</span><span class="sh">Para quién</span></a><a href="#crear/c-canal"><span class="sn">2</span><span class="fl">¿Dónde va a salir?</span><span class="sh">Dónde</span></a><a href="#crear/c-fundamentos"><span class="sn">3</span><span class="fl">¿Qué debo cuidar?</span><span class="sh">Qué cuidar</span></a><a href="#crear/c-ejemplos"><span class="sn">4</span><span class="fl">Ejemplos reales</span><span class="sh">Ejemplos</span></a><span class="ind"></span>
   </div></div></nav>
 
-  <section class="band" id="c-pieza">
+  <section class="band view" id="c-pieza">
     <div class="wrap">
-      <div class="sec-head rv"><h2 class="h2">Cómo hacer una pieza</h2><p class="muted">Ocho criterios para producir una pieza alineada con la marca.</p></div>
+      <div class="sec-head rv"><div><span class="step-k">Antes de empezar</span><h2 class="h2">Cómo hacer una pieza</h2></div><p class="muted">Ocho criterios para producir una pieza alineada con la marca.</p></div>
       <div class="oro rv"><div><small>La regla de oro, antes de publicar</small><b>¿Le sirve al aliado para vender más, confiar más o entender mejor? Si no, no va.</b></div></div>
       <div class="stps-wrap draw"><div class="track"><span></span></div><div class="stps"><article class="stp rv" style="--d:0ms"><span class="n">1</span><h3 class="h3">Elige la línea de comunicación</h3><ul><li><b>Distribuidores:</b> distribuidores, mayoristas, aliados comerciales y puntos de venta.</li><li><b>Corporativo:</b> empresas y organizaciones.</li><li><b>Institucional:</b> tercer territorio Jaltech, con el mismo sistema de identidad.</li><li><b>Partner POS:</b> desarrolladores POS, integradores y aliados tecnológicos.</li><li><b>TecniGo:</b> marca independiente, dirigida al usuario final.</li></ul></article><article class="stp rv" style="--d:60ms"><span class="n">2</span><h3 class="h3">Usa producto oficial</h3><ul><li>Solo productos oficiales Jaltech, con marca visible.</li><li>Nada genérico, de otras marcas ni referencias de internet.</li><li>Si usas IA, revisa que el producto no quede alterado.</li></ul></article><article class="stp rv" style="--d:120ms"><span class="n">3</span><h3 class="h3">Aplica el color de la línea</h3><ul><li><b>Distribuidores:</b> más flexibilidad según campaña; el verde se mantiene presente.</li><li><b>Corporativo:</b> paleta Jaltech sobria; naranja o morado como acento controlado.</li><li><b>Partner POS:</b> limpia y confiable, sin estética gamer.</li></ul></article><article class="stp rv" style="--d:180ms"><span class="n">4</span><h3 class="h3">Elige un solo tipo de fondo</h3><ul><li>Sólido, textura sencilla o degradado suave.</li><li>El fondo acompaña; no compite con el producto ni con la jerarquía.</li></ul></article><article class="stp rv" style="--d:0ms"><span class="n">5</span><h3 class="h3">Aplica la tipografía</h3><ul><li>Mont o Montserrat predominan en títulos y destacados.</li><li>Poppins o Aptos en párrafos.</li><li>En Distribuidores, una tipografía temática puede ir en palabras o frases puntuales (Navidad, Halloween, fechas comerciales) sin reemplazar el sistema.</li></ul></article><article class="stp rv" style="--d:60ms"><span class="n">6</span><h3 class="h3">Usa iconografía lineal</h3><ul><li>Base gris y un acento cuando aporte jerarquía.</li><li>Sobre fondos de color, icono blanco.</li></ul></article><article class="stp rv" style="--d:120ms"><span class="n">7</span><h3 class="h3">Pon el logo correcto</h3><ul><li>Distribuidores, Corporativo e Institucional: logo Jaltech. Jaltech POS, Partner POS y TecniGo: el suyo.</li><li>Full color sobre claro, una tinta sobre oscuro.</li><li>Respeta la zona de protección.</li></ul></article><article class="stp rv last" style="--d:180ms"><span class="n">8</span><h3 class="h3">Valida antes de publicar</h3><ul><li>Envía la pieza a Dirección Creativa: <a href="mailto:dir.creativa@jaltechsas.com" style="font-weight:600">dir.creativa@jaltechsas.com</a>.</li></ul></article></div></div>
+      <p class="next-step"><a href="#crear/c-territorio"><span>Empezar</span><b><span class="sn">1</span>¿Para quién?</b><svg class="i i-sm"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <section class="band b-white" id="c-territorio">
+  <section class="band b-white view" id="c-territorio">
     <div class="wrap">
-      <div class="sec-head rv"><h2 class="h2">Por territorio</h2><p class="muted">Misma marca y mismo logo en los tres territorios. Lo que cambia es el lenguaje visual alrededor.</p></div>
+      <p class="ctx-back" hidden><a href="#marca/m-ecosistema" id="backEco">← Volver a Ecosistema</a></p>
+      <div class="sec-head rv"><div><span class="step-k">Paso 1 de 4 · Territorio</span><h2 class="h2">¿Para quién?</h2></div><p class="muted">Misma marca y mismo logo en los tres territorios. Lo que cambia es el lenguaje visual alrededor.</p></div>
       <div class="tsw rv" role="tablist">
         <button class="tsb core" role="tab" data-t="dist" aria-selected="true"><span class="tag">Territorio core</span><b>Distribuidores</b><span>Distribuidores, mayoristas, aliados comerciales y puntos de venta</span></button>
         <button class="tsb" role="tab" data-t="corp" aria-selected="false"><b>Corporativo</b><span>Empresas y organizaciones</span></button>
-        <button class="tsb" role="tab" data-t="inst" aria-selected="false"><b>Institucional</b><span>Sistema de identidad Jaltech</span></button>
+        <button class="tsb" role="tab" data-t="inst" aria-selected="false"><b>Institucional</b><span>Comunicaciones institucionales y de marca</span></button>
       </div>
       <div class="tpanel on" id="tp-dist" role="tabpanel">
         <div class="tp-txt">
@@ -2017,12 +2146,13 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
         <div><span>Voz</span><p class="c1">Comercial y dinámica; CTA fuerte.</p><p>Institucional, confiable y empresarial.</p><p>Voz Jaltech: cercana, clara, útil y confiable.</p></div>
         <div><span>Jalbot</span><p class="c1">En campañas de cercanía, fechas especiales y activaciones. No en listados de precios ni piezas muy transaccionales.</p><p>Solo cuando aporta cercanía; no en piezas de alto enfoque transaccional.</p><p>No aparece en comunicación institucional formal o seria.</p></div>
       </div>
+      <p class="next-step"><a href="#crear/c-canal"><span>Siguiente</span><b><span class="sn">2</span>¿Dónde va a salir?</b><svg class="i i-sm"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
 
-  <section class="band b-soft" id="c-canal">
+  <section class="band b-soft view" id="c-canal">
     <div class="wrap">
-      <div class="sec-head rv"><h2 class="h2">Por canal</h2><p class="muted">El tono no cambia; cambia el formato. Elige un canal.</p></div>
+      <div class="sec-head rv"><div><span class="step-k">Paso 2 de 4 · Canal</span><h2 class="h2">¿Dónde va a salir?</h2></div><p class="muted">El tono no cambia; cambia el formato. Elige un canal.</p></div>
       <div class="pills rv" role="tablist" id="pills"><button class="pill" role="tab" data-ch="mail" aria-selected="true"><span class="dot"></span>Mailing</button><button class="pill" role="tab" data-ch="redes" aria-selected="false"><span class="dot"></span>Redes sociales</button><button class="pill" role="tab" data-ch="wa" aria-selected="false"><span class="dot"></span>WhatsApp</button><button class="pill" role="tab" data-ch="web" aria-selected="false"><span class="dot"></span>Sitio web</button><button class="pill" role="tab" data-ch="cat" aria-selected="false"><span class="dot"></span>Catálogo</button><button class="pill" role="tab" data-ch="pop" aria-selected="false"><span class="dot"></span>POP, stand y feria</button><button class="pill" role="tab" data-ch="ficha" aria-selected="false"><span class="dot"></span>Ficha comercial</button><button class="pill" role="tab" data-ch="emp" aria-selected="false"><span class="dot"></span>Empaques</button><button class="pill" role="tab" data-ch="ali" aria-selected="false"><span class="dot"></span>Material para aliados</button></div>
       <div class="chan-panel rv" id="chanPanel" role="tabpanel">
         <div class="ch-txt">
@@ -2033,12 +2163,14 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
         <div class="ch-wf"><div class="wfstage" id="chWf"><div class="wf-mail"><i class="img" style="left:8%;top:6%;width:84%;height:30%"></i><b class="tag" style="left:12%;top:26%">Banner con beneficio</b><i class="bar" style="left:8%;top:42%;width:70%"></i><i class="ln" style="left:8%;top:54%;width:80%"></i><i class="ln" style="left:8%;top:60%;width:72%"></i><i class="cta" style="left:8%;top:72%;width:36%"></i><b class="tag" style="left:48%;top:73%">1 solo CTA</b><i class="ln" style="left:8%;top:88%;width:40%"></i></div></div><span class="wf-cap">Composición de referencia</span></div>
       </div>
 
+      <p class="next-step"><a href="#crear/c-fundamentos"><span>Siguiente</span><b><span class="sn">3</span>¿Qué debo cuidar?</b><svg class="i i-sm"><use href="#i-arrow"/></svg></a></p>
     </div>
   </section>
-  <section class="band" id="c-fundamentos">
+  <div class="view" id="c-fundamentos">
+  <section class="band">
     <div class="wrap">
       <div>
-        <div class="sec-head rv"><h2 class="h2">Fundamentos aplicados</h2><p class="muted">Fotografía, producto, composición e iconografía en la práctica.</p></div>
+        <div class="sec-head rv"><div><span class="step-k">Paso 3 de 4 · Fundamentos</span><h2 class="h2">¿Qué debo cuidar?</h2></div><p class="muted">Fundamentos aplicados: fotografía, producto, composición e iconografía en la práctica. Luego, video, embajadoras y uso de Jalbot.</p></div>
         <div class="g12">
           <article class="card s6 rv"><div class="media"><img loading="lazy" decoding="async" class="img" src="assets/images/estilo-de-vida.png" alt="Estilo de vida"></div><h3 class="h3">Fotografía</h3><ul class="rl"><li class="d"><span class="m"></span><span>Personas usando tecnología en oficinas, comercios y espacios de trabajo.</span></li><li class="d"><span class="m"></span><span>Contextos reales de uso.</span></li><li class="d"><span class="m"></span><span>Se usa cuando ayuda a contextualizar la solución o el mensaje.</span></li></ul></article>
           <article class="card s6 rv" style="--d:80ms"><div class="media"><img loading="lazy" decoding="async" class="img" src="assets/images/productos-collage.png" alt="Collage de productos"></div><h3 class="h3">Uso de producto</h3><ul class="rl"><li class="d"><span class="m"></span><span>Solo productos oficiales Jaltech, con marca visible.</span></li><li class="d"><span class="m"></span><span>Nada genérico ni de otras marcas.</span></li><li class="d"><span class="m"></span><span>Si se usa IA, revisar que el producto no quede alterado.</span></li></ul></article>
@@ -2061,7 +2193,7 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
 
   <section class="band b-navy vid2" id="c-video">
     <div class="wrap">
-      <div class="sec-head rv"><h2 class="h2">Marca en video</h2><p class="muted">Logo arriba a la izquierda, dentro del área segura.</p></div>
+      <div class="sec-head rv"><div><span class="step-k">Paso 3 de 4 · Video</span><h2 class="h2">Marca en video</h2></div><p class="muted">Logo arriba a la izquierda, dentro del área segura.</p></div>
       <div class="vwrap rv">
         <div class="vp"><div class="vfr v169"><span class="vsafe"></span><span class="vdim">área segura</span><img loading="lazy" decoding="async" class="vlogo" src="assets/logo/jaltech-horizontal-green-white-gradient.png" alt="Logo Jaltech"><span class="vslot">Contenedor editable · 16:9</span></div><p class="vcap"><b>16:9 · logo Jaltech completo,</b> arriba a la izquierda. Videos corporativos, YouTube, pantallas y presentaciones.</p></div>
         <div class="vp"><div class="vfr v916"><span class="vsafe"></span><span class="vdim">área segura</span><img loading="lazy" decoding="async" class="vlogo iso" src="assets/logo/jaltech-isotipo-white.png" alt="Isotipo Jaltech"><span class="vslot">Contenedor editable · 9:16</span></div><p class="vcap"><b>9:16 · isotipo Jaltech,</b> arriba a la izquierda. Pauta, historias, reels y contenido móvil.</p></div>
@@ -2076,10 +2208,20 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
       <p class="muted small" style="margin-top:14px">Cada marca puede sumar talento adicional según la campaña.</p>
     </div>
   </section>
-
-  <section class="band b-white" id="c-ejemplos">
+  <section class="band b-white step-jb">
     <div class="wrap">
-      <div class="sec-head rv"><h2 class="h2">Ejemplos</h2><p class="muted">Piezas reales aprobadas. Toca una para verla en grande.</p></div>
+      <div class="jb-band rv">
+        <div class="l"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-jumping.png" alt="" style="width:64px;height:80px;object-fit:contain"><div><h3 class="h3">Usar Jalbot</h3><p class="muted small">Quién es y cuándo aparece, en Marca.</p></div></div>
+        <a class="btn" href="#marca/m-jalbot">Ver Jalbot <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="next-step"><a href="#crear/c-ejemplos"><span>Siguiente</span><b><span class="sn">4</span>Ejemplos reales</b><svg class="i i-sm"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+  </div>
+
+  <section class="band b-white view" id="c-ejemplos">
+    <div class="wrap">
+      <div class="sec-head rv"><div><span class="step-k">Paso 4 de 4</span><h2 class="h2">Ejemplos reales</h2></div><p class="muted">Piezas reales aprobadas. Toca una para verla en grande.</p></div>
       <div class="gallery">
         <button class="gi g1 rv" data-lb="c_vac" data-cap="Banner vacaciones"><img loading="lazy" decoding="async" class="img" style="object-position:center" src="assets/campaigns/banner-vacaciones.png" alt="Banner vacaciones"><span class="ov"><b>Banner vacaciones</b><span>Ver aplicación <svg class="i i-sm"><use href="#i-arrow"/></svg></span></span></button>
         <button class="gi g2 rv" style="--d:60ms" data-lb="c_promo" data-cap="Jalbot promociones"><img loading="lazy" decoding="async" class="img" src="assets/campaigns/jalbot-promociones.png" alt="Jalbot promociones"><span class="ov"><b>Jalbot promociones</b><span>Ver aplicación <svg class="i i-sm"><use href="#i-arrow"/></svg></span></span></button>
@@ -2088,11 +2230,7 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
         <button class="gi g3 rv" style="--d:120ms" data-lb="c_pos" data-cap="Jalbot POS"><img loading="lazy" decoding="async" class="img" style="object-position:center" src="assets/campaigns/jalbot-pos.png" alt="Jalbot POS"><span class="ov"><b>Jalbot POS</b><span>Ver aplicación <svg class="i i-sm"><use href="#i-arrow"/></svg></span></span></button>
         <button class="gi g6 rv" style="--d:120ms" data-lb="pos_pieza" data-cap="Pieza Jaltech POS"><img loading="lazy" decoding="async" class="img" src="assets/images/pieza-jaltech-pos.webp" alt="Pieza Jaltech POS"><span class="ov"><b>Pieza Jaltech POS</b><span>Ver aplicación <svg class="i i-sm"><use href="#i-arrow"/></svg></span></span></button>
       </div>
-      <div class="jb-band rv">
-        <div class="l"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-jumping.png" alt="" style="width:64px;height:80px;object-fit:contain"><div><h3 class="h3">Usar Jalbot</h3><p class="muted small">Quién es y cuándo aparece, en Marca.</p></div></div>
-        <a class="btn" href="#marca/m-jalbot">Ver Jalbot <svg class="i i-sm"><use href="#i-arrow"/></svg></a>
-      </div>
-      <p class="refs"><a class="backup" href="guia-agencia.html" target="_blank" rel="noopener">Consultar Guía Creativa completa <svg class="i i-sm"><use href="#i-ext"/></svg></a></p>
+      <p class="refs"><a class="backup" href="guia-agencia.html" target="_blank" rel="noopener">Consultar Guía Creativa para proveedores y agencias <svg class="i i-sm"><use href="#i-ext"/></svg></a></p>
     </div>
   </section>
 </section>
@@ -2110,8 +2248,9 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
       <button class="chip" data-f="brand" data-v="all" aria-pressed="true">Todas</button><button class="chip" data-f="brand" data-v="jaltech" aria-pressed="false">Jaltech</button><button class="chip" data-f="brand" data-v="pos" aria-pressed="false">Jaltech POS</button><button class="chip" data-f="brand" data-v="partner" aria-pressed="false">Partner POS</button><button class="chip" data-f="brand" data-v="basik" aria-pressed="false">Basik Tech</button><button class="chip" data-f="brand" data-v="gamer" aria-pressed="false">Gamer Tech</button><button class="chip" data-f="brand" data-v="tecnigo" aria-pressed="false">TecniGo</button></div>
   </div></div>
   <div class="wrap" style="padding-bottom:72px">
+    <div class="rnote" id="noteImg" hidden><b>Imágenes de referencia</b><p>Puedes descargarlas para crear piezas o utilizarlas como referencia al trabajar con herramientas de IA. Ayudan a que la IA entienda mejor el estilo visual, los productos y el universo de marca de Jaltech.</p></div>
     <div class="resbar"><span id="count" aria-live="polite"></span><div class="active" id="activeChips"></div></div>
-    <div class="rgrid" id="rgrid"><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-green-gradient.png" alt="Logo horizontal"></div><div class="body"><div><h4>Logo horizontal</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-horizontal-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-horizontal-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev dk"><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-white.png" alt="Logo horizontal blanco"></div><div class="body"><div><h4>Logo horizontal blanco</h4><p class="meta">Jaltech · fondo oscuro</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-horizontal-white.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-horizontal-white.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-vertical-green-gradient.png" alt="Logo vertical"></div><div class="body"><div><h4>Logo vertical</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-vertical-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-vertical-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-isotipo-green-gradient.png" alt="Isotipo"></div><div class="body"><div><h4>Isotipo</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-isotipo-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-isotipo-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="pos"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.png" alt="Logo Jaltech POS"></div><div class="body"><div><h4>Logo Jaltech POS</h4><p class="meta">Jaltech POS · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="partner"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/partners-pos/logo-3.png" alt="Logo Partner POS"></div><div class="body"><div><h4>Logo Partner POS</h4><p class="meta">Partner POS · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/partners-pos/logo-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/partners-pos/logo-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="basik"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/basik-tech/logo-horizontal-4.png" alt="Logo Basik Tech"></div><div class="body"><div><h4>Logo Basik Tech</h4><p class="meta">Basik Tech · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/basik-tech/logo-horizontal-4.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/basik-tech/logo-horizontal-4.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="gamer"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/gamer-tech/logo-horizontal-3.png" alt="Logo Gamer Tech"></div><div class="body"><div><h4>Logo Gamer Tech</h4><p class="meta">Gamer Tech · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/gamer-tech/logo-horizontal-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/gamer-tech/logo-horizontal-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="tecnigo"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/tecnigo/logo-3.png" alt="Logo TecniGo"></div><div class="body"><div><h4>Logo TecniGo</h4><p class="meta">TecniGo · a color</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/tecnigo/logo-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/tecnigo/logo-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/boton-icono-outline.svg" alt="Botón"></div><div class="body"><div><h4>Botón</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/boton-icono-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/boton-icono-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/catalogo-outline.svg" alt="Catálogo"></div><div class="body"><div><h4>Catálogo</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/catalogo-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/catalogo-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/colores-outline.svg" alt="Colores"></div><div class="body"><div><h4>Colores</h4><p class="meta">SVG · Lineal</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/colores-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/corporativo-accent.svg" alt="Corporativo"></div><div class="body"><div><h4>Corporativo</h4><p class="meta">SVG · Lineal · Duotono · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/corporativo-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/corporativo-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/corporativo-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-accent.svg" alt="Distribuidores"></div><div class="body"><div><h4>Distribuidores</h4><p class="meta">SVG · Lineal · Duotono · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/distribuidores-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/distribuidores-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/distribuidores-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/firma-piezas-outline.svg" alt="Firma de piezas"></div><div class="body"><div><h4>Firma de piezas</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/firma-piezas-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/firma-piezas-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/fotografia-outline.svg" alt="Fotografía"></div><div class="body"><div><h4>Fotografía</h4><p class="meta">SVG · Lineal</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/fotografia-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/hombre-de-influencia-accent.svg" alt="Hombre de influencia"></div><div class="body"><div><h4>Hombre de influencia</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/hombre-de-influencia-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/hombre-de-influencia-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/hombre-de-influencia-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/hombre-de-influencia.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/mailing-outline.svg" alt="Mailing"></div><div class="body"><div><h4>Mailing</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/mailing-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/mailing-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/mercadeo-en-linea-accent.svg" alt="Mercadeo en línea"></div><div class="body"><div><h4>Mercadeo en línea</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/mercadeo-en-linea-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/mercadeo-en-linea-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/mercadeo-en-linea-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/mercadeo-en-linea.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/mundial-accent.svg" alt="Mundial"></div><div class="body"><div><h4>Mundial</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/mundial-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/mundial-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/mundial-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/mundial.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/patron-visual-outline.svg" alt="Patrón visual"></div><div class="body"><div><h4>Patrón visual</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/patron-visual-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/patron-visual-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/pin-jalbot-outline.svg" alt="Pin Jalbot"></div><div class="body"><div><h4>Pin Jalbot</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/pin-jalbot-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/pin-jalbot-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/pop-outline.svg" alt="POP"></div><div class="body"><div><h4>POP</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/pop-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/pop-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/publicidad-accent.svg" alt="Publicidad"></div><div class="body"><div><h4>Publicidad</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/publicidad-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/publicidad-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/publicidad-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/publicidad.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-accent.svg" alt="Publicidad digital"></div><div class="body"><div><h4>Publicidad digital</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/publicidad-digital-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/publicidad-digital-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/publicidad-digital-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/publicidad-digital.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/redes-outline.svg" alt="Redes"></div><div class="body"><div><h4>Redes</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/redes-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/redes-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/sello-calidad-outline.svg" alt="Sello de calidad"></div><div class="body"><div><h4>Sello de calidad</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/sello-calidad-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/sello-calidad-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/sello-marca-outline.svg" alt="Sello de marca"></div><div class="body"><div><h4>Sello de marca</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/sello-marca-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/sello-marca-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-accent.svg" alt="Terminal de punto de venta"></div><div class="body"><div><h4>Terminal de punto de venta</h4><p class="meta">SVG · Lineal · Duotono · Blanco · Original</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/terminal-de-punto-de-venta-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/terminal-de-punto-de-venta-accent.svg" target="_blank" rel="noopener" download>Duotono</a><a class="btn sec" href="assets/icons/terminal-de-punto-de-venta-white.svg" target="_blank" rel="noopener" download>Blanco</a><a class="btn sec" href="assets/icons/terminal-de-punto-de-venta.svg" target="_blank" rel="noopener" download>Original</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/tipografia-outline.svg" alt="Tipografía"></div><div class="body"><div><h4>Tipografía</h4><p class="meta">SVG · Lineal</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/tipografia-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/web-outline.svg" alt="Web"></div><div class="body"><div><h4>Web</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/web-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/web-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res ic-card" data-type="iconos" data-brand="jaltech"><div class="prev"><img loading="lazy" decoding="async" src="assets/icons/whatsapp-outline.svg" alt="WhatsApp"></div><div class="body"><div><h4>WhatsApp</h4><p class="meta">SVG · Lineal · Blanco</p></div><div class="dl ic-dl"><a class="btn" href="assets/icons/whatsapp-outline.svg" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Lineal</a><a class="btn sec" href="assets/icons/whatsapp-white.svg" target="_blank" rel="noopener" download>Blanco</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/estilo-de-vida.png" alt="Estilo de vida"></div><div class="body"><div><h4>Estilo de vida</h4><p class="meta">Jaltech · fotografía</p></div><div class="dl"><a class="btn" href="assets/images/estilo-de-vida.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/productos-collage.png" alt="Productos"></div><div class="body"><div><h4>Productos</h4><p class="meta">Jaltech · collage oficial</p></div><div class="dl"><a class="btn" href="assets/images/productos-collage.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/texture.webp" alt="Textura del sistema"></div><div class="body"><div><h4>Textura del sistema</h4><p class="meta">Jaltech · fondo</p></div><div class="dl"><a class="btn" href="assets/images/texture.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/degrade.webp" alt="Degradado suave"></div><div class="body"><div><h4>Degradado suave</h4><p class="meta">Jaltech · fondo</p></div><div class="dl"><a class="btn" href="assets/images/degrade.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev checker"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-apunta.webp" alt="Jalbot apunta"></div><div class="body"><div><h4>Jalbot apunta</h4><p class="meta">Pose oficial · referencia · WEBP</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-apunta.webp" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar WEBP</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev checker"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-saludando.png" alt="Jalbot saludando"></div><div class="body"><div><h4>Jalbot saludando</h4><p class="meta">Pose oficial · referencia</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-saludando.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev checker"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-jumping.png" alt="Jalbot jumping"></div><div class="body"><div><h4>Jalbot jumping</h4><p class="meta">Pose oficial · referencia</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-jumping.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-birthday.png" alt="Jalbot birthday"></div><div class="body"><div><h4>Jalbot birthday</h4><p class="meta">Pose oficial · referencia</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-birthday.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev checker"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-isotipo.webp" alt="Jalbot isotipo"></div><div class="body"><div><h4>Jalbot isotipo</h4><p class="meta">Recurso de firma visual</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-isotipo.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="tecnicos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/protection/area-de-proteccion1.png" alt="Área de protección"></div><div class="body"><div><h4>Área de protección</h4><p class="meta">Jaltech</p></div><div class="dl"><a class="btn" href="assets/protection/area-de-proteccion1.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res feat" data-type="uikit" data-brand="jaltech"><div class="prev" style="background:var(--green-soft)"><div class="uik"><div class="sw6"><span style="background:#529A00"></span><span style="background:#1D2333"></span><span style="background:#FF8600"></span><span style="background:#6A2AE1"></span><span style="background:#FFBF15"></span><span style="background:#0063FE"></span></div><div class="btns"><span style="background:#529A00;color:#1D2333">Botón primario</span><span style="background:#1D2333;color:#fff">Botón</span><span style="background:#fff;color:#1D2333;box-shadow:inset 0 0 0 1px #D8D8D2">Secundario</span></div></div></div><div class="body" style="justify-content:center"><div><h3 class="h3">UI Kit Jaltech</h3><p class="meta" style="margin-top:4px">Tokens de diseño y componentes: botones, badges, cards, inputs y estados.</p></div><div class="dl" style="margin-top:8px"><a class="btn" href="#recursos/r-uikit">Ver UI Kit Jaltech <svg class="i i-sm"><use href="#i-arrow"/></svg></a></div></div></article></div>
+    <div class="rgrid" id="rgrid"><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-green-gradient.png" alt="Logo horizontal"></div><div class="body"><div><h4>Logo horizontal</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-horizontal-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-horizontal-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev dk"><img loading="lazy" decoding="async" src="assets/logo/jaltech-horizontal-white.png" alt="Logo horizontal blanco"></div><div class="body"><div><h4>Logo horizontal blanco</h4><p class="meta">Jaltech · fondo oscuro</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-horizontal-white.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-horizontal-white.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-vertical-green-gradient.png" alt="Logo vertical"></div><div class="body"><div><h4>Logo vertical</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-vertical-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-vertical-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/logo/jaltech-isotipo-green-gradient.png" alt="Isotipo"></div><div class="body"><div><h4>Isotipo</h4><p class="meta">Jaltech · full color</p></div><div class="dl"><a class="btn" href="assets/logo/jaltech-isotipo-green-gradient.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/logo/jaltech-isotipo-green-gradient.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="pos"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.png" alt="Logo Jaltech POS"></div><div class="body"><div><h4>Logo Jaltech POS</h4><p class="meta">Jaltech POS · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/jaltech-pos/logo-horizontal-2.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="partner"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/partners-pos/logo-3.png" alt="Logo Partner POS"></div><div class="body"><div><h4>Logo Partner POS</h4><p class="meta">Partner POS · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/partners-pos/logo-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/partners-pos/logo-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="basik"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/basik-tech/logo-horizontal-4.png" alt="Logo Basik Tech"></div><div class="body"><div><h4>Logo Basik Tech</h4><p class="meta">Basik Tech · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/basik-tech/logo-horizontal-4.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/basik-tech/logo-horizontal-4.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="gamer"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/gamer-tech/logo-horizontal-3.png" alt="Logo Gamer Tech"></div><div class="body"><div><h4>Logo Gamer Tech</h4><p class="meta">Gamer Tech · fondo claro</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/gamer-tech/logo-horizontal-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/gamer-tech/logo-horizontal-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="logos" data-brand="tecnigo"><div class="prev "><img loading="lazy" decoding="async" src="assets/lineas-negocio/tecnigo/logo-3.png" alt="Logo TecniGo"></div><div class="body"><div><h4>Logo TecniGo</h4><p class="meta">TecniGo · a color</p></div><div class="dl"><a class="btn" href="assets/lineas-negocio/tecnigo/logo-3.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a><span class="vec"><a class="btn sec" href="assets/lineas-negocio/tecnigo/logo-3.svg" target="_blank" rel="noopener" download>Descargar SVG</a><small>Formato vectorial</small></span></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/estilo-de-vida.png" alt="Estilo de vida"></div><div class="body"><div><h4>Estilo de vida</h4><p class="meta">Jaltech · fotografía</p></div><div class="dl"><a class="btn" href="assets/images/estilo-de-vida.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/productos-collage.png" alt="Productos"></div><div class="body"><div><h4>Productos</h4><p class="meta">Jaltech · collage oficial</p></div><div class="dl"><a class="btn" href="assets/images/productos-collage.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/texture.webp" alt="Textura del sistema"></div><div class="body"><div><h4>Textura del sistema</h4><p class="meta">Jaltech · fondo</p></div><div class="dl"><a class="btn" href="assets/images/texture.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="imagenes" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/images/degrade.webp" alt="Degradado suave"></div><div class="body"><div><h4>Degradado suave</h4><p class="meta">Jaltech · fondo</p></div><div class="dl"><a class="btn" href="assets/images/degrade.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev jbp"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-apunta.webp" alt="Jalbot apunta"></div><div class="body"><div><h4>Jalbot apunta</h4><p class="meta">Pose oficial · referencia · WEBP</p><p class="tbg">Fondo transparente</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-apunta.webp" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar WEBP</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev jbp"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-saludando.png" alt="Jalbot saludando"></div><div class="body"><div><h4>Jalbot saludando</h4><p class="meta">Pose oficial · referencia</p><p class="tbg">Fondo transparente</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-saludando.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev jbp"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-jumping.png" alt="Jalbot jumping"></div><div class="body"><div><h4>Jalbot jumping</h4><p class="meta">Pose oficial · referencia</p><p class="tbg">Fondo transparente</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-jumping.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev full"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-birthday.png" alt="Jalbot birthday"></div><div class="body"><div><h4>Jalbot birthday</h4><p class="meta">Pose oficial · referencia</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-birthday.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="jalbot" data-brand="jaltech"><div class="prev jbp"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-isotipo.webp" alt="Jalbot isotipo"></div><div class="body"><div><h4>Jalbot isotipo</h4><p class="meta">Recurso de firma visual</p><p class="tbg">Fondo transparente</p></div><div class="dl"><a class="btn" href="assets/jalbot/jalbot-isotipo.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res" data-type="tecnicos" data-brand="jaltech"><div class="prev "><img loading="lazy" decoding="async" src="assets/protection/area-de-proteccion1.png" alt="Área de protección"></div><div class="body"><div><h4>Área de protección</h4><p class="meta">Jaltech</p></div><div class="dl"><a class="btn" href="assets/protection/area-de-proteccion1.png" target="_blank" rel="noopener" download><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar PNG</a></div></div></article><article class="res feat" data-type="uikit" data-brand="jaltech"><div class="prev" style="background:var(--green-soft)"><div class="uik"><div class="sw6"><span style="background:#529A00"></span><span style="background:#1D2333"></span><span style="background:#FF8600"></span><span style="background:#6A2AE1"></span><span style="background:#FFBF15"></span><span style="background:#0063FE"></span></div><div class="btns"><span style="background:#529A00;color:#1D2333">Botón primario</span><span style="background:#1D2333;color:#fff">Botón</span><span style="background:#fff;color:#1D2333;box-shadow:inset 0 0 0 1px #D8D8D2">Secundario</span></div></div></div><div class="body" style="justify-content:center"><div><h3 class="h3">UI Kit Jaltech</h3><p class="meta" style="margin-top:4px">Recursos para diseñar interfaces digitales de Jaltech: páginas web, portales, herramientas y aplicaciones.</p><p class="uik-note"><b>¿No trabajas en UX/UI o desarrollo?</b> No necesitas usarlo directamente. También puedes compartirlo como referencia con una herramienta de IA para que las interfaces que genere respeten mejor la identidad visual de Jaltech.</p></div><div class="dl" style="margin-top:8px"><a class="btn" href="#recursos/r-uikit">Ver UI Kit Jaltech <svg class="i i-sm"><use href="#i-arrow"/></svg></a></div></div></article><section class="icolib" data-type="iconos" data-brand="jaltech" aria-label="Iconos por estilo"><div class="icolib-head"><h3 class="h3">Iconos</h3><p class="muted small">Organizados por estilo. Un mismo icono puede estar en varios estilos: cada uno es un archivo SVG distinto.</p></div><div class="icg-group"><div class="icg-head"><h3 class="h3">Lineales <span>23</span></h3><p class="muted small">Trazo en un solo color.</p></div><div class="icg-grid"><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/boton-icono-outline.svg" alt=""></div><figcaption><b>Botón</b><a class="ico-dl" href="assets/icons/boton-icono-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Botón, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/catalogo-outline.svg" alt=""></div><figcaption><b>Catálogo</b><a class="ico-dl" href="assets/icons/catalogo-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Catálogo, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/colores-outline.svg" alt=""></div><figcaption><b>Colores</b><a class="ico-dl" href="assets/icons/colores-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Colores, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/corporativo-outline.svg" alt=""></div><figcaption><b>Corporativo</b><a class="ico-dl" href="assets/icons/corporativo-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Corporativo, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-outline.svg" alt=""></div><figcaption><b>Distribuidores</b><a class="ico-dl" href="assets/icons/distribuidores-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Distribuidores, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/firma-piezas-outline.svg" alt=""></div><figcaption><b>Firma de piezas</b><a class="ico-dl" href="assets/icons/firma-piezas-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Firma de piezas, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/fotografia-outline.svg" alt=""></div><figcaption><b>Fotografía</b><a class="ico-dl" href="assets/icons/fotografia-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Fotografía, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/hombre-de-influencia-outline.svg" alt=""></div><figcaption><b>Hombre de influencia</b><a class="ico-dl" href="assets/icons/hombre-de-influencia-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Hombre de influencia, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mailing-outline.svg" alt=""></div><figcaption><b>Mailing</b><a class="ico-dl" href="assets/icons/mailing-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Mailing, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mercadeo-en-linea-outline.svg" alt=""></div><figcaption><b>Mercadeo en línea</b><a class="ico-dl" href="assets/icons/mercadeo-en-linea-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Mercadeo en línea, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mundial-outline.svg" alt=""></div><figcaption><b>Mundial</b><a class="ico-dl" href="assets/icons/mundial-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Mundial, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/patron-visual-outline.svg" alt=""></div><figcaption><b>Patrón visual</b><a class="ico-dl" href="assets/icons/patron-visual-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Patrón visual, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/pin-jalbot-outline.svg" alt=""></div><figcaption><b>Pin Jalbot</b><a class="ico-dl" href="assets/icons/pin-jalbot-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Pin Jalbot, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/pop-outline.svg" alt=""></div><figcaption><b>POP</b><a class="ico-dl" href="assets/icons/pop-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar POP, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad-outline.svg" alt=""></div><figcaption><b>Publicidad</b><a class="ico-dl" href="assets/icons/publicidad-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-outline.svg" alt=""></div><figcaption><b>Publicidad digital</b><a class="ico-dl" href="assets/icons/publicidad-digital-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad digital, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/redes-outline.svg" alt=""></div><figcaption><b>Redes</b><a class="ico-dl" href="assets/icons/redes-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Redes, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/sello-calidad-outline.svg" alt=""></div><figcaption><b>Sello de calidad</b><a class="ico-dl" href="assets/icons/sello-calidad-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Sello de calidad, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/sello-marca-outline.svg" alt=""></div><figcaption><b>Sello de marca</b><a class="ico-dl" href="assets/icons/sello-marca-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Sello de marca, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-outline.svg" alt=""></div><figcaption><b>Terminal de punto de venta</b><a class="ico-dl" href="assets/icons/terminal-de-punto-de-venta-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Terminal de punto de venta, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/tipografia-outline.svg" alt=""></div><figcaption><b>Tipografía</b><a class="ico-dl" href="assets/icons/tipografia-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Tipografía, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/web-outline.svg" alt=""></div><figcaption><b>Web</b><a class="ico-dl" href="assets/icons/web-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar Web, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/whatsapp-outline.svg" alt=""></div><figcaption><b>WhatsApp</b><a class="ico-dl" href="assets/icons/whatsapp-outline.svg" target="_blank" rel="noopener" download aria-label="Descargar WhatsApp, lineales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure></div></div><div class="icg-group"><div class="icg-head"><h3 class="h3">Duotono <span>8</span></h3><p class="muted small">Trazo con acento verde.</p></div><div class="icg-grid"><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/corporativo-accent.svg" alt=""></div><figcaption><b>Corporativo</b><a class="ico-dl" href="assets/icons/corporativo-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Corporativo, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-accent.svg" alt=""></div><figcaption><b>Distribuidores</b><a class="ico-dl" href="assets/icons/distribuidores-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Distribuidores, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/hombre-de-influencia-accent.svg" alt=""></div><figcaption><b>Hombre de influencia</b><a class="ico-dl" href="assets/icons/hombre-de-influencia-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Hombre de influencia, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mercadeo-en-linea-accent.svg" alt=""></div><figcaption><b>Mercadeo en línea</b><a class="ico-dl" href="assets/icons/mercadeo-en-linea-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Mercadeo en línea, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mundial-accent.svg" alt=""></div><figcaption><b>Mundial</b><a class="ico-dl" href="assets/icons/mundial-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Mundial, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad-accent.svg" alt=""></div><figcaption><b>Publicidad</b><a class="ico-dl" href="assets/icons/publicidad-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-accent.svg" alt=""></div><figcaption><b>Publicidad digital</b><a class="ico-dl" href="assets/icons/publicidad-digital-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad digital, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-accent.svg" alt=""></div><figcaption><b>Terminal de punto de venta</b><a class="ico-dl" href="assets/icons/terminal-de-punto-de-venta-accent.svg" target="_blank" rel="noopener" download aria-label="Descargar Terminal de punto de venta, duotono, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure></div></div><div class="icg-group"><div class="icg-head"><h3 class="h3">Blancos <span>20</span></h3><p class="muted small">Para fondos oscuros o de color.</p></div><div class="icg-grid"><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/boton-icono-white.svg" alt=""></div><figcaption><b>Botón</b><a class="ico-dl" href="assets/icons/boton-icono-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Botón, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/catalogo-white.svg" alt=""></div><figcaption><b>Catálogo</b><a class="ico-dl" href="assets/icons/catalogo-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Catálogo, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/corporativo-white.svg" alt=""></div><figcaption><b>Corporativo</b><a class="ico-dl" href="assets/icons/corporativo-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Corporativo, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/distribuidores-white.svg" alt=""></div><figcaption><b>Distribuidores</b><a class="ico-dl" href="assets/icons/distribuidores-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Distribuidores, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/firma-piezas-white.svg" alt=""></div><figcaption><b>Firma de piezas</b><a class="ico-dl" href="assets/icons/firma-piezas-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Firma de piezas, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/hombre-de-influencia-white.svg" alt=""></div><figcaption><b>Hombre de influencia</b><a class="ico-dl" href="assets/icons/hombre-de-influencia-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Hombre de influencia, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/mailing-white.svg" alt=""></div><figcaption><b>Mailing</b><a class="ico-dl" href="assets/icons/mailing-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Mailing, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/mercadeo-en-linea-white.svg" alt=""></div><figcaption><b>Mercadeo en línea</b><a class="ico-dl" href="assets/icons/mercadeo-en-linea-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Mercadeo en línea, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/mundial-white.svg" alt=""></div><figcaption><b>Mundial</b><a class="ico-dl" href="assets/icons/mundial-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Mundial, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/patron-visual-white.svg" alt=""></div><figcaption><b>Patrón visual</b><a class="ico-dl" href="assets/icons/patron-visual-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Patrón visual, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/pin-jalbot-white.svg" alt=""></div><figcaption><b>Pin Jalbot</b><a class="ico-dl" href="assets/icons/pin-jalbot-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Pin Jalbot, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/pop-white.svg" alt=""></div><figcaption><b>POP</b><a class="ico-dl" href="assets/icons/pop-white.svg" target="_blank" rel="noopener" download aria-label="Descargar POP, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/publicidad-white.svg" alt=""></div><figcaption><b>Publicidad</b><a class="ico-dl" href="assets/icons/publicidad-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital-white.svg" alt=""></div><figcaption><b>Publicidad digital</b><a class="ico-dl" href="assets/icons/publicidad-digital-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad digital, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/redes-white.svg" alt=""></div><figcaption><b>Redes</b><a class="ico-dl" href="assets/icons/redes-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Redes, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/sello-calidad-white.svg" alt=""></div><figcaption><b>Sello de calidad</b><a class="ico-dl" href="assets/icons/sello-calidad-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Sello de calidad, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/sello-marca-white.svg" alt=""></div><figcaption><b>Sello de marca</b><a class="ico-dl" href="assets/icons/sello-marca-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Sello de marca, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta-white.svg" alt=""></div><figcaption><b>Terminal de punto de venta</b><a class="ico-dl" href="assets/icons/terminal-de-punto-de-venta-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Terminal de punto de venta, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/web-white.svg" alt=""></div><figcaption><b>Web</b><a class="ico-dl" href="assets/icons/web-white.svg" target="_blank" rel="noopener" download aria-label="Descargar Web, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip dk"><img loading="lazy" decoding="async" src="assets/icons/whatsapp-white.svg" alt=""></div><figcaption><b>WhatsApp</b><a class="ico-dl" href="assets/icons/whatsapp-white.svg" target="_blank" rel="noopener" download aria-label="Descargar WhatsApp, blancos, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure></div></div><div class="icg-group"><div class="icg-head"><h3 class="h3">Originales <span>6</span></h3><p class="muted small">Trazo con acento naranja.</p></div><div class="icg-grid"><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/hombre-de-influencia.svg" alt=""></div><figcaption><b>Hombre de influencia</b><a class="ico-dl" href="assets/icons/hombre-de-influencia.svg" target="_blank" rel="noopener" download aria-label="Descargar Hombre de influencia, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mercadeo-en-linea.svg" alt=""></div><figcaption><b>Mercadeo en línea</b><a class="ico-dl" href="assets/icons/mercadeo-en-linea.svg" target="_blank" rel="noopener" download aria-label="Descargar Mercadeo en línea, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/mundial.svg" alt=""></div><figcaption><b>Mundial</b><a class="ico-dl" href="assets/icons/mundial.svg" target="_blank" rel="noopener" download aria-label="Descargar Mundial, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad.svg" alt=""></div><figcaption><b>Publicidad</b><a class="ico-dl" href="assets/icons/publicidad.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/publicidad-digital.svg" alt=""></div><figcaption><b>Publicidad digital</b><a class="ico-dl" href="assets/icons/publicidad-digital.svg" target="_blank" rel="noopener" download aria-label="Descargar Publicidad digital, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure><figure class="ico"><div class="ip"><img loading="lazy" decoding="async" src="assets/icons/terminal-de-punto-de-venta.svg" alt=""></div><figcaption><b>Terminal de punto de venta</b><a class="ico-dl" href="assets/icons/terminal-de-punto-de-venta.svg" target="_blank" rel="noopener" download aria-label="Descargar Terminal de punto de venta, originales, SVG"><svg class="i i-sm"><use href="#i-dl"/></svg>Descargar SVG</a></figcaption></figure></div></div></section></div>
     <div class="empty" id="empty" hidden><h3 class="h3">No hay recursos con esos filtros</h3><p class="muted small" style="margin:6px 0 18px">Prueba con otro tipo o con otra marca.</p><button class="btn sec" type="button" id="clearF">Quitar filtros</button></div>
   </div>
   </section>
@@ -2192,7 +2331,7 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
 (function(){
   const routes=['inicio','marca','crear','recursos'];
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let current=null, spyObs=null;
+  let current=null;
   const body=document.body, hdr=document.getElementById('hdr');
   const sheet=document.getElementById('sheet'), menuBtn=document.getElementById('menuBtn');
 
@@ -2214,13 +2353,15 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
 
   function showView(scr,anchor){
     const views=[...scr.querySelectorAll(':scope .view')];
-    let v=views.find(x=>x.id===anchor)||views[0];
+    let v=views.find(x=>x.id===anchor)||(anchor&&views.find(x=>x.querySelector('#'+CSS.escape(anchor))))||views[0];
+    const inner=anchor&&v.id!==anchor&&v.querySelector('#'+CSS.escape(anchor));
     const changed=!v.classList.contains('on');
     views.forEach(x=>x.classList.toggle('on',x===v));
     const nav=scr.querySelector('.subnav-in');
     if(nav){nav.querySelectorAll('a').forEach(l=>l.classList.toggle('on',l.getAttribute('href').split('/')[1]===v.id));requestAnimationFrame(()=>moveInd(nav));}
     armReveal(v);
     if(changed||anchor){const top=scr.querySelector('.subnav');const y=top?top.getBoundingClientRect().top+window.scrollY-parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr')||64):0;if(window.scrollY>y) window.scrollTo({top:Math.max(0,y),behavior:'auto'});}
+    if(inner) setTimeout(()=>scrollToId(anchor),60);
     document.dispatchEvent(new CustomEvent('viewchange',{detail:v.id}));
   }
   function go(r,anchor){
@@ -2232,14 +2373,12 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
     current=r;
     document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id==='s-'+r));
     document.querySelectorAll('[data-route]').forEach(a=>{if(a.dataset.route===r) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');});
-    body.classList.toggle('route-proveedores',r==='proveedores');
     armReveal(scr);
     window.scrollTo(0,0);
-    if(hasViews){showView(scr,anchor);if(spyObs) spyObs.disconnect();return;}
+    if(hasViews){showView(scr,anchor);return;}
     if(anchor) requestAnimationFrame(()=>scrollToId(anchor));
-    setupSpy();
   }
-  function parse(){const h=decodeURIComponent(location.hash.slice(1));const p=h.split('/');go(p[0]||'inicio',p[1]);}
+  function parse(){const h=decodeURIComponent(location.hash.slice(1));const p=h.split('/');if((p[0]||'inicio')!=='crear') window.jtFromEco=false;go(p[0]||'inicio',p[1]);}
   window.addEventListener('hashchange',parse);
 
   document.addEventListener('click',e=>{
@@ -2256,37 +2395,12 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
     ind.style.left=on.offsetLeft+'px'; ind.style.width=on.offsetWidth+'px';
     if(nav.scrollWidth>nav.clientWidth) nav.scrollTo({left:Math.max(0,on.offsetLeft-24),behavior:reduce?'auto':'smooth'});
   }
-  function setupSpy(){
-    if(spyObs) spyObs.disconnect();
-    const scr=document.querySelector('.screen.on'); if(!scr) return;
-    const nav=scr.querySelector('.subnav-in'); if(!nav) return;
-    const links=[...nav.querySelectorAll('a')];
-    const map=new Map();
-    links.forEach(l=>{const id=l.getAttribute('href').split('/')[1];const s=document.getElementById(id);if(s) map.set(s,l);});
-    links.forEach(l=>l.classList.remove('on')); links[0].classList.add('on');
-    requestAnimationFrame(()=>moveInd(nav));
-    spyObs=new IntersectionObserver(es=>{
-      es.forEach(en=>{if(!en.isIntersecting) return;links.forEach(l=>l.classList.remove('on'));map.get(en.target).classList.add('on');moveInd(nav);});
-    },{rootMargin:'-30% 0px -60% 0px'});
-    map.forEach((l,s)=>spyObs.observe(s));
-  }
   window.addEventListener('resize',()=>{const n=document.querySelector('.screen.on .subnav-in');if(n) moveInd(n);});
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{const n=document.querySelector('.screen.on .subnav-in');if(n) moveInd(n);});
 
   // Header: cambio de superficie al hacer scroll
   window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>8),{passive:true});
 
-  // Controles de la maqueta
-  document.querySelectorAll('[data-dev]').forEach(b=>b.addEventListener('click',()=>{
-    body.classList.toggle('mobile',b.dataset.dev==='mobile');
-    document.querySelectorAll('[data-dev]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-    closeSheet();
-    setTimeout(()=>{const n=document.querySelector('.screen.on .subnav-in');if(n) moveInd(n);},380);
-  }));
-  document.querySelectorAll('[data-notes]').forEach(b=>b.addEventListener('click',()=>{
-    body.classList.toggle('notes-off',b.dataset.notes==='off');
-    document.querySelectorAll('[data-notes]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  }));
 
   // Filtros de Recursos
   const state={type:'all',brand:'all'}, labels={};
@@ -2306,8 +2420,13 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
       const ok=(state.type==='all'||r.dataset.type===state.type)&&(state.brand==='all'||r.dataset.brand===state.brand);
       r.hidden=!ok; if(ok) n++;
     });
+    grid.querySelectorAll('.icolib').forEach(l=>{
+      const ok=(state.type==='all'||l.dataset.type===state.type)&&(state.brand==='all'||l.dataset.brand===state.brand);
+      l.hidden=!ok; if(ok) n+=l.querySelectorAll('.ico').length;
+    });
     count.textContent=n+(n===1?' recurso':' recursos');
     empty.hidden=n>0;
+    const ni=document.getElementById('noteImg'); if(ni) ni.hidden=state.type!=='imagenes';
     active.innerHTML='';
     ['type','brand'].forEach(f=>{
       if(state[f]==='all') return;
@@ -2360,7 +2479,6 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   window.addEventListener('hashchange',()=>setTimeout(refresh,60));
   window.addEventListener('resize',refresh);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(refresh);
-  document.querySelectorAll('[data-dev]').forEach(b=>b.addEventListener('click',()=>setTimeout(refresh,400)));
   setTimeout(refresh,80);
 
   // Canales
@@ -2403,7 +2521,11 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
     document.querySelectorAll('.tpanel').forEach(p=>p.classList.toggle('on',p.id==='tp-'+t));
   }
   document.querySelectorAll('.tsb').forEach(b=>b.addEventListener('click',()=>selTerr(b.dataset.t)));
-  document.querySelectorAll('[data-terr]').forEach(a=>a.addEventListener('click',()=>selTerr(a.dataset.terr)));
+  document.querySelectorAll('[data-terr]').forEach(a=>a.addEventListener('click',()=>{selTerr(a.dataset.terr);window.jtFromEco=true;}));
+  const ctxBack=document.querySelector('.ctx-back');
+  document.addEventListener('viewchange',e=>{ if(ctxBack) ctxBack.hidden=!(window.jtFromEco&&e.detail==='c-territorio'); });
+  const backEco=document.getElementById('backEco');
+  if(backEco) backEco.addEventListener('click',()=>{ setTimeout(()=>{const t=document.getElementById('eco-terr'); if(t&&t.offsetParent!==null) t.scrollIntoView({block:'center',behavior:'auto'});},120); });
   // Conteo de mínimos
   function countUp(el){
     const to=+el.dataset.count; if(reduce){el.textContent=to;return;}
@@ -2423,26 +2545,47 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   const io=new IntersectionObserver(es=>es.forEach(e=>{
     if(!e.isIntersecting) return;
     if(e.target.dataset.count){countUp(e.target);io.unobserve(e.target);}
-    if(e.target===ja && !ja.dataset.done){ja.dataset.done=1;playJA();}
   }),{threshold:.4});
   document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
-  if(ja){io.observe(ja); ja.querySelector('.ja-replay').addEventListener('click',()=>{jaT.forEach(clearTimeout);jaT=[];ja.classList.remove('done');once();jaT.push(setTimeout(()=>ja.classList.add('done'),3800));});}
-  document.querySelectorAll('.tab[data-panel="t-logo"]').forEach(b=>b.addEventListener('click',()=>setTimeout(playJA,60)));
+  // J + A: se arma al entrar a Marca / Identidad / Logo y se reproduce cuando el bloque está realmente visible.
+  // Varios disparadores (observer, scroll, resize, temporizador) para no depender de uno solo.
+  let jaPending=true;
+  function jaVisible(){
+    if(!ja||ja.offsetParent===null) return false;
+    const st=ja.querySelector('.ja-stage')||ja, r=st.getBoundingClientRect(), vh=window.innerHeight||document.documentElement.clientHeight;
+    const top=Math.max(r.top,parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hdr'))||0);
+    const vis=Math.min(r.bottom,vh)-top;
+    return r.height>0 && vis>=r.height*0.5;
+  }
+  function jaCheck(){ if(jaPending && jaVisible()){ jaPending=false; playJA(); } }
+  function jaArm(){
+    if(!ja) return;
+    jaPending=true; jaT.forEach(clearTimeout); jaT=[];
+    ja.classList.remove('play'); if(!reduce) ja.classList.remove('done');
+    requestAnimationFrame(()=>requestAnimationFrame(jaCheck));
+    setTimeout(jaCheck,450);
+  }
+  if(ja){
+    const jaIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting) jaCheck();}),{threshold:[0,.2,.4,.6]});
+    jaIO.observe(ja);
+    let jaRaf=0; const jaSoon=()=>{ if(!jaPending||jaRaf) return; jaRaf=requestAnimationFrame(()=>{jaRaf=0;jaCheck();}); };
+    window.addEventListener('scroll',jaSoon,{passive:true});
+    window.addEventListener('resize',jaSoon);
+    document.addEventListener('viewchange',e=>{ if(e.detail==='m-identidad') jaArm(); });
+    document.querySelectorAll('.tab[data-panel="t-logo"]').forEach(b=>b.addEventListener('click',jaArm));
+    ja.querySelector('.ja-replay').addEventListener('click',()=>{
+      if(reduce) return;
+      jaPending=false; jaT.forEach(clearTimeout); jaT=[]; ja.classList.remove('done'); once();
+      jaT.push(setTimeout(()=>ja.classList.add('done'),3800));
+    });
+    if(reduce) ja.classList.add('done');
+    jaCheck(); window.addEventListener('load',jaCheck);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(jaCheck);
+  }
   // Reveal de elementos .draw dentro de pestañas y vistas
   const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target);}}),{threshold:.3});
   document.querySelectorAll('.draw,.mins2').forEach(el=>io2.observe(el));
   document.addEventListener('viewchange',()=>{const n=document.querySelector('.screen.on .tabs'); if(n) setTimeout(()=>n.dispatchEvent(new Event('refresh')),50); window.dispatchEvent(new Event('resize'));});
-})();
-(function(){
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const alt=document.getElementById('heroAlt'); if(!alt) return;
-  function run(){ alt.classList.remove('go'); void alt.offsetWidth; alt.classList.add('go'); }
-  document.querySelectorAll('[data-hero]').forEach(b=>{ if(b===alt) return; b.addEventListener('click',()=>{
-    alt.dataset.hero=b.dataset.hero;
-    document.querySelectorAll('button[data-hero]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-    location.hash='inicio'; window.scrollTo(0,0); run();
-  });});
-  setTimeout(run,reduce?0:250);
 })();
 (function(){
   const sheet=document.getElementById('sheet'),btn=document.getElementById('menuBtn'); if(!sheet||!btn) return;

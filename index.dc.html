@@ -1690,6 +1690,61 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
   .rnote{font-size:14px}
 }
 @container site (max-width:380px){.icg-grid{gap:6px}}
+
+
+/* ===== Ajuste puntual: Recursos compactos (logos + Jalbot) ===== */
+/* Logos e isotipos: tarjetas más bajas y fáciles de escanear */
+.res[data-type="logos"] .prev{
+  aspect-ratio:16/7;
+  min-height:0;
+  padding:14px 18px;
+}
+.res[data-type="logos"] .prev img{
+  max-width:72%;
+  max-height:64%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+.res[data-type="logos"] .body{
+  padding:12px 14px 14px;
+  gap:7px;
+}
+.res[data-type="logos"] .meta{font-size:12.5px}
+.res[data-type="logos"] .dl{gap:6px}
+.res[data-type="logos"] .dl a.btn[download]{padding:6px 10px;font-size:12.5px}
+.res[data-type="logos"] .vec small{font-size:11px}
+
+/* Jalbot: tarjetas un poco más compactas y pose completa centrada */
+.res[data-type="jalbot"] .prev.jbp{
+  aspect-ratio:4/3;
+  min-height:0;
+  padding:12px 16px;
+  display:grid;
+  place-items:center;
+}
+.res[data-type="jalbot"] .prev.jbp img{
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+  transform:none;
+}
+.res[data-type="jalbot"]:hover .prev.jbp img{transform:scale(1.015)}
+.res[data-type="jalbot"] .body{
+  padding:12px 14px 14px;
+  gap:7px;
+}
+.res[data-type="jalbot"] .meta,
+.res[data-type="jalbot"] .tbg{font-size:12.5px}
+.res[data-type="jalbot"] .dl a.btn[download]{padding:6px 10px;font-size:12.5px}
+
+@container site (max-width:720px){
+  .res[data-type="logos"] .prev{aspect-ratio:16/8;padding:12px 16px}
+  .res[data-type="jalbot"] .prev.jbp{aspect-ratio:4/3;padding:10px 14px}
+}
 </style>
 </head>
 <body>

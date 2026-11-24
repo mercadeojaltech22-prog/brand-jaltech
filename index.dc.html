@@ -1068,6 +1068,27 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace}
 .pose figcaption{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px}
 .pose b{font-weight:600}
 .pose span{font-size:13.5px;color:var(--ink-2)}
+.poses.jb-ref{grid-template-columns:repeat(5,1fr)}
+.ctx-head{margin-top:46px;max-width:78ch}
+.ctx-head .h3{margin:2px 0 6px}
+.ctx-head p{color:var(--ink-2)}
+.ctx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.ctx-card{margin:0;background:#fff;border-radius:20px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);transition:transform .25s var(--ease)}
+.ctx-card:hover{transform:translateY(-3px)}
+.ctx-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#fff}
+.ctx-card figcaption{padding:12px 14px 14px;font-size:14px;font-weight:600;color:var(--navy)}
+@container site (max-width:1060px){
+  .poses.jb-ref{grid-template-columns:repeat(3,1fr)}
+  .ctx-grid{grid-template-columns:repeat(2,1fr)}
+}
+@container site (max-width:720px){
+  .poses.jb-ref{grid-template-columns:1fr 1fr}
+  .ctx-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .ctx-card figcaption{padding:10px 12px 12px;font-size:13px}
+}
+@container site (max-width:380px){
+  .poses.jb-ref,.ctx-grid{grid-template-columns:1fr}
+}
 .jb-real{display:grid;grid-template-columns:1fr 1fr 2fr;gap:14px;height:260px}
 .jb-real button{border:0;padding:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--g100)}
 .jb-real .img{transition:transform .45s var(--ease)}
@@ -2051,13 +2072,28 @@ html.menu-open,html.menu-open body{overflow:hidden;overscroll-behavior:none}
    </div>
    <div class="band b-soft">
     <div class="wrap">
-      <h3 class="h3" style="margin:0 0 6px">Poses oficiales</h3>
-      <p class="small" style="margin-bottom:18px;max-width:72ch;color:var(--ink-2)"><strong class="em">Las poses oficiales sirven como referencia.</strong> Jalbot puede adoptar nuevas poses, gestos y contextos acordes con el mensaje o la temporada, siempre <strong class="em">conservando sus rasgos e identidad visual</strong>.</p>
-      <div class="poses">
-        <figure class="pose rv"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-saludando.png" alt="Jalbot saludando"></div><figcaption><b>Saludando</b><span class="pt">Puede transmitir</span><span class="kw">bienvenida · cercanía · apertura</span></figcaption></figure>
-        <figure class="pose rv" style="--d:80ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-apunta.webp" alt="Jalbot apunta"></div><figcaption><b>Apunta</b><span class="pt">Puede transmitir</span><span class="kw">atención · acción · orientación</span></figcaption></figure>
-        <figure class="pose rv" style="--d:160ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-jumping.png" alt="Jalbot jumping"></div><figcaption><b>Jumping</b><span class="pt">Puede transmitir</span><span class="kw">energía · celebración · dinamismo</span></figcaption></figure>
-        <figure class="pose rv" style="--d:240ms"><div class="pst ph0"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-birthday.png" alt="Jalbot birthday"></div><figcaption><b>Birthday</b><span class="pt">Puede transmitir</span><span class="kw">celebración · hitos · fechas especiales</span></figcaption></figure>
+      <h3 class="h3" style="margin:0 0 6px">Referencias de poses</h3>
+      <p class="small" style="margin-bottom:18px;max-width:78ch;color:var(--ink-2)">Estas imágenes funcionan como <strong class="em">referencias visuales, no como usos exclusivos</strong>. Jalbot puede adoptar nuevas poses, gestos y expresiones según el mensaje, la campaña o el contexto, siempre <strong class="em">conservando sus rasgos e identidad visual</strong>.</p>
+      <div class="poses jb-ref">
+        <figure class="pose rv"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-origin-listening.webp" alt="Jalbot escuchando"></div><figcaption><b>Escuchando</b><span>Pose de referencia</span></figcaption></figure>
+        <figure class="pose rv" style="--d:70ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-role-accompany-open.webp" alt="Jalbot acompañando"></div><figcaption><b>Acompañando</b><span>Pose de referencia</span></figcaption></figure>
+        <figure class="pose rv" style="--d:140ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-role-orient-pointing.webp" alt="Jalbot señalando"></div><figcaption><b>Señalando</b><span>Pose de referencia</span></figcaption></figure>
+        <figure class="pose rv" style="--d:210ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-belief-curious.webp" alt="Jalbot curioso"></div><figcaption><b>Curioso</b><span>Pose de referencia</span></figcaption></figure>
+        <figure class="pose rv" style="--d:280ms"><div class="pst"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-role-celebrate.webp" alt="Jalbot celebrando"></div><figcaption><b>Celebrando</b><span>Pose de referencia</span></figcaption></figure>
+      </div>
+
+      <div class="ctx-head rv">
+        <span class="kind">Adaptación visual</span>
+        <h3 class="h3">Jalbot se adapta al contexto</h3>
+        <p class="small">Puede incorporar accesorios, gestos y escenarios según la campaña o la temporada. El contexto cambia; <strong class="em">la identidad de Jalbot se mantiene</strong>.</p>
+      </div>
+      <div class="ctx-grid">
+        <figure class="ctx-card rv"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-cumpleaños.png" alt="Jalbot en contexto de cumpleaños"><figcaption>Cumpleaños</figcaption></figure>
+        <figure class="ctx-card rv" style="--d:60ms"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-celebraciones.png" alt="Jalbot en contexto de celebración"><figcaption>Celebraciones</figcaption></figure>
+        <figure class="ctx-card rv" style="--d:120ms"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-navidad.png" alt="Jalbot en contexto navideño"><figcaption>Navidad</figcaption></figure>
+        <figure class="ctx-card rv" style="--d:180ms"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-lanzamiento.png" alt="Jalbot en contexto de lanzamiento"><figcaption>Lanzamiento</figcaption></figure>
+        <figure class="ctx-card rv" style="--d:240ms"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-black-friday.png" alt="Jalbot en contexto Black Friday"><figcaption>Black Friday</figcaption></figure>
+        <figure class="ctx-card rv" style="--d:300ms"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-halloween.png" alt="Jalbot en contexto de Halloween"><figcaption>Halloween</figcaption></figure>
       </div>
       <div class="firma rv"><img loading="lazy" decoding="async" src="assets/jalbot/jalbot-isotipo.webp" alt="Jalbot isotipo"><div><span class="kind">Recurso de firma</span><h4>Jalbot isotipo</h4><p class="small" style="color:var(--ink-2)">Asset oficial de firma visual: Jalbot junto al isotipo Jaltech. Funciona como cierre o firma de piezas, separado de las poses expresivas.</p></div></div>
       <h3 class="h3" style="margin:48px 0 16px">En piezas reales</h3>

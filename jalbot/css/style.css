@@ -15,7 +15,7 @@
 
 :root {
   /* Paleta de marca */
-  --green: #529A00;            /* verde oficial Jaltech */
+  --green: #51b000;            /* verde oficial Jaltech */
   --green-ink: #3F7A00;        /* verde para texto pequeño sobre claro */
   --green-on-dark: #7BC62A;    /* verde sobre fondo oscuro */
   --graphite: #1D2333;         /* azul / grafito oscuro */
@@ -236,7 +236,7 @@ a { color: inherit; }
 
 /* ---------- 5. ROLES · 4 paneles interactivos ---------- */
 .roles { padding-block: clamp(80px, 10vw, 150px); }
-.role-board { --a: #529A00; --at: #3F7A00; --t: #EAF3DC; --i: 0; position: relative; }
+.role-board { --a: #51b000; --at: #3F7A00; --t: #EAF3DC; --i: 0; position: relative; }
 .role-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .role-panel { appearance: none; border: 0; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 22px; border-radius: 30px; background: #E7E8EB; color: var(--gray-muted); transition: background-color calc(0.6s * var(--dur)) ease, box-shadow calc(0.5s * var(--dur)) ease, color calc(0.5s * var(--dur)) ease; }
 .role-panel:hover { background: #E0E2E6; }

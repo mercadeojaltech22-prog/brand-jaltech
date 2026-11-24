@@ -281,6 +281,7 @@ a { color: inherit; }
 .card-id { display: flex; flex-direction: column; line-height: 1.25; }
 .card-id strong { font-size: 16px; font-weight: 700; }
 .card-id small { font-size: 12px; color: var(--gray-muted); }
+.chatbot-logo { display: block; width: clamp(128px, 11vw, 168px); max-height: 54px; height: auto; object-fit: contain; object-position: left center; }
 .card-body { padding: 22px; }
 .bubble { display: inline-block; max-width: 88%; background: var(--mist); padding: 14px 16px; border-radius: 16px 16px 16px 4px; font-size: 15px; line-height: 1.45; }
 .opts { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -363,6 +364,7 @@ a { color: inherit; }
 
   .today-stage { flex-direction: column; align-items: stretch; min-height: 0; }
   .today-card { width: calc(100% - 28px); min-width: 0; margin: 14px; }
+  .chatbot-logo { width: 138px; max-height: 48px; }
   .today-jalbot { position: relative; width: 46%; margin: -20px 12px 0 auto; left: auto; bottom: auto; }
   .opts { grid-template-columns: 1fr 1fr; }
 

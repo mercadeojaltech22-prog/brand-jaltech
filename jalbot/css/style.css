@@ -221,7 +221,7 @@ a { color: inherit; }
 .t1 .t-circle::after { content: ""; position: absolute; inset: -4%; border: 1.5px dashed var(--a); border-radius: 50%; opacity: 0.45; }
 .t2 .t-circle { background: rgba(255, 255, 255, 0.6); background: color-mix(in srgb, var(--a) 17%, transparent); }
 .t3 .t-circle::after { content: ""; position: absolute; width: 44%; aspect-ratio: 1; left: -16%; bottom: -4%; border-radius: 50%; background: rgba(255, 134, 0, 0.22); }
-.t4 .t-circle { background: rgba(255, 255, 255, 0.55); border: 2px solid var(--a); }
+.t4 .t-circle {   background: rgba(255, 255, 255, 0.55);   border: 2px solid rgba(111, 143, 184, 0.35); }
 .t5 .t-circle { background: radial-gradient(circle at 50% 30%, #fff, rgba(106, 42, 225, 0.22)); }
 .t5 .t-circle::after { content: ""; position: absolute; inset: -8%; border: 2px solid var(--a); border-radius: 50%; opacity: 0.55; clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%); }
 
